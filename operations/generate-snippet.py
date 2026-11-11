@@ -1,54 +1,39 @@
 import json
-import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TARGET = REPO / 'operations'
 TARGET.mkdir(exist_ok=True)
-home = (REPO / 'index.html').read_text()
-manifesto = re.search(r'<section class="manifesto movement-manifesto".*?</section>', home, re.S).group(0)
-css = (REPO / 'assets/art-direction.css').read_text()
-art = (REPO / 'assets/art-direction.js').read_text()
-source = '''// Ayoba public-page update, applied with Netlify snippet injection.
-// Deliberately independent of the deployed studio backend.
+home = (TARGET / 'home-redesign.html').read_text()
+css = (REPO / 'assets/movement-studio.css').read_text()
+shared = (REPO / 'assets/site-redesign.js').read_text()
+engine = (REPO / 'assets/movement-engine.js').read_text()
+source = r'''// Ayoba public redesign. No backend deployment or data changes.
 (() => {
-  const route = location.pathname.replace(/\\/+$/, '') || '/';
-  if (!['/', '/about', '/private-sessions'].includes(route)) return;
+  const route = location.pathname.replace(/\/+$/, '') || '/';
+  if (!['/', '/about', '/private-sessions', '/group-journeys', '/contact', '/faq', '/privacy-policy', '/participant-agreement', '/cancellation-refund-policy'].includes(route)) return;
   function apply() {
-    if (!document.querySelector('link[href*="/assets/art-direction.css"], #ayoba-art-direction')) {
+    if (!document.querySelector('link[href*="/assets/movement-studio.css"], #ayoba-movement-studio')) {
       const style = document.createElement('style');
-      style.id = 'ayoba-art-direction';
+      style.id = 'ayoba-movement-studio';
       style.textContent = CSS_SOURCE;
       document.head.append(style);
     }
-    if (route === '/') {
-      const manifesto = document.querySelector('#philosophy');
-      if (manifesto && !manifesto.classList.contains('movement-manifesto') && manifesto.querySelector('h2')?.textContent.includes('We were never meant')) {
-        const template = document.createElement('template');
-        template.innerHTML = MANIFESTO_SOURCE;
-        manifesto.classList.add('movement-manifesto');
-        manifesto.replaceChildren(...template.content.firstElementChild.childNodes);
-        if (location.hash === '#philosophy') requestAnimationFrame(() => manifesto.scrollIntoView({behavior: 'instant'}));
+    if (route === '/' && document.querySelector('main')?.dataset.motionVersion !== '2') {
+      const template = document.createElement('template');
+      template.innerHTML = HOME_SOURCE;
+      document.querySelector('main')?.replaceWith(template.content.firstElementChild);
+      if (['#philosophy', '#sessions', '#movement-lab'].includes(location.hash)) {
+        requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior: 'instant'}));
       }
     }
-    if (route === '/about') {
-      const heading = document.querySelector('main h1');
-      if (heading && heading.textContent.replace(/\\s+/g, ' ').includes('Learning to move')) {
-        heading.classList.add('art-title');
-        heading.innerHTML = 'dance as <em>art.</em>';
-      }
-    }
-    if (route === '/private-sessions') {
-      const lede = document.querySelector('main .lede');
-      const old = 'Your pace, your curiosity, your way of moving. An individualized space to explore without needing to get anywhere.';
-      if (lede?.textContent.trim() === old) lede.textContent = 'Your pace, your curiosity, your way of moving.';
-    }
-    ART_SOURCE
+    SHARED_SOURCE
+    ENGINE_SOURCE
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once: true});
   else apply();
 })();
-'''.replace('CSS_SOURCE', json.dumps(css)).replace('MANIFESTO_SOURCE', json.dumps(manifesto)).replace('ART_SOURCE', art)
+'''.replace('CSS_SOURCE', json.dumps(css)).replace('HOME_SOURCE', json.dumps(home)).replace('SHARED_SOURCE', shared).replace('ENGINE_SOURCE', engine)
 assert '</script' not in source.lower()
 (TARGET / 'live-update.js').write_text(source)
 snippet = {'title': 'Ayoba — movement copy and interactive art study', 'general': '<script id="ayoba-live-update">\n' + source + '</script>', 'general_position': 'footer', 'goal': '', 'goal_position': 'footer'}
