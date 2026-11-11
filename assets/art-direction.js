@@ -1,7 +1,8 @@
 // Local drawing only. No storage, tracking, or network requests.
 (() => {
   const study = document.querySelector('[data-movement-study]');
-  if (!study) return;
+  if (!study || study.dataset.gestureReady === 'true') return;
+  study.dataset.gestureReady = 'true';
   const surface = study.querySelector('.gesture-surface');
   const lines = study.querySelector('.gesture-lines');
   const status = study.querySelector('.study-status');
