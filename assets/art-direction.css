@@ -1,0 +1,17 @@
+/* Ayoba: movement as an art practice. Additive styles preserve existing layouts. */
+.movement-manifesto{position:relative;background:#f0e9dc;border-bottom:1px solid var(--line)}
+.movement-manifesto:before{content:"";position:absolute;top:0;left:5%;width:90%;height:1px;background:var(--line)}
+.movement-manifesto h2{font-size:clamp(36px,4.65vw,70px);max-width:1160px;line-height:1.17;letter-spacing:-2px;font-weight:500;margin-bottom:66px;text-wrap:pretty}
+.movement-manifesto h2 em{display:inline-block;font-size:1.28em;line-height:.8;transform:rotate(-4deg);padding-inline:.06em;color:var(--berry)}
+.intention-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+.intention-copy{max-width:480px}.intention-copy p{font-size:15px;line-height:1.85;margin:0 0 20px}.intention-copy .textlink{margin-top:12px}
+.movement-study{background:#e5dfcd;color:var(--berry);border:1px solid #55583a40;transform:rotate(2deg);position:relative;padding:20px 23px 17px}
+.study-heading{display:flex;justify-content:space-between;align-items:center;color:var(--ink)}.study-heading .eyebrow{margin:0;font-size:9px}.study-number{font:italic 23px Instrument,Georgia,serif}
+.gesture-surface{display:block;width:100%;height:auto;aspect-ratio:5/3;touch-action:none;cursor:crosshair;overflow:hidden}
+.study-footer{border-top:1px solid #55583a40;color:var(--ink);padding-top:14px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}.study-footer p{font-size:10px;line-height:1.6;margin:0;max-width:160px}.study-footer>div{display:flex;gap:15px}.study-footer button{font:11px DM,Arial,sans-serif;background:none;color:var(--ink);border:0;border-bottom:1px solid currentColor;min-height:38px;padding:4px 0;cursor:pointer}.study-footer button:hover{color:var(--berry)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.page .art-title{font-size:clamp(68px,10.5vw,150px);font-weight:500;letter-spacing:-6px;line-height:1.03;margin-bottom:55px}.art-title em{font-size:1.2em;color:var(--berry)}
+.art-title~.content-columns .about-photo{transform:rotate(2deg);margin:10px 10px 40px}.art-title~.photo-essay .photo-essay-grid figure:first-child{transform:rotate(-2deg)}.art-title~.photo-essay .photo-essay-grid figure:last-child{transform:rotate(2deg)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.journey-photo img,.photo-essay-grid img{transition:transform .65s ease}.journey-photo{overflow:hidden}.journey-photo:hover img{transform:scale(1.035)}.photo-essay-grid figure:hover img{transform:translateY(-7px)}}
+@media(max-width:900px){.intention-layout{gap:40px}.movement-study{padding:16px}.study-footer>div{gap:20px}.movement-manifesto h2{margin-bottom:46px}.page .art-title{letter-spacing:-3px}}
+@media(max-width:640px){.intention-layout{grid-template-columns:1fr;gap:32px}.movement-manifesto{padding-block:60px}.movement-manifesto h2{font-size:clamp(32px,7.4vw,45px);letter-spacing:-1.2px;line-height:1.24;margin-bottom:32px}.movement-study{margin-inline:5px;transform:rotate(1deg)}.intention-copy p{font-size:14px}.study-footer p{max-width:130px}.page .art-title{font-size:clamp(60px,13.5vw,90px);letter-spacing:-2px;margin-bottom:40px}}
