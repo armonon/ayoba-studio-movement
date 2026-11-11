@@ -1,0 +1,53 @@
+functionsDirectory = "/Users/lillypad/Documents/New project/ayoba-studio/netlify/functions"
+functionsDirectoryOrigin = "config"
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[build]
+publish = "/Users/lillypad/Documents/New project/ayoba-studio/dist"
+publishOrigin = "config"
+command = "npm run build && npm run check && npm test"
+commandOrigin = "config"
+functions = "/Users/lillypad/Documents/New project/ayoba-studio/netlify/functions"
+
+  [build.environment]
+  SITE_ORIGIN = "https://ayoba-studio-movement.netlify.app"
+  SITE_HOSTING = "Netlify"
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[functions]
+
+  [functions."*"]
+  included_files = [
+    "server/founder-kit.zip"
+  ]
+  node_bundler = "esbuild"
+
+[[headers]]
+for = "/*"
+
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+for = "/studio/*"
+
+  [headers.values]
+  Cache-Control = "no-store"
+  X-Robots-Tag = "noindex, nofollow"
+  Referrer-Policy = "no-referrer"
+  X-Frame-Options = "DENY"
+  Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'"
