@@ -1,21 +1,37 @@
-AYOBA LIVE PAGE UPDATES — NOVEMBER 11, 2026
+AYOBA — PLAYFUL MOVEMENT STUDIO REDESIGN
 
-The requested copy and interactive art changes are live at
-https://ayoba-studio-movement.netlify.app
+Live site: https://ayoba-studio-movement.netlify.app
 
-HOW THE LIVE UPDATE WORKS
+DESIGN
+Butter yellow, cobalt blue, oversized type, and overlapping photographic
+studies. The homepage includes a manual photo sequence with optional playback,
+session disclosures, a drawing playground with Flow/Pulse/Still gestures,
+and selectable movement invitations. The other public pages share the type,
+color, navigation, and footer design. Requested copy edits are retained.
+
+SOURCE
+operations/home-redesign.html is the canonical homepage main element; index.html
+contains the same markup for a future complete native deployment.
+assets/movement-studio.css supplies the design and responsive layouts.
+assets/movement-engine.js handles photos, drawing, and progressive reveals.
+assets/site-redesign.js applies shared copy/presentation and movement prompts.
+The ordinary public HTML files also contain the updated copy and asset links.
+
+LIVE DELIVERY
 Netlify injects the named "Ayoba — movement copy and interactive art study"
-snippet into static pages as they are served. It changes only the homepage,
-About, and Private Sessions pages. It uses no analytics, storage, or network
-requests. The existing studio function, data, authentication, contact delivery,
-deployment, and security headers remain in place.
+snippet into static pages as they are served. This updates the nine public
+routes without rebuilding or replacing the existing studio backend. The
+snippet contains its CSS, markup, and JavaScript; all photos and fonts already
+exist in the published deployment. No added network requests, storage,
+analytics, or dependencies are used by the redesign scripts.
 
-This avoids rebuilding the original studio backend, whose source is absent
-from this repository. It does not recover that backend's source code.
+The studio function, authentication, contact delivery, published schedules,
+and security headers remain in place. Existing app.js and public-runtime.js
+are unchanged. The snippet does not execute on /studio or /api routes.
 
-SOURCE AND MAINTENANCE
-The HTML files and assets/art-direction.* contain the same changes in ordinary
-site source. The live snippet is generated from those files:
+MAINTENANCE
+After editing assets or the canonical homepage, synchronize index.html and
+other affected native pages, then run:
 
   python3 operations/generate-snippet.py
   node --check operations/live-update.js
@@ -23,34 +39,39 @@ site source. The live snippet is generated from those files:
 
 The publisher uses NETLIFY_AUTH_TOKEN from the environment, or this Mac's
 existing Netlify CLI login. It never prints or saves the credential. It updates
-only the named snippet and verifies the stored content. Always verify the
-affected public pages and the studio API after publishing.
+only the named snippet and verifies the stored content. Keep a copy of the
+previous snippet before publishing so it can be restored if needed.
 
 The current live snippet ID is 0. It is managed in Netlify under Project
 configuration > Developer settings > Post processing > Snippet injection.
 
-The script checks for existing markup and initialized controls, so a later
-deployment of the updated HTML does not duplicate the movement study or its
-event handlers. It does not overwrite future headings with different wording.
-After a complete native deployment, the named snippet can be removed in Netlify.
+The script checks the homepage version and per-control initialization to avoid
+duplicating markup or listeners. After a complete native deployment, remove
+the named snippet so future native changes are not overridden.
 
 LIMITS
-The current live copy changes require JavaScript. Visitors with JavaScript
-disabled see the original deployed HTML. The studio's restrictive CSP remains
-intact and may block the inline snippet there; the public update does not need
-to execute on studio pages.
+Live presentation changes require JavaScript. Visitors with JavaScript disabled
+see the previous deployed HTML. The updated native HTML in this repository
+contains the new copy without that dependency. The studio's restrictive CSP
+remains intact and may block the inline snippet there, as intended.
 
-Do not deploy this repository as a replacement for the complete application:
-netlify.toml still references the missing original build and functions folders.
-The live-update publisher does not invoke that build or replace any function.
+The original backend source is absent from this repository. Do not deploy this
+export as a replacement for the complete application: netlify.toml references
+the original build/functions folders on another computer. This approach does
+not recover that source. Use [skip ci] for source-only commits while the
+existing build configuration remains unavailable.
 
 VERIFICATION
-Browser: homepage copy, class-intention passage, About heading, shortened Private
-Sessions introduction, drawing, Add a gesture, and Clear all verified live.
-API: /api/studio/public remains 200 with the same response; /api/studio/state
-remains 401 without authentication. Studio JavaScript and security headers match
-the pre-update versions. Production deployment ID and studio function digest
-are unchanged.
+Check public-page rendering, photo selection/play/pause, session disclosures,
+Flow/Pulse/Still, drawing/Add/Clear, movement prompts, responsive navigation,
+and contact/booking links. Drawing includes keyboard button alternatives;
+reduced-motion settings disable playback and transitions. Contact form markup,
+policy content, app.js, public-runtime.js, and netlify.toml remain unchanged
+apart from public presentation around them.
+
+After publication, verify /api/studio/public, unauthenticated 401 at
+/api/studio/state, studio script integrity and security headers, and unchanged
+published deployment ID and studio function digest.
 
 Netlify reference:
 https://docs.netlify.com/build/post-processing/snippet-injection/
