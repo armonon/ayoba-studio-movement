@@ -28,6 +28,30 @@
       "bytes": 645211,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-tropical-background.8bc2f47e0385.jpg"
     },
+    "ayoba-about-montage.mp4": {
+      "path": "assets/ayoba-about-montage.22a8303b4ffd.mp4",
+      "sha1": "22a8303b4ffdb76420ea4fda92a73a401b9cbe14",
+      "bytes": 7059219,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-about-montage.22a8303b4ffd.mp4"
+    },
+    "ayoba-about-montage-mobile.mp4": {
+      "path": "assets/ayoba-about-montage-mobile.58561b3862f5.mp4",
+      "sha1": "58561b3862f5270151bba161d7db75d26dc4a3d4",
+      "bytes": 4744539,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-about-montage-mobile.58561b3862f5.mp4"
+    },
+    "ayoba-about-montage-poster.jpg": {
+      "path": "assets/ayoba-about-montage-poster.639b6355a5ce.jpg",
+      "sha1": "639b6355a5ce7acdbffff20f60ac137e9aa27ada",
+      "bytes": 193201,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-about-montage-poster.639b6355a5ce.jpg"
+    },
+    "ayoba-about-montage-mobile-poster.jpg": {
+      "path": "assets/ayoba-about-montage-mobile-poster.2a1dfe68af1c.jpg",
+      "sha1": "2a1dfe68af1cf6bed11617f6063fbff03ea53fc3",
+      "bytes": 62076,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-about-montage-mobile-poster.2a1dfe68af1c.jpg"
+    },
     "characters/candle-devil.webp": {
       "path": "assets/characters/candle-devil.8524e7667016.webp",
       "sha1": "8524e76670168bc9dfe26d1e715080443c08dd9b",
@@ -143,6 +167,6 @@
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/wavy-sun.de251f4c4c59.webp"
     }
   },
-  "deploy_id": "6af611a3d25d83a2c17e65e6",
-  "previous_deploy_id": "6af60dc520e141cabb3892f4"
+  "deploy_id": "6af617ac25b1f58fae88c12b",
+  "previous_deploy_id": "6af611a3d25d83a2c17e65e6"
 }

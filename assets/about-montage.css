@@ -1,0 +1,29 @@
+/* The film is a backdrop; the words always sit over a calm cream wash. */
+.about-film-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#d7dbbc}
+.about-film-backdrop>img,.about-film-backdrop>video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+.about-film-backdrop>video{opacity:0}
+.about-film-backdrop[data-film-ready=true]>video{opacity:1}
+.about-film-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f8f4e5b3,#f8f4e5de 60%,#f8f4e5e8)}
+body.ayoba-simple-home .about-montage-section{position:relative;isolation:isolate;overflow:hidden;background:#d7dbbc}
+body.ayoba-simple-home .about-montage-section .founder-grid{position:relative}
+body.ayoba-simple-home .about-montage-section .founder-photo>img{height:auto;aspect-ratio:1.08;object-fit:cover}
+body.ayoba-simple-home .about-montage-section .founder-copy{background:#f8f4e5c7;padding:30px;border:1px solid #f8f4e5b3}
+body.ayoba-simple-home .about-montage-section .pendant-caption{margin-top:-12px}
+body.about-montage-page>#ayoba-background{display:none}
+body.about-montage-page>.about-film-backdrop{position:fixed}
+body.about-montage-page>.about-film-backdrop:after{background:linear-gradient(90deg,#f8f4e5c7 0%,#f8f4e5a3 60%,#f8f4e570 100%)}
+body.about-montage-page .content-columns>div:first-child{background:#f8f4e5ed;padding:30px;border:1px solid #f8f4e5cc}
+body.about-montage-page .about-photo figcaption{background:#f8f4e5ed;padding:12px 16px}
+body.about-montage-page .photo-essay{background:#f8f4e5e8;padding:30px;margin-top:65px}
+body.about-montage-page .footer{background:#f8f4e5e8}
+body.ayoba-simple .about-film-credit{display:inline-flex;align-items:center;gap:18px;font:11px/1.7 DM,Arial,sans-serif;letter-spacing:.1px;border-bottom:1px solid #55583a80;padding-bottom:5px;margin:0 0 26px;color:var(--ink)}
+body.ayoba-simple .about-film-credit:hover{color:var(--berry);border-color:currentColor}
+body.about-montage-page .page h1{margin-bottom:24px}
+@media(max-width:700px){
+  body.ayoba-simple-home .about-montage-section .founder-copy{padding:22px}
+  body.about-montage-page .content-columns>div:first-child{padding:24px 20px}
+  body.about-montage-page>.about-film-backdrop:after{background:#f8f4e5b8}
+  body.about-montage-page .photo-essay{padding:20px;margin-top:45px}
+  .about-film-backdrop:after{background:#f8f4e5b8}
+  body.ayoba-simple .about-film-credit{font-size:10px;margin-bottom:22px}
+}
