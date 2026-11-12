@@ -15,7 +15,7 @@
     {name:'candle-devil', src:'/assets/characters/candle-devil.webp', stage:'film', x:23, y:50, size:159, phase:3.7, travel:58, dance:'hop', duration:0.68},
   ];
   const mounts = {
-    hero:document.querySelector('[data-art-hero]'),
+    hero:document.querySelector('[data-art-hero], [data-video-hero]'),
     practice:document.querySelector('#philosophy .manifesto-layout'),
     sessions:document.querySelector('#sessions'),
     play:document.querySelector('#play > .shell'),
