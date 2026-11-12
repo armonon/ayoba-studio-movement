@@ -11,6 +11,26 @@
       document.head.append(style);
     }
     if (route === '/') {
+      if (!document.querySelector('link[href*="/assets/video-hero.css"], #ayoba-video-design')) {
+        const style = document.createElement('style');
+        style.id = 'ayoba-video-design';
+        style.textContent = "/* A moving image within Ayoba's existing olive, butter and cream palette. */\n.hero-canvas.video-hero{min-height:660px;min-height:min(780px,calc(100svh - 98px));isolation:isolate;background:#263023;color:#f2ddaa}\n.video-hero .hero-video-poster,.video-hero .hero-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:66% 80%;z-index:-3}\n.video-hero .hero-video{opacity:0;transition:opacity .65s ease;pointer-events:none}\n.video-hero.is-video-ready .hero-video{opacity:1}\n.video-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#182116ed 0%,#25301dc9 31%,#20291c55 62%,#20291c12 100%),linear-gradient(0deg,#1b2318b3,transparent 35%,transparent 70%,#1b231850)}\n.video-hero-content{position:relative;min-height:inherit;display:flex;flex-direction:column;padding-block:30px 24px}\n.video-hero-top,.video-hero-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:9px;letter-spacing:1.6px;text-transform:uppercase}\n.video-hero-top p{margin:0}.video-hero-top span{color:#fff9e6}\n.video-hero-main{padding-block:55px 45px;flex:1;display:flex;flex-direction:column;justify-content:center}\n.video-hero h1{font:600 clamp(76px,8.4vw,128px)/.92 Bricolage,Arial,sans-serif;letter-spacing:-.065em;max-width:750px;margin:0 0 30px}\n.video-hero h1 em{font:italic 1.12em/1.03 Instrument,Georgia,serif;letter-spacing:-.04em;padding:0;display:block;margin-left:.35em}\n.video-hero-main>p{color:#fff9e6;font-size:14px;line-height:1.7;max-width:320px;margin:0 0 28px}\n.video-hero-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.video-hero-actions .button{padding:16px 22px;font-size:12px;gap:28px}\n.video-film-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0;border-bottom:1px solid #f2ddaa80;padding:9px 0;color:#fff9e6}\n.video-play-icon{font:24px/1 Arial,sans-serif}.video-film-link:hover{color:var(--butter)}\n.video-hero-bottom{padding-top:20px;border-top:1px solid #f2ddaa48;font-size:9px;letter-spacing:1.1px}\n.video-hero-bottom>a{display:inline-flex;gap:30px;align-items:center}.video-hero-bottom>a span{font-size:20px;line-height:1}\n.video-hero [data-hero-toggle]{display:inline-flex;gap:9px;align-items:center;min-height:40px;border:1px solid #f2ddaa80;border-radius:30px;padding:8px 14px;background:#26302366;color:#fff9e6;font:10px/1.3 DM,Arial,sans-serif;letter-spacing:.2px;text-transform:none;backdrop-filter:blur(5px)}\n.video-hero [data-hero-toggle-icon]{font:15px/1 Arial,sans-serif;width:12px;text-align:center}\n.video-hero a:focus-visible,.video-hero button:focus-visible{outline:3px solid var(--butter);outline-offset:5px}\n.video-hero [data-hero-toggle]:disabled{opacity:.65;cursor:default}\n.studio-film{padding-block:70px 90px;scroll-margin-top:35px}.studio-film-heading{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:32px}.studio-film-heading .eyebrow{margin-bottom:18px}.studio-film h2{font:600 clamp(42px,5vw,72px)/1.05 Bricolage,Arial,sans-serif;letter-spacing:-.05em;margin:0}.studio-film h2 em{font-size:1.15em}.studio-film-heading>p{font-size:13px;line-height:1.7;margin:0;max-width:300px}.studio-film>video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#263023;object-fit:contain;border:0}.studio-film-caption{display:flex;justify-content:space-between;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;padding-top:15px}\n@media(max-width:900px){.hero-canvas.video-hero{min-height:680px}.video-hero-main{padding-block:55px 42px}.video-hero h1{font-size:clamp(76px,10vw,110px)}.video-hero .hero-video-poster,.video-hero .hero-video{object-position:75% 80%}.video-hero-shade{background:linear-gradient(90deg,#182116e6 0%,#25301cb8 32%,#20291c40 100%),linear-gradient(0deg,#1b2318b0,transparent 45%)}.video-hero-actions{gap:22px}}\n@media(max-width:560px){.hero-canvas.video-hero{min-height:700px;min-height:max(700px,calc(100svh - 78px))}.video-hero-content{width:calc(100% - 40px);padding-block:23px 16px}.video-hero-top{font-size:7px;letter-spacing:1px;gap:18px;align-items:start}.video-hero-top p{max-width:175px}.video-hero-top span{white-space:nowrap;font-size:7px}.video-hero-main{justify-content:flex-start;padding-block:60px 150px}.video-hero h1{font-size:clamp(66px,16.5vw,89px);letter-spacing:-.06em;margin-bottom:22px}.video-hero h1 em{margin-left:.18em}.video-hero-main>p{font-size:12px;max-width:255px;margin-bottom:23px}.video-hero-actions{align-items:flex-start;gap:13px;flex-direction:column}.video-hero-actions .button{font-size:10px;min-height:48px;padding:13px 17px;gap:25px}.video-film-link{font-size:11px;padding:5px 0}.video-play-icon{font-size:22px}.video-hero .hero-video-poster,.video-hero .hero-video{object-position:80% bottom}.video-hero-shade{background:linear-gradient(180deg,#182116cc 0%,#20291c85 33%,#20291c15 71%,#182116b3 100%),linear-gradient(90deg,#1821168c,transparent 90%)}.video-hero-bottom{font-size:7px;letter-spacing:1px;gap:10px;padding-top:12px}.video-hero-bottom>a{gap:14px}.video-hero [data-hero-toggle]{min-height:40px;font-size:9px;padding:8px 11px}.studio-film{padding-block:40px 55px}.studio-film-heading{display:block;margin-bottom:24px}.studio-film-heading .eyebrow{font-size:8px}.studio-film h2{font-size:43px;margin-bottom:20px}.studio-film-heading>p{font-size:12px}.studio-film-caption{font-size:7px;letter-spacing:.8px;gap:10px}}\n@media(prefers-reduced-motion:reduce){.video-hero .hero-video{transition:none}.studio-film{scroll-behavior:auto}}\n";
+        document.head.append(style);
+      }
+      const previousHero = document.querySelector('.hero-canvas');
+      if (previousHero && !previousHero.hasAttribute('data-video-hero')) {
+        const booking = document.querySelector('.navlinks .button')?.getAttribute('href') || '/contact/#intro-call';
+        const template = document.createElement('template');
+        template.innerHTML = "<section class=\"hero-canvas video-hero\" data-video-hero aria-labelledby=\"hero-title\">\n  <img class=\"hero-video-poster\" src=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-video-poster.0bc303a2e700.jpg\" alt=\"Sophie dancing in a sunlit grassy field.\" width=\"1280\" height=\"720\" fetchpriority=\"high\">\n  <video class=\"hero-video\" data-hero-video data-src=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-hero.bc859e57d99b.mp4\" poster=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-video-poster.0bc303a2e700.jpg\" muted playsinline loop preload=\"none\" aria-hidden=\"true\" tabindex=\"-1\"></video>\n  <div class=\"video-hero-shade\" aria-hidden=\"true\"></div>\n  <div class=\"video-hero-content shell\">\n    <div class=\"video-hero-top\"><p>Somatic movement &amp; ecstatic dance</p><span>Online, with Sophie</span></div>\n    <div class=\"video-hero-main\"><h1 id=\"hero-title\">Movement<br><em>as play.</em></h1><p>Private sessions &amp; group journeys.<br>A practice you can make your own.</p><div class=\"video-hero-actions\"><a class=\"button light\" href=\"/contact/#intro-call\">Book a free intro call <span aria-hidden=\"true\">\u2197</span></a><a class=\"video-film-link\" href=\"#studio-film\"><span class=\"video-play-icon\" aria-hidden=\"true\">\u25b7</span> Watch the film</a></div></div>\n    <div class=\"video-hero-bottom\"><a href=\"#philosophy\">Explore the practice <span aria-hidden=\"true\">\u2193</span></a><button type=\"button\" data-hero-toggle aria-label=\"Play background video\" aria-pressed=\"false\"><span data-hero-toggle-icon aria-hidden=\"true\">\u25b7</span><span data-hero-toggle-label>Play motion</span></button></div>\n  </div>\n</section>\n";
+        template.content.querySelector('a[href="/contact/#intro-call"]').setAttribute('href', booking);
+        previousHero.replaceWith(template.content.firstElementChild);
+      }
+      const previousFilm = document.querySelector('.film-section');
+      if (previousFilm && !previousFilm.classList.contains('studio-film')) {
+        const template = document.createElement('template');
+        template.innerHTML = "<section class=\"film-section studio-film shell\" id=\"studio-film\" aria-labelledby=\"studio-film-title\">\n  <div class=\"studio-film-heading\"><div><p class=\"eyebrow\">A movement film</p><h2 id=\"studio-film-title\">Dance as <em>art.</em></h2></div><p>A glimpse into Sophie\u2019s practice,<br>filmed outdoors.</p></div>\n  <video data-studio-film controls playsinline preload=\"none\" poster=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-video-poster.0bc303a2e700.jpg\" aria-label=\"Sophie\u2019s 36-second movement film, without audio\"><source src=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-film.0d5c62839b0b.mp4\" type=\"video/mp4\"><p><a href=\"https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-film.0d5c62839b0b.mp4\">Watch Sophie\u2019s movement film</a>.</p></video>\n  <div class=\"studio-film-caption\"><span>Ayoba Studio \u00b7 Movement study</span><span>00:36 \u00b7 No audio</span></div>\n</section>\n";
+        previousFilm.replaceWith(template.content.firstElementChild);
+      }
       const manifesto = document.querySelector('#philosophy');
       if (manifesto && !manifesto.classList.contains('movement-manifesto') && manifesto.querySelector('h2')?.textContent.includes('We were never meant')) {
         const template = document.createElement('template');
@@ -94,6 +114,86 @@
     status.textContent = 'Drawing cleared.';
   });
   addGesture(false);
+})();
+
+    // Video enhancement is deliberately independent of booking data and form delivery.
+(() => {
+  const hero = document.querySelector('[data-video-hero]');
+  if (!hero || hero.dataset.ready) return;
+  hero.dataset.ready = 'true';
+  const video = hero.querySelector('[data-hero-video]');
+  const toggle = hero.querySelector('[data-hero-toggle]');
+  const label = hero.querySelector('[data-hero-toggle-label]');
+  const icon = hero.querySelector('[data-hero-toggle-icon]');
+  const film = document.querySelector('[data-studio-film]');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let wantsMotion = !reduced.matches && !navigator.connection?.saveData;
+  let inView = true;
+  let failed = false;
+  let pending = false;
+  let queuedResume = false;
+  video.muted = true;
+  video.defaultMuted = true;
+  function update() {
+    const playing = !video.paused && !video.ended;
+    toggle.setAttribute('aria-pressed', String(playing));
+    toggle.setAttribute('aria-label', failed ? 'Background video unavailable' : playing ? 'Pause background video' : 'Play background video');
+    label.textContent = failed ? 'Still image' : playing ? 'Pause motion' : 'Play motion';
+    icon.textContent = playing ? 'Ⅱ' : '▷';
+    toggle.disabled = failed;
+  }
+  function canResume() {
+    return !failed && wantsMotion && inView && !document.hidden && (!film || film.paused);
+  }
+  async function resume() {
+    if (!canResume()) return;
+    if (pending) { queuedResume = true; return; }
+    if (!video.getAttribute('src')) video.src = video.dataset.src;
+    pending = true;
+    queuedResume = false;
+    let interrupted = false;
+    try {
+      await video.play();
+      if (!canResume()) pause();
+    } catch (error) {
+      interrupted = error?.name === 'AbortError';
+      // Autoplay restrictions leave the poster and manual Play control usable.
+    } finally {
+      pending = false;
+      const retry = interrupted && queuedResume && canResume();
+      queuedResume = false;
+      update();
+      if (retry) resume();
+    }
+  }
+  function pause() { queuedResume = false; video.pause(); update(); }
+  toggle.addEventListener('click', () => {
+    wantsMotion = video.paused;
+    if (wantsMotion) resume(); else pause();
+  });
+  video.addEventListener('playing', () => {hero.classList.add('is-video-ready'); update();});
+  video.addEventListener('pause', update);
+  video.addEventListener('error', () => {
+    failed = true;
+    wantsMotion = false;
+    hero.classList.remove('is-video-ready');
+    pause();
+  });
+  document.addEventListener('visibilitychange', () => {if (document.hidden) pause(); else resume();});
+  reduced.addEventListener('change', () => {if (reduced.matches) {wantsMotion = false; pause();}});
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      if (inView) resume(); else pause();
+    }, {threshold: 0.05}).observe(hero);
+  }
+  if (film) {
+    film.addEventListener('play', pause);
+    film.addEventListener('pause', resume);
+    film.addEventListener('ended', resume);
+  }
+  update();
+  resume();
 })();
 
   }
