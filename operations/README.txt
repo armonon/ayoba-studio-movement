@@ -1,21 +1,24 @@
 AYOBA LIVE PAGE UPDATES — NOVEMBER 11, 2026
 
-The requested copy and interactive art changes are live at
+The requested copy, interactive art, and video hero changes are live at
 https://ayoba-studio-movement.netlify.app
 
 HOW THE LIVE UPDATE WORKS
 Netlify injects the named "Ayoba — movement copy and interactive art study"
 snippet into static pages as they are served. It changes only the homepage,
-About, and Private Sessions pages. It uses no analytics, storage, or network
-requests. The existing studio function, data, authentication, contact delivery,
+About, and Private Sessions pages. The video hero loads optimized public
+media from a dedicated Netlify media site; the full film loads when played.
+The page scripts use no analytics or browser storage. The existing studio function, data, authentication, contact delivery,
 deployment, and security headers remain in place.
 
 This avoids rebuilding the original studio backend, whose source is absent
 from this repository. It does not recover that backend's source code.
 
 SOURCE AND MAINTENANCE
-The HTML files and assets/art-direction.* contain the same changes in ordinary
-site source. The live snippet is generated from those files:
+The HTML files, assets/art-direction.*, and assets/video-hero.* contain the
+same changes in ordinary site source. operations/video-hero.html and
+operations/studio-film.html hold the canonical video section markup. Keep
+index.html synchronized with these templates using local asset paths. The live snippet is generated from those files:
 
   python3 operations/generate-snippet.py
   node --check operations/live-update.js
@@ -54,3 +57,40 @@ are unchanged.
 
 Netlify reference:
 https://docs.netlify.com/build/post-processing/snippet-injection/
+
+VIDEO MEDIA — NOVEMBER 11, 2026
+The supplied 35.6-second video has an effectively silent audio track. The hero
+uses a continuous 7.7–15.6-second segment; the complete film is available in
+its own native-controls player. The original attachment is unchanged.
+
+Optimized files in assets/:
+  ayoba-hero.mp4          H.264 / 720p / 24fps / no audio / 471 KB
+  ayoba-film.mp4          H.264 / 720p / 24fps / no audio / 2.49 MB
+  ayoba-video-poster.jpg  Poster from 11 seconds / 78 KB
+
+A separate media-only Netlify site hosts hash-named files, with a published
+production deploy so ordinary draft-retention cleanup will not expire them.
+The host, deployment ID, and file URLs are recorded in operations/media-host.json.
+Do not replace or delete that published media deploy while its URLs are live.
+The main studio site has not been redeployed.
+
+  python3 operations/publish-media.py status
+
+The hero defaults to silent playback, with a visible pause control. It pauses
+outside the viewport, in hidden tabs, and while the full film plays. Reduced
+motion and save-data preferences start with the poster and a manual Play
+control. The full film does not autoplay. Failed or denied playback leaves
+the poster usable.
+
+BOOKING STATUS
+The existing contact form has a founder email notification configured in
+Netlify. It is an inquiry form, not an availability calendar, and no visitor
+auto-confirmation is configured. The studio records appointments and manual
+email tasks; it does not send those emails or synchronize provider bookings.
+
+Both-party booking confirmations require a real Sophie-owned scheduling link
+and verified delivery. The existing public runtime supports calendarUrl and
+calendarVerified settings. Do not mark the calendar verified until actual
+availability, time zones, conflicts, joining links, and both-party confirmation
+delivery have been checked. No booking provider was configured by this video
+update; the user's scheduling details are still required.

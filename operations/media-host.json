@@ -1,0 +1,27 @@
+{
+  "main_site_id": "1aa56b2e-6e8d-4b74-a4d9-8cb68dcd9867",
+  "main_deploy_before": "6ae39f6541756cca522e2e7f",
+  "site_id": "9077253e-f618-4c07-93fd-5c405aaa3171",
+  "site_url": "https://ayoba-studio-media-1aa56b.netlify.app",
+  "files": {
+    "ayoba-hero.mp4": {
+      "path": "assets/ayoba-hero.bc859e57d99b.mp4",
+      "sha1": "bc859e57d99ba6b76dd034c28b10153b80eac4eb",
+      "bytes": 470725,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-hero.bc859e57d99b.mp4"
+    },
+    "ayoba-film.mp4": {
+      "path": "assets/ayoba-film.0d5c62839b0b.mp4",
+      "sha1": "0d5c62839b0b761b2fffe118c88cabc70d3a3b62",
+      "bytes": 2488010,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-film.0d5c62839b0b.mp4"
+    },
+    "ayoba-video-poster.jpg": {
+      "path": "assets/ayoba-video-poster.0bc303a2e700.jpg",
+      "sha1": "0bc303a2e7003c61a50a78e6f46c689f46e824e2",
+      "bytes": 78158,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-video-poster.0bc303a2e700.jpg"
+    }
+  },
+  "deploy_id": "6af505059e283a6b9113d17d"
+}
