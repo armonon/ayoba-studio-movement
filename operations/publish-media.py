@@ -26,18 +26,20 @@ def request(path, method='GET', data=None):
         headers['Content-Type'] = 'application/json'
         data = json.dumps(data).encode()
     req = urllib.request.Request('https://api.netlify.com/api/v1/' + path, headers=headers, data=data, method=method)
-    with urllib.request.urlopen(req, timeout=45) as response:
+    with urllib.request.urlopen(req, timeout=120 if isinstance(data, bytes) else 45) as response:
         body = response.read()
         return json.loads(body) if body else None
 
 def build_uploads():
     uploads = {}
     media = {}
-    for filename in FILES:
+    characters = sorted(path.relative_to(ROOT / 'assets').as_posix()
+                        for path in (ROOT / 'assets/characters').glob('*.webp'))
+    for filename in FILES + characters:
         data = (ROOT / 'assets' / filename).read_bytes()
         digest = hashlib.sha1(data).hexdigest()
         path = Path(filename)
-        target = 'assets/' + path.stem + '.' + digest[:12] + path.suffix
+        target = 'assets/' + path.with_name(path.stem + '.' + digest[:12] + path.suffix).as_posix()
         uploads[target] = data
         media[filename] = {'path': target, 'sha1': digest, 'bytes': len(data)}
     uploads['index.html'] = b'<!doctype html><meta name="robots" content="noindex"><title>Ayoba Studio media</title><a href="https://ayoba-studio-movement.netlify.app/">Ayoba Studio</a>'
@@ -116,7 +118,7 @@ elif mode == 'status':
         for name, asset in state['files'].items():
             req = urllib.request.Request(asset['url'], headers={'Range': 'bytes=0-63'})
             with urllib.request.urlopen(req, timeout=30) as response:
-                expected = 'video/mp4' if name.endswith('.mp4') else 'image/jpeg'
+                expected = {'.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp'}[Path(name).suffix]
                 assert response.headers.get_content_type() == expected, name
                 assert response.status == 206, (name, response.status)
                 assert response.headers.get('Content-Range') == 'bytes 0-63/' + str(asset['bytes']), name

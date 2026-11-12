@@ -45,12 +45,15 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     style('ayoba-section-design','section-navigation.css',SECTION_CSS_SOURCE);
     style('ayoba-background-design','dynamic-background.css',BACKGROUND_CSS_SOURCE);
     if (route === '/') {
+      style('ayoba-character-design','characters.css',CHARACTER_CSS_SOURCE);
       style('ayoba-video-design','video-hero.css',VIDEO_CSS_SOURCE);
       // Keep section styles after video styles for predictable overrides.
       const sectionStyle = document.getElementById('ayoba-section-design');
       if (sectionStyle) document.head.append(sectionStyle);
       const backgroundStyle = document.getElementById('ayoba-background-design');
       if (backgroundStyle) document.head.append(backgroundStyle);
+      const characterStyle = document.getElementById('ayoba-character-design');
+      if (characterStyle) document.head.append(characterStyle);
       const previousHero = document.querySelector('.hero-canvas');
       if (previousHero && !previousHero.hasAttribute('data-art-hero')) previousHero.replaceWith(fragment(VIDEO_HERO_SOURCE));
       const previousFilm = document.querySelector('.film-section');
@@ -72,6 +75,7 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     ART_SOURCE
     SECTION_JS_SOURCE
     BACKGROUND_JS_SOURCE
+    CHARACTER_JS_SOURCE
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once:true});
   else apply();
@@ -82,6 +86,8 @@ replacements = {
     'VIDEO_CSS_SOURCE': json.dumps(asset('video-hero.css')),
     'SECTION_CSS_SOURCE': json.dumps(asset('section-navigation.css')),
     'BACKGROUND_CSS_SOURCE': json.dumps(asset('dynamic-background.css')),
+    'CHARACTER_CSS_SOURCE': json.dumps(asset('characters.css')),
+    'CHARACTER_JS_SOURCE': public_media(asset('characters.js')),
     'BACKGROUND_JS_SOURCE': public_media(asset('dynamic-background.js')),
     'VIDEO_HERO_SOURCE': json.dumps(public_media(section('hero-canvas video-hero art-hero'))),
     'VIDEO_FILM_SOURCE': json.dumps(public_media(section('film-section studio-film shell'))),

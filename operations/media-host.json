@@ -27,8 +27,68 @@
       "sha1": "8bc2f47e03852f251790daba6ee305ceefdedda7",
       "bytes": 645211,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-tropical-background.8bc2f47e0385.jpg"
+    },
+    "characters/candle-devil.webp": {
+      "path": "assets/characters/candle-devil.8524e7667016.webp",
+      "sha1": "8524e76670168bc9dfe26d1e715080443c08dd9b",
+      "bytes": 52424,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/candle-devil.8524e7667016.webp"
+    },
+    "characters/crow-key.webp": {
+      "path": "assets/characters/crow-key.8090664d3b76.webp",
+      "sha1": "8090664d3b7624a144e72ed81a0a50004339f1c5",
+      "bytes": 119936,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/crow-key.8090664d3b76.webp"
+    },
+    "characters/ghost.webp": {
+      "path": "assets/characters/ghost.f99caff2b64f.webp",
+      "sha1": "f99caff2b64f614f9f13faf4192d59e022c7da2e",
+      "bytes": 123566,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/ghost.f99caff2b64f.webp"
+    },
+    "characters/mandrake.webp": {
+      "path": "assets/characters/mandrake.83d83e15935a.webp",
+      "sha1": "83d83e15935ad2e145515934198b66aad6a68387",
+      "bytes": 133878,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/mandrake.83d83e15935a.webp"
+    },
+    "characters/mermaid.webp": {
+      "path": "assets/characters/mermaid.fd667eb36832.webp",
+      "sha1": "fd667eb36832898509e2b593dc146dd15e01f74c",
+      "bytes": 58606,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/mermaid.fd667eb36832.webp"
+    },
+    "characters/moon-wizard.webp": {
+      "path": "assets/characters/moon-wizard.806bd85a1690.webp",
+      "sha1": "806bd85a1690297216e3fe9ba992c6d57b385bc2",
+      "bytes": 112350,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/moon-wizard.806bd85a1690.webp"
+    },
+    "characters/snail.webp": {
+      "path": "assets/characters/snail.64518c9eb383.webp",
+      "sha1": "64518c9eb383368b8f6f5dfde563721111e5f863",
+      "bytes": 108902,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/snail.64518c9eb383.webp"
+    },
+    "characters/sun-dancer.webp": {
+      "path": "assets/characters/sun-dancer.1135b1c57bcb.webp",
+      "sha1": "1135b1c57bcb1c5e36ab2623530f907e6116fc82",
+      "bytes": 113426,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/sun-dancer.1135b1c57bcb.webp"
+    },
+    "characters/trumpet-lion.webp": {
+      "path": "assets/characters/trumpet-lion.b9675b082ebf.webp",
+      "sha1": "b9675b082ebffcdee6a3edc2a36a5f180f3ed0ff",
+      "bytes": 126302,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/trumpet-lion.b9675b082ebf.webp"
+    },
+    "characters/walking-eye.webp": {
+      "path": "assets/characters/walking-eye.72f2683a8e69.webp",
+      "sha1": "72f2683a8e69479a11558d3cdd3425564a3304d9",
+      "bytes": 135126,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/walking-eye.72f2683a8e69.webp"
     }
   },
-  "deploy_id": "6af60937a346ef26ea3818ae",
-  "previous_deploy_id": "6af505059e283a6b9113d17d"
+  "deploy_id": "6af60dc520e141cabb3892f4",
+  "previous_deploy_id": "6af60937a346ef26ea3818ae"
 }
