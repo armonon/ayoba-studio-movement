@@ -258,8 +258,9 @@ ACTUAL DANCING BACKGROUNDS — NOVEMBER 12, 2026
 This supersedes the still-cutout character presentation described above.
 Nine characters are isolated from the user's supplied 10-second dancing
 video. The mermaid appears only in the reference image, not in that video.
-The website reuses the nine actual clips as 42 independent background
-instances across the seven homepage sections, at varied sizes and phases.
+The website reuses the nine actual clips as 36 independent background
+instances across the six sections below the hero, at varied sizes and phases.
+The hero contains no dancing character layer; its original film remains.
 The old reserved character bands and CSS puppet dances are removed.
 
 Transparent WebP frame atlases and first-frame posters live in
@@ -267,7 +268,7 @@ assets/dancing-clips/. Canvas displays the original recorded poses in
 sequence, reversing at each end for a continuous loop. Scrolling gently
 increases playback pace. No new dance poses are generated.
 
-The seven absolute canvases add no page height and sit behind the content.
+The six absolute canvases add no page height and sit behind the content.
 They are hidden from assistive technology, receive no pointer events or
 keyboard focus, and fade further under reading areas. The original hero
 video, About montage, pendants, text, navigation and booking links remain.
