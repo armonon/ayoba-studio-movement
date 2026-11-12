@@ -7,7 +7,8 @@ HOW THE LIVE UPDATE WORKS
 Netlify injects the named "Ayoba — movement copy and interactive art study"
 snippet into static pages as they are served. It updates the nine public pages; studio and API routes are excluded. The video hero loads optimized public
 media from a dedicated Netlify media site; the full film loads when played.
-The page scripts use no analytics or browser storage. The existing studio function, data, authentication, contact delivery,
+The page scripts use no analytics. A user-selected background-motion pause is
+remembered in sessionStorage for the current browser tab. The existing studio function, data, authentication, contact delivery,
 deployment, and security headers remain in place.
 
 This avoids rebuilding the original studio backend, whose source is absent
@@ -116,3 +117,37 @@ and cross-page deep links; active navigation and font-load positioning; mood
 selection, Add a gesture and Clear; preserved form and private-topic prefilling.
 No test inquiry or notification was sent. Backend preservation is verified
 separately before and after publishing the snippet.
+
+DYNAMIC ART BACKGROUND — NOVEMBER 12, 2026
+The user-supplied “that was easy.jpeg” is copied byte-for-byte to
+assets/ayoba-tropical-background.jpg (1800 × 1800, 645 KB). It now fills the
+opening hero and appears at lower opacity behind the other public sections.
+The supplied full movement film remains in the Film section. The previous
+hero video is retained as a media asset but is no longer loaded by the page.
+
+assets/dynamic-background.css and .js provide a slow 24-second drift/zoom and
+small cursor-responsive offsets on fine-pointer devices. Pause controls are
+available in the hero and farther down the page. User pause persists across
+pages in the same tab. Reduced-motion and save-data settings start still;
+a visitor can explicitly play. Motion pauses in hidden documents, and the
+hero’s animation pauses when it leaves the viewport. There is no animation
+loop in JavaScript; pointer changes are limited to one pending animation frame.
+
+The media publisher now supports an additive update mode that verifies the
+existing media deployment and preserves all existing file paths and hashes.
+The same media-only site hosts the new image; the main studio site has not
+been redeployed. For future additions:
+
+  python3 operations/publish-media.py update
+  python3 operations/publish-media.py status
+
+After media is verified, generate and publish the usual public-page snippet.
+The homepage HTML is canonical; operations/video-hero.html mirrors its new
+art hero markup despite the historical filename.
+
+Verification: desktop and 390px mobile visual review, image loading, cursor
+offsets, frozen animation transforms after Pause, resume, pause carried to
+another page, and full-film URL/markup preserved. Controller checks cover
+reduced motion, save data, hidden documents, unavailable storage, pointer
+cancellation and bounded offsets. The form, application scripts and studio
+runtime remain unchanged.

@@ -43,13 +43,16 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
   function apply() {
     style('ayoba-art-direction','art-direction.css',ART_CSS_SOURCE);
     style('ayoba-section-design','section-navigation.css',SECTION_CSS_SOURCE);
+    style('ayoba-background-design','dynamic-background.css',BACKGROUND_CSS_SOURCE);
     if (route === '/') {
       style('ayoba-video-design','video-hero.css',VIDEO_CSS_SOURCE);
       // Keep section styles after video styles for predictable overrides.
       const sectionStyle = document.getElementById('ayoba-section-design');
       if (sectionStyle) document.head.append(sectionStyle);
+      const backgroundStyle = document.getElementById('ayoba-background-design');
+      if (backgroundStyle) document.head.append(backgroundStyle);
       const previousHero = document.querySelector('.hero-canvas');
-      if (previousHero && !previousHero.hasAttribute('data-video-hero')) previousHero.replaceWith(fragment(VIDEO_HERO_SOURCE));
+      if (previousHero && !previousHero.hasAttribute('data-art-hero')) previousHero.replaceWith(fragment(VIDEO_HERO_SOURCE));
       const previousFilm = document.querySelector('.film-section');
       if (previousFilm && !previousFilm.classList.contains('studio-film')) previousFilm.replaceWith(fragment(VIDEO_FILM_SOURCE));
       const manifesto = document.querySelector('#philosophy');
@@ -67,8 +70,8 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     }
     SECTION_LAYOUT_SOURCE
     ART_SOURCE
-    VIDEO_JS_SOURCE
     SECTION_JS_SOURCE
+    BACKGROUND_JS_SOURCE
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once:true});
   else apply();
@@ -78,12 +81,13 @@ replacements = {
     'ART_CSS_SOURCE': json.dumps(asset('art-direction.css')),
     'VIDEO_CSS_SOURCE': json.dumps(asset('video-hero.css')),
     'SECTION_CSS_SOURCE': json.dumps(asset('section-navigation.css')),
-    'VIDEO_HERO_SOURCE': json.dumps(public_media(section('hero-canvas video-hero'))),
+    'BACKGROUND_CSS_SOURCE': json.dumps(asset('dynamic-background.css')),
+    'BACKGROUND_JS_SOURCE': public_media(asset('dynamic-background.js')),
+    'VIDEO_HERO_SOURCE': json.dumps(public_media(section('hero-canvas video-hero art-hero'))),
     'VIDEO_FILM_SOURCE': json.dumps(public_media(section('film-section studio-film shell'))),
     'MANIFESTO_SOURCE': json.dumps(section('manifesto movement-manifesto')),
     'SECTION_LAYOUT_SOURCE': layout,
     'ART_SOURCE': asset('art-direction.js'),
-    'VIDEO_JS_SOURCE': asset('video-hero.js'),
     'SECTION_JS_SOURCE': asset('section-navigation.js'),
 }
 for name, value in replacements.items():
