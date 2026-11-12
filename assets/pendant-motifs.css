@@ -1,0 +1,31 @@
+/* Nine individual ink pendants, set in their own space above the section titles. */
+.pendant-motif{display:block;flex:none;width:76px;height:90px;pointer-events:none;user-select:none}
+.pendant-motif img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none;transform-origin:50% 8%;animation:pendant-sway 7s ease-in-out var(--pendant-delay,0s) infinite;animation-play-state:paused}
+body[data-motion=running] .pendant-motif[data-pendant-visible=true] img{animation-play-state:running}
+body[data-motion=paused] .pendant-motif img{animation-play-state:paused}
+body.ayoba-simple .eyebrow.pendant-caption{display:flex;align-items:center;gap:24px;min-height:90px;margin-bottom:24px;max-width:none}
+.pendant-caption:after{content:"";height:1px;background:var(--line,#55583a40);flex:1;order:1}
+.pendant-caption>.pendant-motif{order:2}
+.pendant-hero{width:32px;height:48px;margin-inline:16px}
+body.ayoba-simple .video-hero-top{align-items:center}
+.pendant-divider{display:flex;align-items:center;justify-content:center;gap:32px;margin:-10px auto 42px;pointer-events:none}
+.pendant-divider:after{content:"";width:120px;height:1px;order:1;background:var(--line,#55583a40)}
+.pendant-divider>.pendant-motif:last-child{order:2}
+.pendant-divider>.pendant-motif{height:106px;width:84px}
+@keyframes pendant-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@media(max-width:700px){
+  .pendant-motif{width:60px;height:78px}
+  body.ayoba-simple .eyebrow.pendant-caption{min-height:78px;gap:18px;margin-bottom:22px}
+  .pendant-hero{width:24px;height:38px;margin-inline:8px}
+  .pendant-divider{gap:24px;margin:-6px auto 30px}
+  .pendant-divider:after{width:70px}
+  .pendant-divider>.pendant-motif{width:64px;height:88px}
+}
+@media(max-width:360px){
+  .pendant-hero{width:20px;height:34px;margin-inline:5px}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not([data-motion=running]) .pendant-motif img{animation:none;transform:none}
+  body[data-motion=running] .pendant-motif img{animation:pendant-sway 7s ease-in-out var(--pendant-delay,0s) infinite!important;animation-play-state:paused!important}
+  body[data-motion=running] .pendant-motif[data-pendant-visible=true] img{animation-play-state:running!important}
+}
