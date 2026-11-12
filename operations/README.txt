@@ -204,3 +204,41 @@ deployment, function, authentication, and contact form remain in place.
 Verification: desktop and 320px mobile visual review, all nine assets loaded,
 no horizontal page overflow, shared Pause/Play behavior, and footer/contact
 page placement. The contact form subtree is byte-for-byte unchanged.
+
+ABOUT VIDEO MONTAGE — NOVEMBER 12, 2026
+The user-supplied public channel https://www.youtube.com/@sophiesky999
+(Roze) contains 38 public uploads: 17 Videos and 21 Shorts. A silent edit
+includes an excerpt from each upload. The desktop version interleaves
+landscape scenes with seven portrait triptychs; a separate phone version
+presents all 38 sequentially with landscape footage contained over a soft
+fill. The source inventory and edit timing are recorded in
+operations/about-montage-sources.json. No private or authenticated media
+was accessed, and no source audio is included.
+
+assets/about-montage.css and .js add the montage behind the homepage About
+section and the full /about/ page. Text sits over a cream wash and readable
+panels. The tropical art remains on the other sections and public pages.
+A quiet link leads to Sophie's original channel. Existing content, forms,
+photographs, characters, pendants, navigation, and studio runtime remain.
+
+Video loading is deferred until About is near the viewport and motion is
+enabled. The shared Pause motion control pauses the video as well as the
+other animation. Reduced-motion/save-data visitors initially receive only
+the poster; they can explicitly opt in. Hidden and offscreen videos pause.
+Only one video is loaded: the phone edit is selected below 701px on first
+play, and the source remains stable across resizing to avoid extra downloads.
+Playback rejection retains the poster. Interrupted play attempts recover
+without retrying autoplay-denial errors indefinitely.
+
+Publish the four new assets additively to the existing media-only host,
+then generate and update the existing public-page snippet. Never rebuild
+the main site from this snapshot: the original backend source is absent.
+
+Final files: desktop 63 seconds at 1280 × 720 (7,059,219 bytes); mobile
+66.5 seconds at 540 × 960 (4,744,539 bytes), both 24fps silent H.264 with
+faststart. Both variants have verified coverage of all 38 source videos,
+exact frame counts, clean full decoding, and cyclic end-to-start dissolves.
+Desktop, 390px and 320px browser previews confirm readable text, no page
+overflow, motion controls, preserved section navigation and lazy video loading.
+Focused checks cover paused defaults, visibility, device selection, source
+stability, and interrupted play promise recovery.

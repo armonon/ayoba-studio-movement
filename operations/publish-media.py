@@ -12,7 +12,9 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / 'operations/media-host.json'
 MAIN_SITE = '1aa56b2e-6e8d-4b74-a4d9-8cb68dcd9867'
 NAME = 'ayoba-studio-media-1aa56b'
-FILES = ['ayoba-hero.mp4', 'ayoba-film.mp4', 'ayoba-video-poster.jpg', 'ayoba-tropical-background.jpg']
+FILES = ['ayoba-hero.mp4', 'ayoba-film.mp4', 'ayoba-video-poster.jpg', 'ayoba-tropical-background.jpg',
+         'ayoba-about-montage.mp4', 'ayoba-about-montage-mobile.mp4',
+         'ayoba-about-montage-poster.jpg', 'ayoba-about-montage-mobile-poster.jpg']
 token = os.environ.get('NETLIFY_AUTH_TOKEN')
 if not token:
     config = json.loads((Path.home() / 'Library/Preferences/netlify/config.json').read_text())
