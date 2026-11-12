@@ -87,8 +87,62 @@
       "sha1": "72f2683a8e69479a11558d3cdd3425564a3304d9",
       "bytes": 135126,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/walking-eye.72f2683a8e69.webp"
+    },
+    "motifs/crescent-arrow.webp": {
+      "path": "assets/motifs/crescent-arrow.1ffcf43e4a85.webp",
+      "sha1": "1ffcf43e4a851dbc86ee19a2b5748796faba4da6",
+      "bytes": 11498,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/crescent-arrow.1ffcf43e4a85.webp"
+    },
+    "motifs/crescent-star.webp": {
+      "path": "assets/motifs/crescent-star.b2ca88a87b90.webp",
+      "sha1": "b2ca88a87b901e7f73dc47445b1aa898dc6de7e1",
+      "bytes": 25792,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/crescent-star.b2ca88a87b90.webp"
+    },
+    "motifs/curled-sun.webp": {
+      "path": "assets/motifs/curled-sun.6cc4b3d9bd18.webp",
+      "sha1": "6cc4b3d9bd18cadbcdb935e8f74a75c909693cb7",
+      "bytes": 25036,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/curled-sun.6cc4b3d9bd18.webp"
+    },
+    "motifs/horned-disc.webp": {
+      "path": "assets/motifs/horned-disc.7f12b127e9f3.webp",
+      "sha1": "7f12b127e9f38113d5eccf488f8f409e20f82af0",
+      "bytes": 10686,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/horned-disc.7f12b127e9f3.webp"
+    },
+    "motifs/radiant-tassel.webp": {
+      "path": "assets/motifs/radiant-tassel.6883855829ae.webp",
+      "sha1": "6883855829aed13e6e6f53ac4a04fb924a1d757b",
+      "bytes": 16260,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/radiant-tassel.6883855829ae.webp"
+    },
+    "motifs/spoke-cross.webp": {
+      "path": "assets/motifs/spoke-cross.704cbff7f6ec.webp",
+      "sha1": "704cbff7f6eccadda600275ce6dd9211f85051f1",
+      "bytes": 21926,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/spoke-cross.704cbff7f6ec.webp"
+    },
+    "motifs/spoked-wheel.webp": {
+      "path": "assets/motifs/spoked-wheel.201436210b1f.webp",
+      "sha1": "201436210b1f19aa71627ee6b449da361020f7da",
+      "bytes": 22290,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/spoked-wheel.201436210b1f.webp"
+    },
+    "motifs/sun-cross.webp": {
+      "path": "assets/motifs/sun-cross.8001f8ea9d77.webp",
+      "sha1": "8001f8ea9d771ef42e098a1ee221a52f854cd66b",
+      "bytes": 19252,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/sun-cross.8001f8ea9d77.webp"
+    },
+    "motifs/wavy-sun.webp": {
+      "path": "assets/motifs/wavy-sun.de251f4c4c59.webp",
+      "sha1": "de251f4c4c59bf367af6ea8dc99cbf707b921eaf",
+      "bytes": 16792,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/wavy-sun.de251f4c4c59.webp"
     }
   },
-  "deploy_id": "6af60dc520e141cabb3892f4",
-  "previous_deploy_id": "6af60937a346ef26ea3818ae"
+  "deploy_id": "6af611a3d25d83a2c17e65e6",
+  "previous_deploy_id": "6af60dc520e141cabb3892f4"
 }

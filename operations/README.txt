@@ -177,3 +177,30 @@ updates, actual scroll-triggered animation names, frozen character transforms
 after Pause, resume, reduced-motion/controller checks, and 320px mobile layout.
 The existing film, contact form and studio runtime are unchanged. A ZIP with
 all original PNG cutouts, webcopies, and final prompts is provided separately.
+
+PENDANT MOTIFS — NOVEMBER 12, 2026
+Nine separate transparent ink ornaments are derived from the user-supplied
+pendant reference with built-in imagegen. Full-resolution PNGs and lossless
+384px WebP delivery copies (169,532 bytes total) are in assets/motifs/. The source prompts and an asset
+archive are provided separately in the workspace output.
+
+assets/pendant-motifs.js adds one small hero ornament, six individual section
+markers, and two footer ornaments. Detailed public pages use one heading
+ornament and the same footer pair. No new navigation section is added. The
+ornaments reserve their own space, are hidden from assistive technology, and
+ignore pointer events. Forms and existing controls are not replaced.
+
+A slow three-degree sway follows the shared motion setting. Paused, hidden,
+and offscreen ornaments stay still; reduced-motion and save-data preferences
+are inherited from the existing background controller. There is no new
+scroll handler or animation loop. The script is idempotent and explicitly
+limited to the same nine public routes as the live presentation snippet.
+
+The media publisher discovers motifs/*.webp alongside the existing character
+assets, retaining every existing immutable media URL. Only the existing
+public presentation snippet is updated on the main site; the original studio
+deployment, function, authentication, and contact form remain in place.
+
+Verification: desktop and 320px mobile visual review, all nine assets loaded,
+no horizontal page overflow, shared Pause/Play behavior, and footer/contact
+page placement. The contact form subtree is byte-for-byte unchanged.

@@ -44,6 +44,7 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     style('ayoba-art-direction','art-direction.css',ART_CSS_SOURCE);
     style('ayoba-section-design','section-navigation.css',SECTION_CSS_SOURCE);
     style('ayoba-background-design','dynamic-background.css',BACKGROUND_CSS_SOURCE);
+    style('ayoba-pendant-design','pendant-motifs.css',PENDANT_CSS_SOURCE);
     if (route === '/') {
       style('ayoba-character-design','characters.css',CHARACTER_CSS_SOURCE);
       style('ayoba-video-design','video-hero.css',VIDEO_CSS_SOURCE);
@@ -76,6 +77,7 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     SECTION_JS_SOURCE
     BACKGROUND_JS_SOURCE
     CHARACTER_JS_SOURCE
+    PENDANT_JS_SOURCE
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once:true});
   else apply();
@@ -87,6 +89,8 @@ replacements = {
     'SECTION_CSS_SOURCE': json.dumps(asset('section-navigation.css')),
     'BACKGROUND_CSS_SOURCE': json.dumps(asset('dynamic-background.css')),
     'CHARACTER_CSS_SOURCE': json.dumps(asset('characters.css')),
+    'PENDANT_CSS_SOURCE': json.dumps(asset('pendant-motifs.css')),
+    'PENDANT_JS_SOURCE': public_media(asset('pendant-motifs.js')),
     'CHARACTER_JS_SOURCE': public_media(asset('characters.js')),
     'BACKGROUND_JS_SOURCE': public_media(asset('dynamic-background.js')),
     'VIDEO_HERO_SOURCE': json.dumps(public_media(section('hero-canvas video-hero art-hero'))),
