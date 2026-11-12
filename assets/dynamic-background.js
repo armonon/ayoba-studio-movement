@@ -39,7 +39,7 @@
     document.body.dataset.motion = wantsMotion && !document.hidden ? 'running' : 'paused';
     controls.forEach(button => {
       button.setAttribute('aria-pressed', String(wantsMotion));
-      button.setAttribute('aria-label', wantsMotion ? 'Pause background motion' : 'Play background motion');
+      button.setAttribute('aria-label', wantsMotion ? 'Pause all motion' : 'Play all motion');
       button.querySelector('[data-background-label]').textContent = wantsMotion ? 'Pause motion' : 'Play motion';
       button.querySelector('[data-background-icon]').textContent = wantsMotion ? 'Ⅱ' : '▷';
     });

@@ -1,0 +1,57 @@
+/* Separate figures live in clear spaces, never in front of text or form fields. */
+.cast-stage{position:relative;height:190px;margin-top:28px;isolation:isolate;pointer-events:none;user-select:none;contain:layout style}
+.character-flight{position:absolute;left:var(--cast-x);top:var(--cast-y);width:var(--cast-size);height:var(--cast-size);transform:translate(-50%,-50%) translate3d(var(--flight-x,0px),var(--flight-y,0px),0) rotate(var(--flight-turn,0deg));transition:transform .22s ease-out;pointer-events:none}
+.character-puppet{height:100%;width:100%;transform-origin:50% 78%;animation:cast-idle var(--idle-duration,5s) ease-in-out var(--cast-delay,0s) infinite;animation-play-state:paused}
+.character-puppet img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;pointer-events:none;user-select:none;-webkit-user-drag:none}
+body[data-motion=running] .character-puppet{animation-play-state:running}
+body[data-motion=paused] .character-puppet{animation-play-state:paused}
+body[data-motion=paused] .character-flight{transition:none}
+.cast-stage[data-visible=false] .character-puppet{animation-play-state:paused!important}
+.cast-stage[data-dancing=true] .character-puppet{animation-name:cast-step;animation-duration:var(--dance-duration,.8s)}
+.cast-stage[data-dancing=true] .dance-hop{animation-name:cast-hop}
+.cast-stage[data-dancing=true] .dance-sway{animation-name:cast-sway}
+.cast-stage[data-dancing=true] .dance-flutter{animation-name:cast-flutter}
+body.ayoba-tropical .cast-hero{position:absolute;inset:14% 1.5% 13% 58%;height:auto;margin:0;z-index:0}
+body.ayoba-tropical .art-hero .video-hero-content{z-index:1}
+.cast-practice{margin-top:40px;height:180px}
+.cast-sessions{height:120px;margin-top:28px;margin-bottom:-25px}
+.cast-play{height:190px;margin-top:24px}
+.cast-about{height:105px;margin-top:28px}
+.cast-about .character-flight{height:115px}
+.cast-film{height:170px;margin-top:10px;margin-bottom:-28px}
+@keyframes cast-idle{0%,100%{transform:translate3d(0,5px,0) rotate(-3deg)}50%{transform:translate3d(0,-8px,0) rotate(3deg)}}
+@keyframes cast-hop{0%,100%{transform:translateY(4px) rotate(-6deg) scale(1.035,.965)}45%{transform:translateY(calc(-17px * var(--dance-strength,.6))) rotate(7deg) scale(.97,1.04)}70%{transform:translateY(-5px) rotate(3deg)}}
+@keyframes cast-step{0%,100%{transform:translate(-5px,2px) rotate(-7deg)}25%{transform:translate(0,-9px) rotate(-2deg) scaleY(1.025)}50%{transform:translate(6px,2px) rotate(7deg)}75%{transform:translate(0,-7px) rotate(2deg) scaleY(1.025)}}
+@keyframes cast-sway{0%,100%{transform:translate(-8px,3px) rotate(-10deg)}50%{transform:translate(8px,-8px) rotate(10deg)}}
+@keyframes cast-flutter{0%,100%{transform:translateY(3px) rotate(-8deg) scaleX(.97)}50%{transform:translateY(-13px) rotate(10deg) scaleX(1.03)}}
+@media(min-width:1300px){body.ayoba-tropical .cast-hero{left:61%;right:3%}.cast-hero .character-flight{width:calc(var(--cast-size) * 1.15);height:calc(var(--cast-size) * 1.15)}}
+@media(max-width:1000px) and (min-width:701px){.cast-hero .character-flight{width:calc(var(--cast-size) * .8);height:calc(var(--cast-size) * .8)}body.ayoba-tropical .cast-hero{left:60%;right:0}}
+@media(max-width:700px){
+ body.ayoba-tropical.ayoba-simple-home .hero-canvas.art-hero{min-height:790px}
+ body.ayoba-tropical.ayoba-simple-home .art-hero .video-hero-main{padding-bottom:255px}
+ body.ayoba-tropical .cast-hero{inset:auto 20px 88px;height:190px}
+ .cast-hero .character-flight{width:calc(var(--cast-size) * .74);height:calc(var(--cast-size) * .74)}
+ .cast-hero [data-character=sun-dancer]{left:22%;top:42%}
+ .cast-hero [data-character=ghost]{left:82%;top:43%}
+ .cast-hero [data-character=moon-wizard]{left:50%;top:65%}
+ .cast-stage:not(.cast-hero){height:155px;margin-top:24px}
+ .cast-stage:not(.cast-hero) .character-flight{width:calc(var(--cast-size) * .82);height:calc(var(--cast-size) * .82)}
+ .cast-stage.cast-sessions{height:110px;margin-bottom:-16px}
+ .cast-stage.cast-about{height:100px}
+ .cast-about .character-flight{height:100px!important}
+ .cast-stage.cast-film{height:145px;margin-bottom:-20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .character-flight{transition:none}
+ body[data-motion=running] .character-puppet{animation:cast-idle var(--idle-duration,5s) ease-in-out var(--cast-delay,0s) infinite!important}
+ body[data-motion=running] .cast-stage[data-dancing=true] .character-puppet{animation-name:cast-step!important;animation-duration:var(--dance-duration,.8s)!important}
+ body[data-motion=running] .cast-stage[data-dancing=true] .dance-hop{animation-name:cast-hop!important}
+ body[data-motion=running] .cast-stage[data-dancing=true] .dance-sway{animation-name:cast-sway!important}
+ body[data-motion=running] .cast-stage[data-dancing=true] .dance-flutter{animation-name:cast-flutter!important}
+ body[data-motion=running] .cast-stage[data-visible=false] .character-puppet{animation-play-state:paused!important}
+}
+@media(max-width:360px){
+ body.ayoba-tropical.ayoba-simple-home .art-hero h1{font-size:56px}
+ body.ayoba-tropical.ayoba-simple-home .navlinks{gap:9px}
+ body.ayoba-tropical.ayoba-simple-home .navlinks>.button{padding-inline:9px;gap:7px}
+}

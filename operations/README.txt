@@ -151,3 +151,29 @@ another page, and full-film URL/markup preserved. Controller checks cover
 reduced motion, save data, hidden documents, unavailable storage, pointer
 cancellation and bounded offsets. The form, application scripts and studio
 runtime remain unchanged.
+
+INDEPENDENT SCROLL CHARACTERS — NOVEMBER 12, 2026
+The supplied manuscript-style sheet is separated into ten transparent cutouts:
+candle devil, snail, sun dancer, ghost, crow with key, mandrake, mermaid,
+trumpet lion, moon wizard, and walking eye. Built-in imagegen produced the
+isolated PNG assets; the supplied 10-second video guided the differing motion
+rhythms. It is a reference, not a flattened video overlay.
+
+assets/characters/ retains the full-resolution PNGs and 512px WebP delivery
+copies. The WebP files preserve alpha and total 1,084,516 bytes. Each figure has
+its own image element, phase, path, and dance timing in assets/characters.js.
+Figures float at rest and hop, sway, flutter or step while the page scrolls.
+They occupy reserved spaces inside existing sections; no new navigation
+section is added. Decorative stages are aria-hidden and ignore pointer events.
+The booking section and forms contain no character overlays.
+
+The shared Pause motion button now stops both artwork and characters. Reduced
+motion and save-data preferences start still unless the visitor explicitly
+plays. Offscreen figures pause. Scroll updates use at most one pending frame,
+read geometry before writes, and have bounded travel and dance strength.
+
+Verification: all 10 hosted assets, independent DOM nodes, visible-only dance
+updates, actual scroll-triggered animation names, frozen character transforms
+after Pause, resume, reduced-motion/controller checks, and 320px mobile layout.
+The existing film, contact form and studio runtime are unchanged. A ZIP with
+all original PNG cutouts, webcopies, and final prompts is provided separately.
