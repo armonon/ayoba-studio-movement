@@ -253,3 +253,32 @@ The video now follows the shared body motion state, including Pause/Play,
 reduced-motion and save-data defaults, hidden/offscreen pause, and pausing
 while the full Film is playing. This reuses existing immutable hosted media;
 no media deployment is needed. Publish only the existing presentation snippet.
+
+ACTUAL DANCING BACKGROUNDS — NOVEMBER 12, 2026
+This supersedes the still-cutout character presentation described above.
+Nine characters are isolated from the user's supplied 10-second dancing
+video. The mermaid appears only in the reference image, not in that video.
+The website reuses the nine actual clips as 42 independent background
+instances across the seven homepage sections, at varied sizes and phases.
+The old reserved character bands and CSS puppet dances are removed.
+
+Transparent WebP frame atlases and first-frame posters live in
+assets/dancing-clips/. Canvas displays the original recorded poses in
+sequence, reversing at each end for a continuous loop. Scrolling gently
+increases playback pace. No new dance poses are generated.
+
+The seven absolute canvases add no page height and sit behind the content.
+They are hidden from assistive technology, receive no pointer events or
+keyboard focus, and fade further under reading areas. The original hero
+video, About montage, pendants, text, navigation and booking links remain.
+
+One shared animation loop draws only visible sections, at most 15fps.
+The existing Pause motion control freezes the current pose. Hidden pages
+and wholly offscreen canvases stop drawing. Reduced motion, save-data or
+an initial saved pause load only the small static posters until Play.
+Decoded atlases are reused across all instances; canvas resolution is
+capped at 1.5x. Failed clip loads leave a static poster or empty decoration.
+
+Publish new media additively with operations/publish-media.py update;
+retain every existing media file. Then regenerate and publish only the
+existing live presentation snippet. Do not rebuild the main site.
