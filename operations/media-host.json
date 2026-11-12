@@ -165,8 +165,116 @@
       "sha1": "de251f4c4c59bf367af6ea8dc99cbf707b921eaf",
       "bytes": 16792,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/motifs/wavy-sun.de251f4c4c59.webp"
+    },
+    "dancing-clips/candle-devil-poster.webp": {
+      "path": "assets/dancing-clips/candle-devil-poster.890836e364d3.webp",
+      "sha1": "890836e364d3b204d019b10423120022cc9c6484",
+      "bytes": 6768,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/candle-devil-poster.890836e364d3.webp"
+    },
+    "dancing-clips/candle-devil.webp": {
+      "path": "assets/dancing-clips/candle-devil.a5c89f040528.webp",
+      "sha1": "a5c89f0405289361d1340d0d59ae3442228b74c1",
+      "bytes": 281996,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/candle-devil.a5c89f040528.webp"
+    },
+    "dancing-clips/crow-key-poster.webp": {
+      "path": "assets/dancing-clips/crow-key-poster.8ff4e0e4f7e7.webp",
+      "sha1": "8ff4e0e4f7e7eddf65a7a25402081d07da03d747",
+      "bytes": 7046,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/crow-key-poster.8ff4e0e4f7e7.webp"
+    },
+    "dancing-clips/crow-key.webp": {
+      "path": "assets/dancing-clips/crow-key.5384bd4d6de4.webp",
+      "sha1": "5384bd4d6de4f53a7ab3571d6fb4487f551ba88c",
+      "bytes": 298922,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/crow-key.5384bd4d6de4.webp"
+    },
+    "dancing-clips/ghost-poster.webp": {
+      "path": "assets/dancing-clips/ghost-poster.84b7ac024032.webp",
+      "sha1": "84b7ac024032d91aafa52c9f39e503b29c5ac03b",
+      "bytes": 7126,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/ghost-poster.84b7ac024032.webp"
+    },
+    "dancing-clips/ghost.webp": {
+      "path": "assets/dancing-clips/ghost.16c71e642762.webp",
+      "sha1": "16c71e6427626824bafaa8770f909253d776162b",
+      "bytes": 293054,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/ghost.16c71e642762.webp"
+    },
+    "dancing-clips/mandrake-poster.webp": {
+      "path": "assets/dancing-clips/mandrake-poster.a063bd692efe.webp",
+      "sha1": "a063bd692efe06d913f8222daaf7cad594512b22",
+      "bytes": 10238,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/mandrake-poster.a063bd692efe.webp"
+    },
+    "dancing-clips/mandrake.webp": {
+      "path": "assets/dancing-clips/mandrake.8188224093ee.webp",
+      "sha1": "8188224093ee3b4df876f6869f6ca3e43ced01a1",
+      "bytes": 215696,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/mandrake.8188224093ee.webp"
+    },
+    "dancing-clips/moon-wizard-poster.webp": {
+      "path": "assets/dancing-clips/moon-wizard-poster.d43598a5bfb6.webp",
+      "sha1": "d43598a5bfb69079c51c8c151d86c97723a3ebd4",
+      "bytes": 8530,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/moon-wizard-poster.d43598a5bfb6.webp"
+    },
+    "dancing-clips/moon-wizard.webp": {
+      "path": "assets/dancing-clips/moon-wizard.c9b8e9100fd9.webp",
+      "sha1": "c9b8e9100fd9bd45b92ceeff0a6ea629f5049630",
+      "bytes": 341234,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/moon-wizard.c9b8e9100fd9.webp"
+    },
+    "dancing-clips/snail-poster.webp": {
+      "path": "assets/dancing-clips/snail-poster.03df3fb9e32f.webp",
+      "sha1": "03df3fb9e32f4a2cb41dd21d8531ae1c7bca4b98",
+      "bytes": 7162,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/snail-poster.03df3fb9e32f.webp"
+    },
+    "dancing-clips/snail.webp": {
+      "path": "assets/dancing-clips/snail.72a4b0d13978.webp",
+      "sha1": "72a4b0d1397824cd04ec224116e96907da257dba",
+      "bytes": 103110,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/snail.72a4b0d13978.webp"
+    },
+    "dancing-clips/sun-dancer-poster.webp": {
+      "path": "assets/dancing-clips/sun-dancer-poster.97d0172e8cb8.webp",
+      "sha1": "97d0172e8cb844e14f96fdbcfb12ca7430580505",
+      "bytes": 9544,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/sun-dancer-poster.97d0172e8cb8.webp"
+    },
+    "dancing-clips/sun-dancer.webp": {
+      "path": "assets/dancing-clips/sun-dancer.53158cb521de.webp",
+      "sha1": "53158cb521de4e5a4fc949a0f544fcf7dd8a5bbe",
+      "bytes": 384880,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/sun-dancer.53158cb521de.webp"
+    },
+    "dancing-clips/trumpet-lion-poster.webp": {
+      "path": "assets/dancing-clips/trumpet-lion-poster.61f6d96ebb18.webp",
+      "sha1": "61f6d96ebb18d0a0e36ffdd585efd1a7525ae33d",
+      "bytes": 9944,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/trumpet-lion-poster.61f6d96ebb18.webp"
+    },
+    "dancing-clips/trumpet-lion.webp": {
+      "path": "assets/dancing-clips/trumpet-lion.3e8d7608982d.webp",
+      "sha1": "3e8d7608982d89a4c884d462b82907a7ad8d2f5f",
+      "bytes": 202664,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/trumpet-lion.3e8d7608982d.webp"
+    },
+    "dancing-clips/walking-eye-poster.webp": {
+      "path": "assets/dancing-clips/walking-eye-poster.cba74512af5c.webp",
+      "sha1": "cba74512af5ce04a22aa08945bb8eb292499faa2",
+      "bytes": 8038,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye-poster.cba74512af5c.webp"
+    },
+    "dancing-clips/walking-eye.webp": {
+      "path": "assets/dancing-clips/walking-eye.e7eb66dc98f4.webp",
+      "sha1": "e7eb66dc98f455bb89f788ce543deb37c0fd8088",
+      "bytes": 102492,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye.e7eb66dc98f4.webp"
     }
   },
-  "deploy_id": "6af617ac25b1f58fae88c12b",
-  "previous_deploy_id": "6af611a3d25d83a2c17e65e6"
+  "deploy_id": "6af6363c19a0636b8b066d56",
+  "previous_deploy_id": "6af617ac25b1f58fae88c12b"
 }

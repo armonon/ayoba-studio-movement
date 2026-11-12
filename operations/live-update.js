@@ -19,7 +19,7 @@
     style('ayoba-pendant-design','pendant-motifs.css',"/* Nine individual ink pendants, set in their own space above the section titles. */\n.pendant-motif{display:block;flex:none;width:76px;height:90px;pointer-events:none;user-select:none}\n.pendant-motif img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none;transform-origin:50% 8%;animation:pendant-sway 7s ease-in-out var(--pendant-delay,0s) infinite;animation-play-state:paused}\nbody[data-motion=running] .pendant-motif[data-pendant-visible=true] img{animation-play-state:running}\nbody[data-motion=paused] .pendant-motif img{animation-play-state:paused}\nbody.ayoba-simple .eyebrow.pendant-caption{display:flex;align-items:center;gap:24px;min-height:90px;margin-bottom:24px;max-width:none}\n.pendant-caption:after{content:\"\";height:1px;background:var(--line,#55583a40);flex:1;order:1}\n.pendant-caption>.pendant-motif{order:2}\n.pendant-hero{width:32px;height:48px;margin-inline:16px}\nbody.ayoba-simple .video-hero-top{align-items:center}\n.pendant-divider{display:flex;align-items:center;justify-content:center;gap:32px;margin:-10px auto 42px;pointer-events:none}\n.pendant-divider:after{content:\"\";width:120px;height:1px;order:1;background:var(--line,#55583a40)}\n.pendant-divider>.pendant-motif:last-child{order:2}\n.pendant-divider>.pendant-motif{height:106px;width:84px}\n@keyframes pendant-sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}\n@media(max-width:700px){\n  .pendant-motif{width:60px;height:78px}\n  body.ayoba-simple .eyebrow.pendant-caption{min-height:78px;gap:18px;margin-bottom:22px}\n  .pendant-hero{width:24px;height:38px;margin-inline:8px}\n  .pendant-divider{gap:24px;margin:-6px auto 30px}\n  .pendant-divider:after{width:70px}\n  .pendant-divider>.pendant-motif{width:64px;height:88px}\n}\n@media(max-width:360px){\n  .pendant-hero{width:20px;height:34px;margin-inline:5px}\n}\n@media(prefers-reduced-motion:reduce){\n  body:not([data-motion=running]) .pendant-motif img{animation:none;transform:none}\n  body[data-motion=running] .pendant-motif img{animation:pendant-sway 7s ease-in-out var(--pendant-delay,0s) infinite!important;animation-play-state:paused!important}\n  body[data-motion=running] .pendant-motif[data-pendant-visible=true] img{animation-play-state:running!important}\n}\n");
     if (route === '/' || route === '/about') style('ayoba-about-film-design','about-montage.css',"/* The film is a backdrop; the words always sit over a calm cream wash. */\n.about-film-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#d7dbbc}\n.about-film-backdrop>img,.about-film-backdrop>video{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}\n.about-film-backdrop>video{opacity:0}\n.about-film-backdrop[data-film-ready=true]>video{opacity:1}\n.about-film-backdrop:after{content:\"\";position:absolute;inset:0;background:linear-gradient(90deg,#f8f4e5b3,#f8f4e5de 60%,#f8f4e5e8)}\nbody.ayoba-simple-home .about-montage-section{position:relative;isolation:isolate;overflow:hidden;background:#d7dbbc}\nbody.ayoba-simple-home .about-montage-section .founder-grid{position:relative}\nbody.ayoba-simple-home .about-montage-section .founder-photo>img{height:auto;aspect-ratio:1.08;object-fit:cover}\nbody.ayoba-simple-home .about-montage-section .founder-copy{background:#f8f4e5c7;padding:30px;border:1px solid #f8f4e5b3}\nbody.ayoba-simple-home .about-montage-section .pendant-caption{margin-top:-12px}\nbody.about-montage-page>#ayoba-background{display:none}\nbody.about-montage-page>.about-film-backdrop{position:fixed}\nbody.about-montage-page>.about-film-backdrop:after{background:linear-gradient(90deg,#f8f4e5c7 0%,#f8f4e5a3 60%,#f8f4e570 100%)}\nbody.about-montage-page .content-columns>div:first-child{background:#f8f4e5ed;padding:30px;border:1px solid #f8f4e5cc}\nbody.about-montage-page .about-photo figcaption{background:#f8f4e5ed;padding:12px 16px}\nbody.about-montage-page .photo-essay{background:#f8f4e5e8;padding:30px;margin-top:65px}\nbody.about-montage-page .footer{background:#f8f4e5e8}\nbody.ayoba-simple .about-film-credit{display:inline-flex;align-items:center;gap:18px;font:11px/1.7 DM,Arial,sans-serif;letter-spacing:.1px;border-bottom:1px solid #55583a80;padding-bottom:5px;margin:0 0 26px;color:var(--ink)}\nbody.ayoba-simple .about-film-credit:hover{color:var(--berry);border-color:currentColor}\nbody.about-montage-page .page h1{margin-bottom:24px}\n@media(max-width:700px){\n  body.ayoba-simple-home .about-montage-section .founder-copy{padding:22px}\n  body.about-montage-page .content-columns>div:first-child{padding:24px 20px}\n  body.about-montage-page>.about-film-backdrop:after{background:#f8f4e5b8}\n  body.about-montage-page .photo-essay{padding:20px;margin-top:45px}\n  .about-film-backdrop:after{background:#f8f4e5b8}\n  body.ayoba-simple .about-film-credit{font-size:10px;margin-bottom:22px}\n}\n");
     if (route === '/') {
-      style('ayoba-character-design','characters.css',"/* Separate figures live in clear spaces, never in front of text or form fields. */\n.cast-stage{position:relative;height:190px;margin-top:28px;isolation:isolate;pointer-events:none;user-select:none;contain:layout style}\n.character-flight{position:absolute;left:var(--cast-x);top:var(--cast-y);width:var(--cast-size);height:var(--cast-size);transform:translate(-50%,-50%) translate3d(var(--flight-x,0px),var(--flight-y,0px),0) rotate(var(--flight-turn,0deg));transition:transform .22s ease-out;pointer-events:none}\n.character-puppet{height:100%;width:100%;transform-origin:50% 78%;animation:cast-idle var(--idle-duration,5s) ease-in-out var(--cast-delay,0s) infinite;animation-play-state:paused}\n.character-puppet img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;pointer-events:none;user-select:none;-webkit-user-drag:none}\nbody[data-motion=running] .character-puppet{animation-play-state:running}\nbody[data-motion=paused] .character-puppet{animation-play-state:paused}\nbody[data-motion=paused] .character-flight{transition:none}\n.cast-stage[data-visible=false] .character-puppet{animation-play-state:paused!important}\n.cast-stage[data-dancing=true] .character-puppet{animation-name:cast-step;animation-duration:var(--dance-duration,.8s)}\n.cast-stage[data-dancing=true] .dance-hop{animation-name:cast-hop}\n.cast-stage[data-dancing=true] .dance-sway{animation-name:cast-sway}\n.cast-stage[data-dancing=true] .dance-flutter{animation-name:cast-flutter}\nbody.ayoba-tropical .cast-hero{position:absolute;inset:14% 1.5% 13% 58%;height:auto;margin:0;z-index:0}\nbody.ayoba-tropical :is(.art-hero,[data-video-hero]) .video-hero-content{z-index:1}\n.cast-practice{margin-top:40px;height:180px}\n.cast-sessions{height:120px;margin-top:28px;margin-bottom:-25px}\n.cast-play{height:190px;margin-top:24px}\n.cast-about{height:105px;margin-top:28px}\n.cast-about .character-flight{height:115px}\n.cast-film{height:170px;margin-top:10px;margin-bottom:-28px}\n@keyframes cast-idle{0%,100%{transform:translate3d(0,5px,0) rotate(-3deg)}50%{transform:translate3d(0,-8px,0) rotate(3deg)}}\n@keyframes cast-hop{0%,100%{transform:translateY(4px) rotate(-6deg) scale(1.035,.965)}45%{transform:translateY(calc(-17px * var(--dance-strength,.6))) rotate(7deg) scale(.97,1.04)}70%{transform:translateY(-5px) rotate(3deg)}}\n@keyframes cast-step{0%,100%{transform:translate(-5px,2px) rotate(-7deg)}25%{transform:translate(0,-9px) rotate(-2deg) scaleY(1.025)}50%{transform:translate(6px,2px) rotate(7deg)}75%{transform:translate(0,-7px) rotate(2deg) scaleY(1.025)}}\n@keyframes cast-sway{0%,100%{transform:translate(-8px,3px) rotate(-10deg)}50%{transform:translate(8px,-8px) rotate(10deg)}}\n@keyframes cast-flutter{0%,100%{transform:translateY(3px) rotate(-8deg) scaleX(.97)}50%{transform:translateY(-13px) rotate(10deg) scaleX(1.03)}}\n@media(min-width:1300px){body.ayoba-tropical .cast-hero{left:61%;right:3%}.cast-hero .character-flight{width:calc(var(--cast-size) * 1.15);height:calc(var(--cast-size) * 1.15)}}\n@media(max-width:1000px) and (min-width:701px){.cast-hero .character-flight{width:calc(var(--cast-size) * .8);height:calc(var(--cast-size) * .8)}body.ayoba-tropical .cast-hero{left:60%;right:0}}\n@media(max-width:700px){\n body.ayoba-tropical.ayoba-simple-home .hero-canvas:is(.art-hero,[data-video-hero]){min-height:790px}\n body.ayoba-tropical.ayoba-simple-home :is(.art-hero,[data-video-hero]) .video-hero-main{padding-bottom:255px}\n body.ayoba-tropical .cast-hero{inset:auto 20px 88px;height:190px}\n .cast-hero .character-flight{width:calc(var(--cast-size) * .74);height:calc(var(--cast-size) * .74)}\n .cast-hero [data-character=sun-dancer]{left:22%;top:42%}\n .cast-hero [data-character=ghost]{left:82%;top:43%}\n .cast-hero [data-character=moon-wizard]{left:50%;top:65%}\n .cast-stage:not(.cast-hero){height:155px;margin-top:24px}\n .cast-stage:not(.cast-hero) .character-flight{width:calc(var(--cast-size) * .82);height:calc(var(--cast-size) * .82)}\n .cast-stage.cast-sessions{height:110px;margin-bottom:-16px}\n .cast-stage.cast-about{height:100px}\n .cast-about .character-flight{height:100px!important}\n .cast-stage.cast-film{height:145px;margin-bottom:-20px}\n}\n@media(prefers-reduced-motion:reduce){\n .character-flight{transition:none}\n body[data-motion=running] .character-puppet{animation:cast-idle var(--idle-duration,5s) ease-in-out var(--cast-delay,0s) infinite!important}\n body[data-motion=running] .cast-stage[data-dancing=true] .character-puppet{animation-name:cast-step!important;animation-duration:var(--dance-duration,.8s)!important}\n body[data-motion=running] .cast-stage[data-dancing=true] .dance-hop{animation-name:cast-hop!important}\n body[data-motion=running] .cast-stage[data-dancing=true] .dance-sway{animation-name:cast-sway!important}\n body[data-motion=running] .cast-stage[data-dancing=true] .dance-flutter{animation-name:cast-flutter!important}\n body[data-motion=running] .cast-stage[data-visible=false] .character-puppet{animation-play-state:paused!important}\n}\n@media(max-width:360px){\n body.ayoba-tropical.ayoba-simple-home :is(.art-hero,[data-video-hero]) h1{font-size:56px}\n body.ayoba-tropical.ayoba-simple-home .navlinks{gap:9px}\n body.ayoba-tropical.ayoba-simple-home .navlinks>.button{padding-inline:9px;gap:7px}\n}\n");
+      style('ayoba-character-design','characters.css',"/* Decorative film fragments, behind the content and outside the reading order. */\nbody.ayoba-simple-home .dance-field{position:relative;isolation:isolate}\n.dance-background{position:absolute;inset:0;z-index:-1;display:block;width:100%;height:100%;pointer-events:none;user-select:none;contain:strict}\n/* The About film has its own background stacking layer. */\nbody.ayoba-simple-home #about>.dance-background{z-index:0}\nbody.ayoba-simple-home #about .founder-grid{z-index:1}\n/* Canvas pixels cannot receive clicks, focus, or create additional page height. */\n@media(max-width:360px){\n body.ayoba-tropical.ayoba-simple-home [data-video-hero] h1{font-size:56px}\n body.ayoba-tropical.ayoba-simple-home .navlinks{gap:9px}\n body.ayoba-tropical.ayoba-simple-home .navlinks>.button{padding-inline:9px;gap:7px}\n}\n");
       style('ayoba-video-design','video-hero.css',"/* A moving image within Ayoba's existing olive, butter and cream palette. */\n.hero-canvas.video-hero{min-height:660px;min-height:min(780px,calc(100svh - 98px));isolation:isolate;background:#263023;color:#f2ddaa}\n.video-hero .hero-video-poster,.video-hero .hero-video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:66% 80%;z-index:-3}\n.video-hero .hero-video{opacity:0;transition:opacity .65s ease;pointer-events:none}\n.video-hero.is-video-ready .hero-video{opacity:1}\n.video-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#182116ed 0%,#25301dc9 31%,#20291c55 62%,#20291c12 100%),linear-gradient(0deg,#1b2318b3,transparent 35%,transparent 70%,#1b231850)}\n.video-hero-content{position:relative;min-height:inherit;display:flex;flex-direction:column;padding-block:30px 24px}\n.video-hero-top,.video-hero-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:9px;letter-spacing:1.6px;text-transform:uppercase}\n.video-hero-top p{margin:0}.video-hero-top span{color:#fff9e6}\n.video-hero-main{padding-block:55px 45px;flex:1;display:flex;flex-direction:column;justify-content:center}\n.video-hero h1{font:600 clamp(76px,8.4vw,128px)/.92 Bricolage,Arial,sans-serif;letter-spacing:-.065em;max-width:750px;margin:0 0 30px}\n.video-hero h1 em{font:italic 1.12em/1.03 Instrument,Georgia,serif;letter-spacing:-.04em;padding:0;display:block;margin-left:.35em}\n.video-hero-main>p{color:#fff9e6;font-size:14px;line-height:1.7;max-width:320px;margin:0 0 28px}\n.video-hero-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap}.video-hero-actions .button{padding:16px 22px;font-size:12px;gap:28px}\n.video-film-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0;border-bottom:1px solid #f2ddaa80;padding:9px 0;color:#fff9e6}\n.video-play-icon{font:24px/1 Arial,sans-serif}.video-film-link:hover{color:var(--butter)}\n.video-hero-bottom{padding-top:20px;border-top:1px solid #f2ddaa48;font-size:9px;letter-spacing:1.1px}\n.video-hero-bottom>a{display:inline-flex;gap:30px;align-items:center}.video-hero-bottom>a span{font-size:20px;line-height:1}\n.video-hero [data-hero-toggle]{display:inline-flex;gap:9px;align-items:center;min-height:40px;border:1px solid #f2ddaa80;border-radius:30px;padding:8px 14px;background:#26302366;color:#fff9e6;font:10px/1.3 DM,Arial,sans-serif;letter-spacing:.2px;text-transform:none;backdrop-filter:blur(5px)}\n.video-hero [data-hero-toggle-icon]{font:15px/1 Arial,sans-serif;width:12px;text-align:center}\n.video-hero a:focus-visible,.video-hero button:focus-visible{outline:3px solid var(--butter);outline-offset:5px}\n.video-hero [data-hero-toggle]:disabled{opacity:.65;cursor:default}\n.studio-film{padding-block:70px 90px;scroll-margin-top:35px}.studio-film-heading{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:32px}.studio-film-heading .eyebrow{margin-bottom:18px}.studio-film h2{font:600 clamp(42px,5vw,72px)/1.05 Bricolage,Arial,sans-serif;letter-spacing:-.05em;margin:0}.studio-film h2 em{font-size:1.15em}.studio-film-heading>p{font-size:13px;line-height:1.7;margin:0;max-width:300px}.studio-film>video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#263023;object-fit:contain;border:0}.studio-film-caption{display:flex;justify-content:space-between;gap:20px;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;padding-top:15px}\n@media(max-width:900px){.hero-canvas.video-hero{min-height:680px}.video-hero-main{padding-block:55px 42px}.video-hero h1{font-size:clamp(76px,10vw,110px)}.video-hero .hero-video-poster,.video-hero .hero-video{object-position:75% 80%}.video-hero-shade{background:linear-gradient(90deg,#182116e6 0%,#25301cb8 32%,#20291c40 100%),linear-gradient(0deg,#1b2318b0,transparent 45%)}.video-hero-actions{gap:22px}}\n@media(max-width:560px){.hero-canvas.video-hero{min-height:700px;min-height:max(700px,calc(100svh - 78px))}.video-hero-content{width:calc(100% - 40px);padding-block:23px 16px}.video-hero-top{font-size:7px;letter-spacing:1px;gap:18px;align-items:start}.video-hero-top p{max-width:175px}.video-hero-top span{white-space:nowrap;font-size:7px}.video-hero-main{justify-content:flex-start;padding-block:60px 150px}.video-hero h1{font-size:clamp(66px,16.5vw,89px);letter-spacing:-.06em;margin-bottom:22px}.video-hero h1 em{margin-left:.18em}.video-hero-main>p{font-size:12px;max-width:255px;margin-bottom:23px}.video-hero-actions{align-items:flex-start;gap:13px;flex-direction:column}.video-hero-actions .button{font-size:10px;min-height:48px;padding:13px 17px;gap:25px}.video-film-link{font-size:11px;padding:5px 0}.video-play-icon{font-size:22px}.video-hero .hero-video-poster,.video-hero .hero-video{object-position:80% bottom}.video-hero-shade{background:linear-gradient(180deg,#182116cc 0%,#20291c85 33%,#20291c15 71%,#182116b3 100%),linear-gradient(90deg,#1821168c,transparent 90%)}.video-hero-bottom{font-size:7px;letter-spacing:1px;gap:10px;padding-top:12px}.video-hero-bottom>a{gap:14px}.video-hero [data-hero-toggle]{min-height:40px;font-size:9px;padding:8px 11px}.studio-film{padding-block:40px 55px}.studio-film-heading{display:block;margin-bottom:24px}.studio-film-heading .eyebrow{font-size:8px}.studio-film h2{font-size:43px;margin-bottom:20px}.studio-film-heading>p{font-size:12px}.studio-film-caption{font-size:7px;letter-spacing:.8px;gap:10px}}\n@media(prefers-reduced-motion:reduce){.video-hero .hero-video{transition:none}.studio-film{scroll-behavior:auto}}\n/* The restored film uses the site's shared motion control and decorative cast. */\nbody.ayoba-tropical [data-video-hero] [data-background-toggle]{background:#26302399;color:#fff9e6;border-color:#f2ddaa80}\nbody.ayoba-tropical [data-video-hero] [data-background-toggle]:hover{background:#263023dd;border-color:#f2ddaa}\nbody.ayoba-tropical [data-video-hero] [data-background-icon]{color:#fff9e6}\n[data-video-hero] .pendant-hero img{filter:invert(1) sepia(.3);opacity:.9}\n");
       // Keep section styles after video styles for predictable overrides.
       const sectionStyle = document.getElementById('ayoba-section-design');
@@ -390,131 +390,184 @@ if (route === '/contact') {
   sync();
 })();
 
-    /* Ten independent cutouts. Scroll changes each flight path and dance rhythm. */
+    /* Actual isolated frames from the supplied dance film, drawn behind the page. */
 (() => {
   if (!document.body.classList.contains('ayoba-simple-home') || document.body.dataset.charactersReady) return;
   document.body.dataset.charactersReady = 'true';
-  const cast = [
-    {name:'sun-dancer', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/sun-dancer.1135b1c57bcb.webp', stage:'hero', x:26, y:20, size:154, phase:0.2, travel:32, dance:'hop', duration:0.78},
-    {name:'ghost', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/ghost.f99caff2b64f.webp', stage:'hero', x:78, y:43, size:137, phase:2.4, travel:38, dance:'sway', duration:1.05},
-    {name:'moon-wizard', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/moon-wizard.806bd85a1690.webp', stage:'hero', x:43, y:80, size:164, phase:4.3, travel:26, dance:'sway', duration:1.3},
-    {name:'snail', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/snail.64518c9eb383.webp', stage:'practice', x:27, y:53, size:153, phase:0.8, travel:51, dance:'step', duration:0.9},
-    {name:'crow-key', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/crow-key.8090664d3b76.webp', stage:'practice', x:73, y:48, size:146, phase:3.2, travel:62, dance:'flutter', duration:0.72},
-    {name:'walking-eye', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/walking-eye.72f2683a8e69.webp', stage:'sessions', x:76, y:50, size:118, phase:1.3, travel:85, dance:'step', duration:0.56},
-    {name:'mandrake', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/mandrake.83d83e15935a.webp', stage:'play', x:28, y:53, size:143, phase:0.5, travel:43, dance:'hop', duration:0.62},
-    {name:'trumpet-lion', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/trumpet-lion.b9675b082ebf.webp', stage:'play', x:72, y:51, size:162, phase:2.6, travel:49, dance:'step', duration:0.84},
-    {name:'mermaid', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/mermaid.fd667eb36832.webp', stage:'about', x:61, y:50, size:173, phase:1.9, travel:48, dance:'sway', duration:1.12},
-    {name:'candle-devil', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/characters/candle-devil.8524e7667016.webp', stage:'film', x:23, y:50, size:159, phase:3.7, travel:58, dance:'hop', duration:0.68},
+  const clips = [
+    {name:'candle-devil', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/candle-devil.a5c89f040528.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/candle-devil-poster.890836e364d3.webp'},
+    {name:'snail', frames:16, src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/snail.72a4b0d13978.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/snail-poster.03df3fb9e32f.webp'},
+    {name:'sun-dancer', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/sun-dancer.53158cb521de.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/sun-dancer-poster.97d0172e8cb8.webp'},
+    {name:'ghost', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/ghost.16c71e642762.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/ghost-poster.84b7ac024032.webp'},
+    {name:'crow-key', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/crow-key.5384bd4d6de4.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/crow-key-poster.8ff4e0e4f7e7.webp'},
+    {name:'mandrake', frames:24, src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/mandrake.8188224093ee.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/mandrake-poster.a063bd692efe.webp'},
+    {name:'trumpet-lion', frames:24, src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/trumpet-lion.3e8d7608982d.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/trumpet-lion-poster.61f6d96ebb18.webp'},
+    {name:'moon-wizard', src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/moon-wizard.c9b8e9100fd9.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/moon-wizard-poster.d43598a5bfb6.webp'},
+    {name:'walking-eye', frames:16, src:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye.e7eb66dc98f4.webp', poster:'https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye-poster.cba74512af5c.webp'},
+  ].map(clip => ({width:160, height:160, columns:8, frames:48, fps:12, ...clip}));
+  // Every instance has its own size, position, phase and playback pace.
+  const layouts = [
+    ['home', [[2,72,25,138],[3,91,44,94],[7,77,73,162],[0,60,91,62],[8,95,83,76],[4,96,13,48]]],
+    ['philosophy', [[1,7,18,126],[4,92,29,156],[5,53,13,58],[8,24,84,92],[0,75,92,66],[2,97,72,116]]],
+    ['sessions', [[8,4,28,106],[3,94,16,150],[1,49,47,64],[6,92,87,140],[7,8,92,78],[5,70,6,52]]],
+    ['play', [[5,7,17,158],[6,92,27,118],[0,47,12,56],[2,14,88,104],[4,71,91,72],[8,98,72,92]]],
+    ['about', [[3,7,19,130],[7,94,69,160],[4,36,91,68],[5,91,15,62],[1,4,82,90],[8,61,8,48]]],
+    ['studio-film', [[0,9,14,138],[2,90,13,178],[1,48,7,62],[6,9,92,108],[3,91,93,76],[5,67,96,48]]],
+    ['book', [[7,3,21,148],[8,95,19,90],[4,4,63,118],[5,95,81,140],[6,42,94,58],[0,76,7,68]]],
   ];
-  const mounts = {
-    hero:document.querySelector('[data-art-hero], [data-video-hero]'),
-    practice:document.querySelector('#philosophy .manifesto-layout'),
-    sessions:document.querySelector('#sessions'),
-    play:document.querySelector('#play > .shell'),
-    about:document.querySelector('#about .founder-photo'),
-    film:document.querySelector('#studio-film'),
-  };
-  const stages = [];
-  const dancers = [];
-  Object.entries(mounts).forEach(([name, parent]) => {
-    if (!parent) return;
-    const stage = document.createElement('div');
-    stage.className = 'cast-stage cast-' + name;
-    stage.dataset.castStage = name;
-    stage.dataset.visible = 'false';
-    stage.setAttribute('aria-hidden', 'true');
-    parent.append(stage);
-    stages.push(stage);
-    cast.filter(character => character.stage === name).forEach(character => {
-      const flight = document.createElement('div');
-      flight.className = 'character-flight';
-      flight.dataset.character = character.name;
-      flight.style.setProperty('--cast-x', character.x + '%');
-      flight.style.setProperty('--cast-y', character.y + '%');
-      flight.style.setProperty('--cast-size', character.size + 'px');
-      const puppet = document.createElement('div');
-      puppet.className = 'character-puppet dance-' + character.dance;
-      puppet.style.setProperty('--idle-duration', (4.2 + character.phase * 0.7) + 's');
-      puppet.style.setProperty('--dance-duration', character.duration + 's');
-      puppet.style.setProperty('--cast-delay', (-character.phase) + 's');
-      const image = document.createElement('img');
-      image.src = character.src;
-      image.alt = '';
-      image.draggable = false;
+  const fields = [];
+  const images = new Map();
+  let raf = 0, elapsed = 0, previousTime = null, lastPaint = -Infinity;
+  let dirty = true, scrollEnergy = 0, lastScroll = window.scrollY;
+  const running = () => document.body.dataset.motion === 'running' && !document.hidden;
+  const visibleFields = () => fields.filter(field => field.visible);
+  function imageFor(src) {
+    if (!images.has(src)) {
+      const image = new Image();
+      const entry = {image, ready:false, failed:false};
+      images.set(src, entry);
       image.decoding = 'async';
-      image.loading = name === 'hero' ? 'eager' : 'lazy';
-      image.width = 1024; image.height = 1536;
-      // Fixed artwork boxes keep late image loads from moving anchor targets.
-      puppet.append(image); flight.append(puppet); stage.append(flight);
-      dancers.push({...character, flight, stage});
+      image.onload = () => { entry.ready = true; paint(); schedule(); };
+      image.onerror = () => { entry.failed = true; };
+      image.src = src;
+    }
+    return images.get(src);
+  }
+  layouts.forEach(([id, instances], sectionIndex) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (!context) return;
+    canvas.className = 'dance-background';
+    canvas.setAttribute('aria-hidden', 'true');
+    canvas.dataset.dancerCount = String(instances.length);
+    canvas.dataset.source = 'isolated-video-frames';
+    section.classList.add('dance-field');
+    section.append(canvas);
+    fields.push({section, canvas, context, visible:false, width:0, height:0,
+      people:instances.map(([clip, x, y, size], index) => ({clip:clips[clip], x, y, size,
+        phase:(index * 11 + sectionIndex * 7), rate:0.88 + ((index + sectionIndex) % 4) * 0.06,
+        mirror:(index + sectionIndex) % 3 === 0, alpha:0.42, drawSize:size})),
     });
   });
-  if (!stages.length) return;
-  let pending = 0;
-  let settleTimer = 0;
-  let lastScroll = window.scrollY;
-  let strength = 0.6;
-  let scrolling = false;
-  const running = () => document.body.dataset.motion === 'running' && !document.hidden;
-  function draw() {
-    pending = 0;
-    if (!running()) return;
-    const small = innerWidth <= 700;
-    const bounds = new Map(stages.map(stage => [stage, stage.getBoundingClientRect()]));
-    dancers.forEach(character => {
-      if (character.stage.dataset.visible !== 'true') return;
-      const box = bounds.get(character.stage);
-      const progress = Math.max(-0.3, Math.min(1.3, (innerHeight - box.top) / (innerHeight + box.height)));
-      const angle = progress * Math.PI * 2 + character.phase;
-      const distance = small ? Math.min(character.travel * 0.4, 25) : character.travel;
-      const x = Math.sin(angle) * distance;
-      const y = Math.cos(angle * 1.3) * (small ? 8 : 17);
-      const turn = Math.sin(angle * 1.7) * (character.dance === 'flutter' ? 11 : 6);
-      character.flight.style.setProperty('--flight-x', x.toFixed(2) + 'px');
-      character.flight.style.setProperty('--flight-y', y.toFixed(2) + 'px');
-      character.flight.style.setProperty('--flight-turn', turn.toFixed(2) + 'deg');
-      character.stage.dataset.dancing = String(scrolling);
-      character.stage.style.setProperty('--dance-strength', strength.toFixed(2));
+  if (!fields.length) return;
+  function measure() {
+    dirty = false;
+    const mobile = innerWidth <= 700;
+    const ratio = Math.min(devicePixelRatio || 1, 1.5);
+    // Batch layout reads; measure again only after a size change.
+    const geometry = fields.map(field => {
+      const box = field.section.getBoundingClientRect();
+      const protectedBoxes = Array.from(field.section.querySelectorAll('h1,h2,h3,p,.button,.textlink,.mood-buttons,.movement-study,.booking-option,.video-hero-bottom'))
+        .map(element => element.getBoundingClientRect());
+      return {field, box, protectedBoxes};
+    });
+    geometry.forEach(({field, box, protectedBoxes}) => {
+      field.width = box.width; field.height = box.height;
+      field.canvas.width = Math.max(1, Math.round(box.width * ratio));
+      field.canvas.height = Math.max(1, Math.round(box.height * ratio));
+      field.context.setTransform(ratio,0,0,ratio,0,0);
+      field.people.forEach(person => {
+        const size = person.size * (mobile ? 0.68 : 1);
+        person.drawSize = size;
+        person.px = person.x / 100 * box.width;
+        person.py = person.y / 100 * box.height;
+        const left = box.left + person.px - size * 0.36;
+        const top = box.top + person.py - size * 0.42;
+        const overText = protectedBoxes.some(rect => left < rect.right && left + size * 0.72 > rect.left && top < rect.bottom && top + size * 0.84 > rect.top);
+        // Fade whole figures under reading areas, without clipping their bodies.
+        person.alpha = overText ? (field.section.id === 'home' ? 0.16 : 0.13) : (mobile ? 0.32 : 0.46);
+      });
     });
   }
-  function schedule() { if (running() && !pending) pending = requestAnimationFrame(draw); }
-  function settle() {
-    scrolling = false;
-    stages.forEach(stage => { stage.dataset.dancing = 'false'; });
+  function loadVisible() {
+    visibleFields().forEach(field => field.people.forEach(person => {
+      imageFor(person.clip.poster);
+      if (running()) imageFor(person.clip.src);
+    }));
   }
-  window.addEventListener('scroll', () => {
-    const delta = Math.abs(window.scrollY - lastScroll);
-    lastScroll = window.scrollY;
-    if (!running() || delta < 0.5) return;
-    strength = Math.min(1, 0.45 + delta / 70);
-    scrolling = true;
-    clearTimeout(settleTimer);
-    settleTimer = setTimeout(settle, 650);
+  function paint() {
+    if (dirty) measure();
+    visibleFields().forEach(field => {
+      const ctx = field.context;
+      ctx.clearRect(0,0,field.width,field.height);
+      field.people.forEach(person => {
+        const clip = person.clip;
+        const atlas = images.get(clip.src);
+        const poster = images.get(clip.poster);
+        // A late network response must not change a pose after Pause was pressed.
+        if (running() && atlas?.ready) person.usingAtlas = true;
+        const useAtlas = atlas?.ready && person.usingAtlas;
+        const entry = useAtlas ? atlas : poster;
+        if (!entry?.ready) return;
+        // Reverse at each end of the actual clip to avoid a hard loop seam.
+        const cycle = Math.max(1, (clip.frames - 1) * 2);
+        const step = Math.floor(elapsed / 1000 * clip.fps * person.rate + person.phase) % cycle;
+        const frame = useAtlas ? (step < clip.frames ? step : cycle - step) : 0;
+        const sx = useAtlas ? frame % clip.columns * clip.width : 0;
+        const sy = useAtlas ? Math.floor(frame / clip.columns) * clip.height : 0;
+        const size = person.drawSize;
+        ctx.save();
+        ctx.globalAlpha = person.alpha;
+        ctx.translate(person.px, person.py);
+        ctx.scale(person.mirror ? -1 : 1, 1);
+        ctx.drawImage(entry.image, sx, sy, clip.width, clip.height, -size/2, -size/2, size, size);
+        ctx.restore();
+      });
+      field.canvas.dataset.playhead = String(Math.floor(elapsed));
+    });
+  }
+  function tick(time) {
+    raf = 0;
+    if (!running() || !visibleFields().length) { previousTime = null; return; }
+    if (previousTime !== null) elapsed += Math.min(120, time - previousTime) * (1 + scrollEnergy);
+    previousTime = time;
+    if (time - lastPaint >= 1000 / 15) {
+      lastPaint = time;
+      scrollEnergy *= 0.88;
+      paint();
+    }
     schedule();
-  }, {passive:true});
-  window.addEventListener('resize', schedule, {passive:true});
+  }
+  function schedule() {
+    if (!raf && running() && visibleFields().length) raf = requestAnimationFrame(tick);
+  }
+  function sync() {
+    if (!running()) {
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0; previousTime = null; scrollEnergy = 0;
+    }
+    loadVisible(); schedule();
+  }
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { entry.target.dataset.visible = String(entry.isIntersecting); });
-      schedule();
-    }, {rootMargin:'80px 0px', threshold:0});
-    stages.forEach(stage => observer.observe(stage));
+      entries.forEach(entry => {
+        const field = fields.find(item => item.section === entry.target);
+        field.visible = entry.isIntersecting;
+      });
+      loadVisible(); paint(); schedule();
+      if (!visibleFields().length && raf) { cancelAnimationFrame(raf); raf = 0; previousTime = null; }
+    }, {threshold:0});
+    fields.forEach(field => observer.observe(field.section));
   } else {
-    stages.forEach(stage => {stage.dataset.visible = 'true';});
+    fields.forEach(field => { field.visible = true; });
   }
-  new MutationObserver(() => {
-    if (!running()) {
-      if (pending) cancelAnimationFrame(pending);
-      pending = 0;
-      clearTimeout(settleTimer);
-      // Keep the current dance pose frozen until motion is enabled again.
-    } else {
-      lastScroll = window.scrollY;
-      settle();
-      schedule();
-    }
-  }).observe(document.body, {attributes:true, attributeFilter:['data-motion']});
-  schedule();
+  const resize = () => { dirty = true; paint(); schedule(); };
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(resize);
+    fields.forEach(field => observer.observe(field.section));
+  }
+  window.addEventListener('resize', resize, {passive:true});
+  window.addEventListener('scroll', () => {
+    const distance = Math.abs(window.scrollY - lastScroll);
+    lastScroll = window.scrollY;
+    if (running()) scrollEnergy = Math.min(0.45, scrollEnergy + distance / 1600);
+  }, {passive:true});
+  document.addEventListener('visibilitychange', sync);
+  new MutationObserver(sync).observe(document.body, {attributes:true, attributeFilter:['data-motion']});
+  document.fonts?.ready.then(resize);
+  sync();
 })();
 
     // The supplied pendants act as quiet section markers, separate from the dancing cast.

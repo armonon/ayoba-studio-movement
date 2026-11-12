@@ -1,0 +1,384 @@
+{
+  "status": "verified",
+  "sourceBasename": "gemini_generated_video_ae8df2e3.mp4",
+  "sourceSHA256": "81d46d7527043df06af4e800070795134420ee47c2e5c1b80a83f80d86b93c42",
+  "sourceStart": 6,
+  "sourceEnd": 10,
+  "fps": 12,
+  "frameCountRange": [
+    16,
+    48
+  ],
+  "cellWidth": 160,
+  "cellHeight": 160,
+  "columns": 8,
+  "characterCount": 9,
+  "totalAtlasBytes": 2224048,
+  "totalPosterBytes": 74396,
+  "decodedAtlasBytes": 32768000,
+  "motion": "Original source video frames; no redrawn frames. Ping-pong playback can join the interval without a jump.",
+  "characters": [
+    {
+      "name": "candle-devil",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 6,
+      "count": 48,
+      "fps": 12,
+      "sourceInterval": [
+        6,
+        10
+      ],
+      "sourceCrop": [
+        55,
+        15,
+        330,
+        375
+      ],
+      "consistentMotionBounds": [
+        26,
+        0,
+        275,
+        349
+      ],
+      "atlas": "assets/dancing-clips/candle-devil.webp",
+      "poster": "assets/dancing-clips/candle-devil-poster.webp",
+      "atlasBytes": 281996,
+      "posterBytes": 6768,
+      "atlasSHA256": "5218176049174fc3cc5753f42f7aa2ba26773b6ccc82eb01294aa60dda83784d",
+      "posterSHA256": "2340a281af54f10b2cee8d851bd86039078c74c416e5ddcf5e53db7fcdc57551",
+      "decodedBytes": 4915200,
+      "opaqueAreaRange": [
+        7653,
+        16907
+      ],
+      "alphaZeroFraction": 0.8551025390625,
+      "maskingMethod": "SAM2.1 tiny direct per-frame segmentation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "snail",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 2,
+      "count": 16,
+      "fps": 12,
+      "sourceInterval": [
+        8.666666666666666,
+        10.0
+      ],
+      "sourceFrameStart": 33,
+      "sourceFrameEnd": 48,
+      "sourceCrop": [
+        320,
+        15,
+        595,
+        375
+      ],
+      "consistentMotionBounds": [
+        32,
+        28,
+        229,
+        355
+      ],
+      "atlas": "assets/dancing-clips/snail.webp",
+      "poster": "assets/dancing-clips/snail-poster.webp",
+      "atlasBytes": 103110,
+      "posterBytes": 7162,
+      "atlasSHA256": "b81bc0d2e43110c320fd98cab9e10c0ad230e8ff1318c1f3f7bbcd78b249b4c6",
+      "posterSHA256": "5952ff470f7fd02c292662009425efc1de925b81a2d8ae59c7f1796fe938d89a",
+      "decodedBytes": 1638400,
+      "opaqueAreaRange": [
+        26016,
+        27076
+      ],
+      "alphaZeroFraction": 0.74650634765625,
+      "maskingMethod": "SAM2.1 tiny direct per-frame segmentation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "sun-dancer",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 6,
+      "count": 48,
+      "fps": 12,
+      "sourceInterval": [
+        6,
+        10
+      ],
+      "sourceCrop": [
+        565,
+        0,
+        855,
+        380
+      ],
+      "consistentMotionBounds": [
+        13,
+        0,
+        290,
+        363
+      ],
+      "atlas": "assets/dancing-clips/sun-dancer.webp",
+      "poster": "assets/dancing-clips/sun-dancer-poster.webp",
+      "atlasBytes": 384880,
+      "posterBytes": 9544,
+      "atlasSHA256": "8a7c9b96593c3a5af9aba8b5e49cef03c1c0f8182f05c50027aceec420ced59d",
+      "posterSHA256": "dc976afdf33e4a022b0fb09996aefb8e35c181266798fe5b5d8215884cb6c90d",
+      "decodedBytes": 4915200,
+      "opaqueAreaRange": [
+        26164,
+        32131
+      ],
+      "alphaZeroFraction": 0.7575935872395834,
+      "maskingMethod": "SAM2.1 tiny direct per-frame segmentation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "ghost",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 6,
+      "count": 48,
+      "fps": 12,
+      "sourceInterval": [
+        6,
+        10
+      ],
+      "sourceCrop": [
+        830,
+        25,
+        1150,
+        385
+      ],
+      "consistentMotionBounds": [
+        0,
+        0,
+        295,
+        346
+      ],
+      "atlas": "assets/dancing-clips/ghost.webp",
+      "poster": "assets/dancing-clips/ghost-poster.webp",
+      "atlasBytes": 293054,
+      "posterBytes": 7126,
+      "atlasSHA256": "1356bab960d2e22d70c16ff066754b358e49ce702c2dfffbe759e90ab9c1e6ab",
+      "posterSHA256": "981c0498f3eb933e32aaf15aa34e466648b679ec0ab92ff228d664031b09c514",
+      "decodedBytes": 4915200,
+      "opaqueAreaRange": [
+        26678,
+        34325
+      ],
+      "alphaZeroFraction": 0.7498014322916666,
+      "maskingMethod": "SAM2.1 tiny video mask propagation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "crow-key",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 6,
+      "count": 48,
+      "fps": 12,
+      "sourceInterval": [
+        6.0,
+        10.0
+      ],
+      "sourceFrameStart": 1,
+      "sourceFrameEnd": 48,
+      "sourceCrop": [
+        0,
+        365,
+        345,
+        700
+      ],
+      "consistentMotionBounds": [
+        0,
+        0,
+        345,
+        304
+      ],
+      "atlas": "assets/dancing-clips/crow-key.webp",
+      "poster": "assets/dancing-clips/crow-key-poster.webp",
+      "atlasBytes": 298922,
+      "posterBytes": 7046,
+      "atlasSHA256": "d7af8cb13c9e84565389864d437edb615c1f8cefb540cd5859261bbc2122d368",
+      "posterSHA256": "e4f40a07e9dd90387d49176c30c08064ec10654f67b80925069d1eeb170a0acb",
+      "decodedBytes": 4915200,
+      "opaqueAreaRange": [
+        20972,
+        28416
+      ],
+      "alphaZeroFraction": 0.7781201171875,
+      "maskingMethod": "SAM2.1 tiny video mask propagation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "mandrake",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 3,
+      "count": 24,
+      "fps": 12,
+      "sourceInterval": [
+        8.0,
+        10.0
+      ],
+      "sourceFrameStart": 25,
+      "sourceFrameEnd": 48,
+      "sourceCrop": [
+        300,
+        370,
+        545,
+        700
+      ],
+      "consistentMotionBounds": [
+        35,
+        3,
+        230,
+        282
+      ],
+      "atlas": "assets/dancing-clips/mandrake.webp",
+      "poster": "assets/dancing-clips/mandrake-poster.webp",
+      "atlasBytes": 215696,
+      "posterBytes": 10238,
+      "atlasSHA256": "83eaf3fae4b1fd12558b2e22fae672f025fe8948d4aee28b88f34818b3197286",
+      "posterSHA256": "ac7492c28b5732c13e0ff0a8eef481cb7ce9da06150be3d503ae732ab542ec9f",
+      "decodedBytes": 2457600,
+      "opaqueAreaRange": [
+        20093,
+        21093
+      ],
+      "alphaZeroFraction": 0.7152457682291666,
+      "maskingMethod": "SAM2.1 tiny direct per-frame segmentation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "trumpet-lion",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 3,
+      "count": 24,
+      "fps": 12,
+      "sourceInterval": [
+        8.0,
+        10.0
+      ],
+      "sourceFrameStart": 25,
+      "sourceFrameEnd": 48,
+      "sourceCrop": [
+        470,
+        405,
+        780,
+        720
+      ],
+      "consistentMotionBounds": [
+        35,
+        0,
+        307,
+        301
+      ],
+      "atlas": "assets/dancing-clips/trumpet-lion.webp",
+      "poster": "assets/dancing-clips/trumpet-lion-poster.webp",
+      "atlasBytes": 202664,
+      "posterBytes": 9944,
+      "atlasSHA256": "6630d03def33a0e5b86ae3166b900ae2735f97f7fc0dee140799dcf72e50454b",
+      "posterSHA256": "d602b5fa2ba78340a81fd9e5e80400f0aeac82d780c6f7700818c0a2c1a4bd9e",
+      "decodedBytes": 2457600,
+      "opaqueAreaRange": [
+        22994,
+        28191
+      ],
+      "alphaZeroFraction": 0.6967024739583333,
+      "maskingMethod": "SAM2.1 tiny direct per-frame segmentation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "moon-wizard",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 6,
+      "count": 48,
+      "fps": 12,
+      "sourceInterval": [
+        6,
+        10
+      ],
+      "sourceCrop": [
+        735,
+        385,
+        1035,
+        720
+      ],
+      "consistentMotionBounds": [
+        21,
+        7,
+        274,
+        320
+      ],
+      "atlas": "assets/dancing-clips/moon-wizard.webp",
+      "poster": "assets/dancing-clips/moon-wizard-poster.webp",
+      "atlasBytes": 341234,
+      "posterBytes": 8530,
+      "atlasSHA256": "124143e370b5380e3b5815aab35d9d03062b1f33a76941a95c73aef472cbbaa5",
+      "posterSHA256": "81a87f60b36b42451a19a9f5aaa32296390a693be970dd38f13993e927568c9f",
+      "decodedBytes": 4915200,
+      "opaqueAreaRange": [
+        29461,
+        33920
+      ],
+      "alphaZeroFraction": 0.6814860026041667,
+      "maskingMethod": "SAM2.1 tiny mask segmentation of original video; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    },
+    {
+      "name": "walking-eye",
+      "frameWidth": 160,
+      "frameHeight": 160,
+      "columns": 8,
+      "rows": 2,
+      "count": 16,
+      "fps": 12,
+      "sourceInterval": [
+        6.0,
+        7.333333333333333
+      ],
+      "sourceFrameStart": 1,
+      "sourceFrameEnd": 16,
+      "sourceCrop": [
+        1000,
+        440,
+        1260,
+        715
+      ],
+      "consistentMotionBounds": [
+        9,
+        3,
+        246,
+        258
+      ],
+      "atlas": "assets/dancing-clips/walking-eye.webp",
+      "poster": "assets/dancing-clips/walking-eye-poster.webp",
+      "atlasBytes": 102492,
+      "posterBytes": 8038,
+      "atlasSHA256": "7b9d4d1f9f8a3574afcaf29ac3e6a1f42e2f6d447220c5002c9aee11a5e3881d",
+      "posterSHA256": "59eda0ae4a86d4ab418f1c82464c74249b39ce5a0e21fbed7a58d09bb814c668",
+      "decodedBytes": 1638400,
+      "opaqueAreaRange": [
+        13979,
+        14946
+      ],
+      "alphaZeroFraction": 0.7716943359375,
+      "maskingMethod": "SAM2.1 tiny video mask propagation; original video RGB; connected-component cleanup; consistent crop; premultiplied Lanczos edge resampling"
+    }
+  ],
+  "validation": {
+    "allNinePresent": true,
+    "frameDimensionsAndCounts": true,
+    "alphaAndCellBorders": true,
+    "sourceIntervalsMatched": true,
+    "hashesMatched": true,
+    "motionFramesDistinct": true,
+    "originalRGBPreserved": true,
+    "visualSourceComparison": "All nine reviewed against original frame samples; snail and eye limited to fully checked sixteen-frame intervals."
+  }
+}

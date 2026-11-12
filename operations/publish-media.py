@@ -39,7 +39,9 @@ def build_uploads():
                         for path in (ROOT / 'assets/characters').glob('*.webp'))
     motifs = sorted(path.relative_to(ROOT / 'assets').as_posix()
                     for path in (ROOT / 'assets/motifs').glob('*.webp'))
-    for filename in FILES + characters + motifs:
+    dancing_clips = sorted(path.relative_to(ROOT / 'assets').as_posix()
+                           for path in (ROOT / 'assets/dancing-clips').glob('*.webp'))
+    for filename in FILES + characters + motifs + dancing_clips:
         data = (ROOT / 'assets' / filename).read_bytes()
         digest = hashlib.sha1(data).hexdigest()
         path = Path(filename)
