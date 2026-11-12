@@ -21,7 +21,14 @@
       "sha1": "0bc303a2e7003c61a50a78e6f46c689f46e824e2",
       "bytes": 78158,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-video-poster.0bc303a2e700.jpg"
+    },
+    "ayoba-tropical-background.jpg": {
+      "path": "assets/ayoba-tropical-background.8bc2f47e0385.jpg",
+      "sha1": "8bc2f47e03852f251790daba6ee305ceefdedda7",
+      "bytes": 645211,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-tropical-background.8bc2f47e0385.jpg"
     }
   },
-  "deploy_id": "6af505059e283a6b9113d17d"
+  "deploy_id": "6af60937a346ef26ea3818ae",
+  "previous_deploy_id": "6af505059e283a6b9113d17d"
 }

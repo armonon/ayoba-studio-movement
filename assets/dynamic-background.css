@@ -1,0 +1,133 @@
+/* Supplied tropical artwork, gently moving behind the existing page content. */
+body.ayoba-tropical{
+  --paper:#f8f4e5;
+  --ink:#303322;
+  --line:#55583a40;
+  position:relative;
+  isolation:isolate;
+  background:var(--paper);
+}
+body.ayoba-tropical #ayoba-background{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:.2;
+  contain:paint;
+}
+body.ayoba-tropical .tropical-plane{
+  position:absolute;
+  inset:-5%;
+  transform:translate3d(var(--pointer-x,0px),var(--pointer-y,0px),0);
+  transition:transform .9s ease-out;
+  pointer-events:none;
+}
+body.ayoba-tropical .tropical-image{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center 47%;
+  transform:scale(1.025);
+  animation:ayoba-tropical-drift 24s ease-in-out infinite alternate;
+  animation-play-state:paused;
+}
+body.ayoba-tropical[data-motion=running] .tropical-image{animation-play-state:running}
+body.ayoba-tropical[data-motion=paused] .tropical-image{animation-play-state:paused}
+body.ayoba-tropical[data-motion=paused] .tropical-plane{transition:none}
+body.ayoba-tropical[data-hero-in-view=false] .art-hero .tropical-image{animation-play-state:paused!important}
+body.ayoba-tropical [data-section-header]{background:#f8f4e5}
+body.ayoba-tropical .footer{background:transparent;padding-bottom:76px}
+body.ayoba-tropical main{background:transparent}
+body.ayoba-tropical.ayoba-simple-home .movement-study{background:#f8f4e5e8}
+body.ayoba-tropical .panel{background:#f1efdfec}
+body.ayoba-tropical .contact-form input,
+body.ayoba-tropical .contact-form select,
+body.ayoba-tropical .contact-form textarea{background:#f8f4e580}
+body.ayoba-tropical .hero-canvas.art-hero{
+  background:#f7edc9;
+  color:var(--ink);
+  isolation:isolate;
+}
+body.ayoba-tropical .art-hero .hero-art-wrap{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:-3;
+  pointer-events:none;
+}
+body.ayoba-tropical .art-hero .video-hero-shade{
+  background:linear-gradient(90deg,#fbf5e5f2 0%,#fbf5e5d9 23%,#fbf5e59c 42%,#fbf5e526 65%,#fbf5e500 100%),linear-gradient(0deg,#fbf5e54d,transparent 34%);
+}
+body.ayoba-tropical .art-hero h1{color:#303322;max-width:760px}
+body.ayoba-tropical .art-hero h1 em{color:#414a2b}
+body.ayoba-tropical .art-hero .video-hero-top,
+body.ayoba-tropical .art-hero .video-hero-top span,
+body.ayoba-tropical .art-hero .video-hero-main>p,
+body.ayoba-tropical .art-hero .video-hero-bottom,
+body.ayoba-tropical .art-hero .video-film-link{color:#303322}
+body.ayoba-tropical .art-hero .video-hero-main>p{max-width:340px}
+body.ayoba-tropical .art-hero .video-hero-actions .button{
+  background:var(--olive);
+  border-color:var(--olive);
+  color:#fffbed;
+}
+body.ayoba-tropical .art-hero .video-hero-actions .button:hover{background:var(--ink);border-color:var(--ink)}
+body.ayoba-tropical .art-hero .video-film-link{border-color:#55583a70}
+body.ayoba-tropical .art-hero .video-film-link:hover{color:#596438}
+body.ayoba-tropical .art-hero .video-hero-bottom{border-color:#55583a4d}
+body.ayoba-tropical .art-hero a:focus-visible,
+body.ayoba-tropical .art-hero button:focus-visible{outline-color:#7b3543}
+body.ayoba-tropical [data-background-toggle]{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:40px;
+  border:1px solid #55583a70;
+  border-radius:24px;
+  padding:9px 14px;
+  background:#f8f4e5eb;
+  color:#303322;
+  font:11px/1.3 DM,Arial,sans-serif;
+  letter-spacing:.1px;
+  text-transform:none;
+  cursor:pointer;
+}
+body.ayoba-tropical [data-background-toggle]:hover{background:#fff9e8;border-color:var(--olive)}
+body.ayoba-tropical [data-background-toggle]:focus-visible{outline:3px solid #7b3543;outline-offset:4px}
+body.ayoba-tropical [data-background-icon]{display:inline-block;width:12px;text-align:center;font:14px/1 Arial,sans-serif}
+body.ayoba-tropical .background-control{
+  position:fixed;
+  right:max(18px,env(safe-area-inset-right));
+  bottom:max(18px,env(safe-area-inset-bottom));
+  z-index:50;
+  box-shadow:0 2px 12px #30332212;
+  font-size:12px;
+  opacity:1;
+  visibility:visible;
+}
+body.ayoba-tropical[data-hero-in-view=true] .background-control{opacity:0;visibility:hidden;pointer-events:none}
+@keyframes ayoba-tropical-drift{
+  from{transform:scale(1.025) translate3d(-.6%,.3%,0)}
+  to{transform:scale(1.06) translate3d(.6%,-.5%,0)}
+}
+@media(max-width:700px){
+  body.ayoba-tropical #ayoba-background{opacity:.17}
+  body.ayoba-tropical .tropical-image{object-position:60% center}
+  body.ayoba-tropical .art-hero .video-hero-shade{
+    background:linear-gradient(90deg,#fbf5e5dc 0%,#fbf5e5b3 38%,#fbf5e538 100%),linear-gradient(180deg,#fbf5e540 0%,transparent 48%,#fbf5e54d 100%);
+  }
+  body.ayoba-tropical .art-hero .video-hero-main>p{max-width:265px}
+  body.ayoba-tropical .art-hero [data-background-toggle]{font-size:9px;padding:8px 11px;min-height:40px}
+  body.ayoba-tropical .background-control{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));min-height:40px;font-size:11px;padding:9px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.ayoba-tropical .tropical-plane{transition:none}
+  body.ayoba-tropical:not([data-motion=running]) .tropical-plane{transform:none}
+  body.ayoba-tropical:not([data-motion=running]) .tropical-image{animation:none!important;transform:scale(1.025)}
+  /* Motion starts only when the visitor explicitly opts in through the control. */
+  body.ayoba-tropical[data-motion=running] .tropical-image{animation:ayoba-tropical-drift 24s ease-in-out infinite alternate!important}
+}
