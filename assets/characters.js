@@ -15,7 +15,6 @@
   ].map(clip => ({width:160, height:160, columns:8, frames:48, fps:12, ...clip}));
   // Every instance has its own size, position, phase and playback pace.
   const layouts = [
-    ['home', [[2,72,25,138],[3,91,44,94],[7,77,73,162],[0,60,91,62],[8,95,83,76],[4,96,13,48]]],
     ['philosophy', [[1,7,18,126],[4,92,29,156],[5,53,13,58],[8,24,84,92],[0,75,92,66],[2,97,72,116]]],
     ['sessions', [[8,4,28,106],[3,94,16,150],[1,49,47,64],[6,92,87,140],[7,8,92,78],[5,70,6,52]]],
     ['play', [[5,7,17,158],[6,92,27,118],[0,47,12,56],[2,14,88,104],[4,71,91,72],[8,98,72,92]]],
@@ -41,7 +40,8 @@
     }
     return images.get(src);
   }
-  layouts.forEach(([id, instances], sectionIndex) => {
+  layouts.forEach(([id, instances], index) => {
+    const sectionIndex = index + 1; // Keep the existing timing below the removed hero layer.
     const section = document.getElementById(id);
     if (!section) return;
     const canvas = document.createElement('canvas');
