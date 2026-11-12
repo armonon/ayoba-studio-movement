@@ -5,8 +5,7 @@ https://ayoba-studio-movement.netlify.app
 
 HOW THE LIVE UPDATE WORKS
 Netlify injects the named "Ayoba — movement copy and interactive art study"
-snippet into static pages as they are served. It changes only the homepage,
-About, and Private Sessions pages. The video hero loads optimized public
+snippet into static pages as they are served. It updates the nine public pages; studio and API routes are excluded. The video hero loads optimized public
 media from a dedicated Netlify media site; the full film loads when played.
 The page scripts use no analytics or browser storage. The existing studio function, data, authentication, contact delivery,
 deployment, and security headers remain in place.
@@ -16,9 +15,10 @@ from this repository. It does not recover that backend's source code.
 
 SOURCE AND MAINTENANCE
 The HTML files, assets/art-direction.*, and assets/video-hero.* contain the
-same changes in ordinary site source. operations/video-hero.html and
-operations/studio-film.html hold the canonical video section markup. Keep
-index.html synchronized with these templates using local asset paths. The live snippet is generated from those files:
+same changes in ordinary site source. index.html holds the canonical public section markup. The video templates in
+operations/ mirror those sections. The generator reads the homepage,
+operations/section-layout.js, and assets/section-navigation.* along with the
+art and video assets to build the live snippet:
 
   python3 operations/generate-snippet.py
   node --check operations/live-update.js
@@ -92,5 +92,27 @@ Both-party booking confirmations require a real Sophie-owned scheduling link
 and verified delivery. The existing public runtime supports calendarUrl and
 calendarVerified settings. Do not mark the calendar verified until actual
 availability, time zones, conflicts, joining links, and both-party confirmation
-delivery have been checked. No booking provider was configured by this video
-update; the user's scheduling details are still required.
+delivery have been checked. No booking provider is connected yet. The agreed schedule is Monday–Friday,
+Pacific local time: free 20-minute consultations noon–3 p.m.; 45-minute paid
+sessions 10 a.m.–6 p.m., $45 first session and $65 thereafter. Both-party
+automated booking email delivery remains unverified.
+
+SECTION NAVIGATION — NOVEMBER 12, 2026
+The homepage now has seven sections: the opening video, Practice, Sessions,
+Play, About, Film, and Book. The wordmark returns to the opening; each other
+section has a persistent navigation link. These are ordinary anchor URLs,
+with browser history, keyboard support, mobile horizontal navigation and an
+active-section underline. Layout is cream and olive with restrained spacing,
+photography and fewer repeated introductory sections.
+
+The live layout moves existing interactive nodes so their listeners survive.
+It preserves the contact form, form submission script, public studio runtime,
+legal copy and backend. The first paid session duration now states 45 minutes.
+Book displays the confirmed hours and inquiry links, not an unconnected calendar.
+Contact copy explains the inquiry flow without exposing implementation details.
+
+Verification: live-equivalent desktop and 390px mobile previews; section links
+and cross-page deep links; active navigation and font-load positioning; mood
+selection, Add a gesture and Clear; preserved form and private-topic prefilling.
+No test inquiry or notification was sent. Backend preservation is verified
+separately before and after publishing the snippet.

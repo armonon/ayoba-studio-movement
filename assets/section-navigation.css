@@ -1,0 +1,190 @@
+/* A quieter, section-led Ayoba. Keep the film, photographs and play in focus. */
+html:has(body.ayoba-simple){scroll-padding-top:0}
+body.ayoba-simple{--paper:#f5f3eb;--line:#55583a38;background:var(--paper)}
+body.ayoba-simple .shell{width:min(1180px,calc(100% - 96px))}
+body.ayoba-simple [data-section-header]{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line)}
+body.ayoba-simple .nav{height:78px;gap:30px}
+body.ayoba-simple .nav .wordmark{font-size:40px;letter-spacing:-3px;color:var(--olive)}
+body.ayoba-simple .nav .wordmark small{font-size:8px;letter-spacing:1.2px;margin-left:10px}
+body.ayoba-simple .menu-button{display:none}
+body.ayoba-simple .navlinks{position:static;display:flex;flex-direction:row;align-items:center;gap:28px;padding:0;margin:0;border:0;background:transparent;min-width:0}
+body.ayoba-simple .navlinks>a{flex:none;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:1.15px;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+body.ayoba-simple .navlinks>a:not(.button){padding:11px 0}
+body.ayoba-simple .navlinks>a:not(.button):after{bottom:6px;background:var(--olive)}
+body.ayoba-simple .navlinks>a[aria-current=location]:after{right:0}
+body.ayoba-simple .navlinks>.button{padding:10px 17px;margin:0;min-height:40px;border-radius:0;font-size:10px;letter-spacing:1.15px;gap:12px}
+body.ayoba-simple .navlinks>.button[aria-current=location]{background:var(--ink);outline:1px solid var(--olive);outline-offset:3px}
+body.ayoba-simple .button:hover{transform:none}
+body.ayoba-simple .button{border-radius:0}
+body.ayoba-simple-home main>section[id]{scroll-margin-top:calc(var(--section-header-height,78px) + 22px)}
+body.ayoba-simple-home main>#home{scroll-margin-top:var(--section-header-height,78px)}
+body.ayoba-simple-home .eyebrow{font-size:10px;letter-spacing:1.7px;margin-bottom:23px}
+body.ayoba-simple-home .section,body.ayoba-simple-home .studio-film{padding-block:88px}
+body.ayoba-simple-home .section h2,body.ayoba-simple-home .studio-film h2{font:600 clamp(42px,4.6vw,64px)/1.07 Bricolage,Arial,sans-serif;letter-spacing:-2.7px;margin:0 0 25px}
+body.ayoba-simple-home .section-heading{display:block;margin-bottom:42px}
+body.ayoba-simple-home .section-heading>.eyebrow{padding:0;margin:0 0 22px}
+body.ayoba-simple-home .section-heading>h2{margin:0}
+body.ayoba-simple-home .section-heading>p:last-child:not(.eyebrow){display:block;justify-self:start;font-size:14px;max-width:440px;margin:21px 0 0;line-height:1.8}
+body.ayoba-simple-home .hero-canvas.video-hero{min-height:clamp(620px,calc(100svh - 78px),740px)}
+body.ayoba-simple-home .video-hero-content{padding-block:27px 23px}
+body.ayoba-simple-home .video-hero-top{font-size:9px;letter-spacing:1.4px}
+body.ayoba-simple-home .video-hero h1{font-size:clamp(80px,8.5vw,122px);letter-spacing:-.06em}
+body.ayoba-simple-home .video-hero h1 em{margin-left:.16em}
+body.ayoba-simple-home .video-hero-main{padding-block:44px 48px}
+body.ayoba-simple-home .video-hero-main>p{font-size:14px;line-height:1.75}
+body.ayoba-simple-home .video-hero-actions .button{font-size:12px;padding:15px 22px}
+body.ayoba-simple-home .video-hero-bottom{font-size:9px}
+body.ayoba-simple-home .movement-manifesto{background:transparent;border:0;padding-block:100px 88px}
+body.ayoba-simple-home .movement-manifesto:before{content:none}
+body.ayoba-simple-home .movement-manifesto h2{font-size:clamp(34px,4.2vw,57px);font-weight:600;letter-spacing:-1.8px;line-height:1.19;max-width:1080px;margin-bottom:45px;text-wrap:pretty}
+body.ayoba-simple-home .movement-manifesto h2 em{font-size:1.15em;line-height:1;transform:none;padding:0;color:var(--olive)}
+body.ayoba-simple-home .intention-layout{display:block}
+body.ayoba-simple-home .intention-copy{max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 36px}
+body.ayoba-simple-home .intention-copy p{font-size:14px;line-height:1.85;margin:0}
+body.ayoba-simple-home .intention-copy .textlink{grid-column:1/-1;justify-self:start;margin-top:0}
+body.ayoba-simple-home .ways{border-top:1px solid var(--line)}
+body.ayoba-simple-home .simple-session-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:46px}
+body.ayoba-simple-home .journey{display:flex;flex-direction:column;background:transparent;min-height:0;margin:0}
+body.ayoba-simple-home .journey-photo{min-height:0;height:auto;aspect-ratio:4/3;overflow:hidden}
+body.ayoba-simple-home .journey-photo img{width:100%;height:100%;object-fit:cover;object-position:center 43%}
+body.ayoba-simple-home .private-photo img{object-position:center 58%}
+body.ayoba-simple-home .journey-copy{padding:28px 0 0;flex:1}
+body.ayoba-simple-home .journey-copy .index{font-size:9px;letter-spacing:1.5px;margin:0 0 12px}
+body.ayoba-simple-home .journey h3{font:600 clamp(29px,3vw,40px)/1.12 Bricolage,Arial,sans-serif;letter-spacing:-1.4px;margin:0 0 17px}
+body.ayoba-simple-home .journey-copy>p{font-size:14px;line-height:1.8;max-width:460px;margin-bottom:18px}
+body.ayoba-simple-home .journey-copy .journey-detail{font-size:10px;line-height:1.8;letter-spacing:.7px;margin:0 0 26px}
+body.ayoba-simple-home .journey-link{font-size:12px;font-weight:500;border-top:1px solid var(--line);padding-top:16px}
+body.ayoba-simple-home .playground{background:transparent;color:var(--ink);padding-block:0}
+body.ayoba-simple-home .playground>.shell{border-block:1px solid var(--line);padding-block:88px}
+body.ayoba-simple-home .simple-play-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:start}
+body.ayoba-simple-home .play-controls{padding:0}
+body.ayoba-simple-home .play-intro{color:var(--ink);font-size:14px;max-width:440px}
+body.ayoba-simple-home .mood-buttons{gap:10px}
+body.ayoba-simple-home .mood-buttons button{border:1px solid #55583a80;color:var(--olive);border-radius:0;padding:14px 17px;min-height:50px;font-size:13px;background:transparent}
+body.ayoba-simple-home .mood-buttons button:hover,body.ayoba-simple-home .mood-buttons button[aria-pressed=true]{color:var(--paper);background:var(--olive)}
+body.ayoba-simple-home .mood-buttons button:focus-visible{outline-color:var(--berry)}
+body.ayoba-simple-home .mood-answer{padding:27px 0 15px;min-height:156px}
+body.ayoba-simple-home .mood-answer p{font:400 25px/1.4 Instrument,Georgia,serif;max-width:460px}
+body.ayoba-simple-home .play-controls>.tiny{font-size:10px;opacity:1;color:#666955;display:block;max-width:430px}
+body.ayoba-simple-home .movement-study{transform:none;background:#eeece2;color:var(--olive);padding:19px 22px 16px;margin:0;border:1px solid var(--line)}
+body.ayoba-simple-home .study-heading .eyebrow{font-size:9px;margin:0}
+body.ayoba-simple-home .study-footer{gap:12px;padding-top:12px}
+body.ayoba-simple-home .study-footer p{font-size:10px}
+body.ayoba-simple-home .study-footer button{font-size:11px;min-height:40px}
+body.ayoba-simple-home .founder{background:transparent}
+body.ayoba-simple-home .founder-grid{gap:80px;grid-template-columns:1fr 1fr;align-items:center}
+body.ayoba-simple-home .founder-photo img{aspect-ratio:1.08;object-fit:cover}
+body.ayoba-simple-home .founder-photo figcaption{font:11px/1.6 DM,Arial,sans-serif;letter-spacing:.4px;padding:13px 0 0}
+body.ayoba-simple-home .founder-copy p{font-size:14px;line-height:1.85}
+body.ayoba-simple-home .founder-copy .eyebrow{font-size:10px;line-height:1.6}
+body.ayoba-simple-home .founder-copy .textlink{margin-top:6px}
+body.ayoba-simple-home .studio-film{border-block:1px solid var(--line)}
+body.ayoba-simple-home .studio-film-heading{align-items:end;margin-bottom:34px;gap:40px}
+body.ayoba-simple-home .studio-film-heading h2{margin:0}
+body.ayoba-simple-home .studio-film-heading>p{font-size:13px;line-height:1.8}
+body.ayoba-simple-home .studio-film-caption{font-size:9px;letter-spacing:1px;padding-top:17px}
+body.ayoba-simple-home .booking-heading{display:grid;grid-template-columns:1fr 1fr;gap:0 70px;align-items:start;margin-bottom:36px}
+body.ayoba-simple-home .booking-heading>.eyebrow{grid-column:1/-1}
+body.ayoba-simple-home .booking-heading h2{margin:0}
+body.ayoba-simple-home .booking-heading>p:not(.eyebrow){font-size:14px;line-height:1.85;max-width:430px;margin:0}
+body.ayoba-simple-home .booking-options{border-top:1px solid var(--line)}
+body.ayoba-simple-home .booking-option{display:grid;grid-template-columns:minmax(0,1fr) 130px 190px;gap:32px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+body.ayoba-simple-home .booking-service h3{font:600 25px/1.25 Bricolage,Arial,sans-serif;letter-spacing:-.6px;margin:0 0 8px}
+body.ayoba-simple-home .booking-service p{font-size:12px;line-height:1.8;margin:0}
+body.ayoba-simple-home .booking-price strong{display:block;font:400 32px/1.15 Instrument,Georgia,serif}
+body.ayoba-simple-home .booking-price span{display:block;font-size:11px;margin-top:4px}
+body.ayoba-simple-home .booking-option .textlink{font-size:12px;justify-self:end;gap:16px;white-space:nowrap}
+body.ayoba-simple-home .booking-note{font-size:12px;line-height:1.85;max-width:740px;margin:23px 0 0;color:#595e49}
+body.ayoba-simple-home .booking-note a{text-decoration:underline;text-underline-offset:3px}
+body.ayoba-simple .footer{background:var(--paper);color:var(--ink);border-top:1px solid var(--line);padding:54px 0 22px}
+body.ayoba-simple .footer-top{grid-template-columns:1.5fr 1fr 1fr;gap:45px;padding-bottom:38px}
+body.ayoba-simple .footer .wordmark{font-size:58px;letter-spacing:-4px;color:var(--olive);margin-bottom:20px}
+body.ayoba-simple .footer .wordmark small{font-size:8px;letter-spacing:1.1px;margin-left:12px}
+body.ayoba-simple .footer p{font-size:11px;color:#595e49}
+body.ayoba-simple .footer-links{font-size:11px;gap:8px}
+body.ayoba-simple .footer-links h4{font-size:9px;color:var(--olive);letter-spacing:1.2px;margin:5px 0 10px}
+body.ayoba-simple .footer-bottom{border-color:var(--line);color:#595e49;font-size:9px}
+body.ayoba-simple .media-credit{color:#595e49;font-size:9px}
+@media(max-width:1000px){
+  body.ayoba-simple .shell{width:calc(100% - 56px)}
+  body.ayoba-simple .navlinks{gap:19px}
+  body.ayoba-simple .navlinks>a{font-size:9px;letter-spacing:.85px}
+  body.ayoba-simple-home .simple-session-grid{gap:30px}
+  body.ayoba-simple-home .simple-play-grid{gap:35px}
+  body.ayoba-simple-home .founder-grid{gap:45px}
+  body.ayoba-simple-home .intention-copy{gap:26px}
+  body.ayoba-simple-home .booking-option{grid-template-columns:minmax(0,1fr) 100px 170px;gap:20px}
+}
+@media(max-width:700px){
+  body.ayoba-simple .shell{width:calc(100% - 40px)}
+  body.ayoba-simple .nav{height:auto;min-height:108px;display:flex;flex-wrap:wrap;align-content:center;gap:7px;padding-top:14px;padding-bottom:0}
+  body.ayoba-simple .nav>a{display:block}
+  body.ayoba-simple .nav .wordmark{font-size:34px;letter-spacing:-2.5px}
+  body.ayoba-simple .nav .wordmark small{font-size:7px}
+  body.ayoba-simple .navlinks{display:flex;width:100%;flex:0 1 100%;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;padding:0 2px 5px;margin:0;scrollbar-width:thin;border:0;scroll-padding-inline:10px}
+  body.ayoba-simple .navlinks>a{min-height:40px;font-size:9px;letter-spacing:.7px}
+  body.ayoba-simple .navlinks>.button{font-size:9px;min-height:32px;align-self:center;padding:5px 12px;letter-spacing:.7px}
+  body.ayoba-simple .navlinks>a:not(.button):after{bottom:5px}
+  body.ayoba-simple-home main>section[id]{scroll-margin-top:calc(var(--section-header-height,108px) + 24px)}
+  body.ayoba-simple-home main>#home{scroll-margin-top:var(--section-header-height,108px)}
+  body.ayoba-simple-home .section,body.ayoba-simple-home .studio-film{padding-block:58px}
+  body.ayoba-simple-home .eyebrow{font-size:9px;letter-spacing:1.3px;margin-bottom:19px}
+  body.ayoba-simple-home .section h2,body.ayoba-simple-home .studio-film h2{font-size:43px;letter-spacing:-1.8px;line-height:1.08}
+  body.ayoba-simple-home .section-heading{margin-bottom:30px}
+  body.ayoba-simple-home .section-heading>.eyebrow{margin-bottom:18px}
+  body.ayoba-simple-home .section-heading>p:last-child:not(.eyebrow){font-size:13px;margin-top:16px}
+  body.ayoba-simple-home .hero-canvas.video-hero{min-height:630px}
+  body.ayoba-simple-home .video-hero-content{padding-block:21px 16px}
+  body.ayoba-simple-home .video-hero h1{font-size:clamp(64px,15.5vw,91px);letter-spacing:-.055em;margin-bottom:22px}
+  body.ayoba-simple-home .video-hero h1 em{margin-left:.08em}
+  body.ayoba-simple-home .video-hero-main{justify-content:flex-start;padding-block:52px 115px}
+  body.ayoba-simple-home .video-hero-main>p{font-size:12px;line-height:1.8;max-width:260px}
+  body.ayoba-simple-home .video-hero-top,body.ayoba-simple-home .video-hero-top span{font-size:7px;letter-spacing:.9px}
+  body.ayoba-simple-home .video-hero-actions .button{font-size:11px;padding:13px 18px}
+  body.ayoba-simple-home .video-hero-bottom{font-size:8px;letter-spacing:.65px}
+  body.ayoba-simple-home .movement-manifesto{padding-block:60px}
+  body.ayoba-simple-home .movement-manifesto h2{font-size:33px;line-height:1.22;letter-spacing:-1px;margin-bottom:30px}
+  body.ayoba-simple-home .intention-copy{grid-template-columns:1fr;gap:20px;max-width:520px}
+  body.ayoba-simple-home .intention-copy p{font-size:14px;line-height:1.8}
+  body.ayoba-simple-home .simple-session-grid{grid-template-columns:1fr;gap:43px}
+  body.ayoba-simple-home .journey-copy{padding-top:23px}
+  body.ayoba-simple-home .journey h3{font-size:33px;letter-spacing:-1px;margin-bottom:14px}
+  body.ayoba-simple-home .journey-copy>p{font-size:14px}
+  body.ayoba-simple-home .journey-copy .journey-detail{font-size:10px;margin-bottom:23px}
+  body.ayoba-simple-home .playground{padding-block:0}
+  body.ayoba-simple-home .playground>.shell{padding-block:58px}
+  body.ayoba-simple-home .simple-play-grid{grid-template-columns:1fr;gap:34px}
+  body.ayoba-simple-home .mood-buttons button{font-size:13px;min-height:50px}
+  body.ayoba-simple-home .mood-answer{min-height:135px;padding-top:23px}
+  body.ayoba-simple-home .movement-study{padding:17px 18px 13px}
+  body.ayoba-simple-home .study-footer>div{gap:18px}
+  body.ayoba-simple-home .founder-grid{grid-template-columns:1fr;gap:32px}
+  body.ayoba-simple-home .founder-copy p{font-size:14px}
+  body.ayoba-simple-home .founder-copy .eyebrow{font-size:9px}
+  body.ayoba-simple-home .studio-film-heading{display:block;margin-bottom:25px}
+  body.ayoba-simple-home .studio-film-heading h2{margin-bottom:20px}
+  body.ayoba-simple-home .studio-film-heading>p{font-size:12px}
+  body.ayoba-simple-home .studio-film-caption{font-size:8px;letter-spacing:.5px;gap:15px}
+  body.ayoba-simple-home .booking-heading{display:block;margin-bottom:29px}
+  body.ayoba-simple-home .booking-heading h2{margin-bottom:20px}
+  body.ayoba-simple-home .booking-heading>p:not(.eyebrow){font-size:13px}
+  body.ayoba-simple-home .booking-option{grid-template-columns:minmax(0,1fr) auto;gap:16px;padding-block:25px}
+  body.ayoba-simple-home .booking-service h3{font-size:22px;letter-spacing:-.5px}
+  body.ayoba-simple-home .booking-service p{font-size:11px}
+  body.ayoba-simple-home .booking-price{text-align:right}
+  body.ayoba-simple-home .booking-price strong{font-size:30px}
+  body.ayoba-simple-home .booking-price span{font-size:10px}
+  body.ayoba-simple-home .booking-option .textlink{grid-column:1/-1;justify-self:start;font-size:12px}
+  body.ayoba-simple-home .booking-note{font-size:11px;margin-top:20px}
+  body.ayoba-simple .footer{padding-top:40px}
+  body.ayoba-simple .footer-top{grid-template-columns:1fr 1fr;gap:26px 20px;padding-bottom:28px}
+  body.ayoba-simple .footer-brand{grid-column:1/-1}
+  body.ayoba-simple .footer .wordmark{font-size:50px;letter-spacing:-3px;margin-bottom:15px}
+  body.ayoba-simple .footer-links{font-size:10px}
+  body.ayoba-simple .footer-links h4{font-size:8px}
+  body.ayoba-simple .footer-bottom{flex-direction:column;gap:7px;font-size:8px}
+  body.ayoba-simple .media-credit{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){html:has(body.ayoba-simple){scroll-behavior:auto}}
+
+body.ayoba-simple main:not([data-section-layout]) [id]{scroll-margin-top:calc(var(--section-header-height,78px) + 24px)}

@@ -1,87 +1,95 @@
+"""Build the live presentation from the matching native public HTML and assets."""
 import json
 import re
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TARGET = REPO / 'operations'
-TARGET.mkdir(exist_ok=True)
 home = (REPO / 'index.html').read_text()
-manifesto = re.search(r'<section class="manifesto movement-manifesto".*?</section>', home, re.S).group(0)
-css = (REPO / 'assets/art-direction.css').read_text()
-art = (REPO / 'assets/art-direction.js').read_text()
-video_css = (REPO / 'assets/video-hero.css').read_text()
-video_js = (REPO / 'assets/video-hero.js').read_text()
 media = json.loads((TARGET / 'media-host.json').read_text())['files']
-def video_markup(name, local=False):
-    result = (TARGET / name).read_text()
-    for placeholder, filename in [('__POSTER_URL__', 'ayoba-video-poster.jpg'), ('__HERO_URL__', 'ayoba-hero.mp4'), ('__FILM_URL__', 'ayoba-film.mp4')]:
-        result = result.replace(placeholder, '/assets/' + filename if local else media[filename]['url'])
-    return result
-hero = video_markup('video-hero.html')
-film = video_markup('studio-film.html')
-source = '''// Ayoba public-page update, applied with Netlify snippet injection.
-// Deliberately independent of the deployed studio backend.
+def section(css):
+    return re.search(r'<section class="' + re.escape(css) + r'".*?</section>', home, re.S).group(0)
+def asset(name):
+    return (REPO / 'assets' / name).read_text()
+def public_media(html):
+    for name, data in media.items():
+        html = html.replace('/assets/' + name, data['url'])
+    return html
+nav = re.search(r'<div class="navlinks" id="navlinks">(.*?)</div>', home, re.S).group(1)
+play = section('playground section')
+study = re.search(r'<div class="movement-study".*</div></div></div></section>', play, re.S).group(0).removesuffix('</div></div></section>')
+layout = (TARGET / 'section-layout.js').read_text()
+for name, value in {
+    'NAV_SOURCE': nav, 'STUDY_SOURCE': study, 'PLAY_SOURCE': play,
+    'SESSIONS_SOURCE': section('section shell ways'),
+    'ABOUT_SOURCE': section('founder section'),
+    'BOOK_SOURCE': section('booking-section section shell'),
+}.items():
+    layout = layout.replace(name, json.dumps(value))
+source = r'''// Ayoba public presentation; the studio backend is deliberately excluded.
 (() => {
-  const route = location.pathname.replace(/\\/+$/, '') || '/';
-  if (!['/', '/about', '/private-sessions'].includes(route)) return;
+  const route = location.pathname.replace(/\/+$/, '') || '/';
+  if (!['/', '/about', '/private-sessions', '/group-journeys', '/contact', '/faq', '/participant-agreement', '/cancellation-refund-policy', '/privacy-policy'].includes(route)) return;
+  function fragment(html) {
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content;
+  }
+  function style(id, file, text) {
+    if (document.getElementById(id) || document.querySelector('link[href*="/assets/' + file + '"]')) return;
+    const element = document.createElement('style');
+    element.id = id; element.textContent = text; document.head.append(element);
+  }
   function apply() {
-    if (!document.querySelector('link[href*="/assets/art-direction.css"], #ayoba-art-direction')) {
-      const style = document.createElement('style');
-      style.id = 'ayoba-art-direction';
-      style.textContent = CSS_SOURCE;
-      document.head.append(style);
-    }
+    style('ayoba-art-direction','art-direction.css',ART_CSS_SOURCE);
+    style('ayoba-section-design','section-navigation.css',SECTION_CSS_SOURCE);
     if (route === '/') {
-      if (!document.querySelector('link[href*="/assets/video-hero.css"], #ayoba-video-design')) {
-        const style = document.createElement('style');
-        style.id = 'ayoba-video-design';
-        style.textContent = VIDEO_CSS_SOURCE;
-        document.head.append(style);
-      }
+      style('ayoba-video-design','video-hero.css',VIDEO_CSS_SOURCE);
+      // Keep section styles after video styles for predictable overrides.
+      const sectionStyle = document.getElementById('ayoba-section-design');
+      if (sectionStyle) document.head.append(sectionStyle);
       const previousHero = document.querySelector('.hero-canvas');
-      if (previousHero && !previousHero.hasAttribute('data-video-hero')) {
-        const booking = document.querySelector('.navlinks .button')?.getAttribute('href') || '/contact/#intro-call';
-        const template = document.createElement('template');
-        template.innerHTML = VIDEO_HERO_SOURCE;
-        template.content.querySelector('a[href="/contact/#intro-call"]').setAttribute('href', booking);
-        previousHero.replaceWith(template.content.firstElementChild);
-      }
+      if (previousHero && !previousHero.hasAttribute('data-video-hero')) previousHero.replaceWith(fragment(VIDEO_HERO_SOURCE));
       const previousFilm = document.querySelector('.film-section');
-      if (previousFilm && !previousFilm.classList.contains('studio-film')) {
-        const template = document.createElement('template');
-        template.innerHTML = VIDEO_FILM_SOURCE;
-        previousFilm.replaceWith(template.content.firstElementChild);
-      }
+      if (previousFilm && !previousFilm.classList.contains('studio-film')) previousFilm.replaceWith(fragment(VIDEO_FILM_SOURCE));
       const manifesto = document.querySelector('#philosophy');
-      if (manifesto && !manifesto.classList.contains('movement-manifesto') && manifesto.querySelector('h2')?.textContent.includes('We were never meant')) {
-        const template = document.createElement('template');
-        template.innerHTML = MANIFESTO_SOURCE;
-        manifesto.classList.add('movement-manifesto');
-        manifesto.replaceChildren(...template.content.firstElementChild.childNodes);
-        if (location.hash === '#philosophy') requestAnimationFrame(() => manifesto.scrollIntoView({behavior: 'instant'}));
-      }
+      if (manifesto && !manifesto.classList.contains('movement-manifesto') && manifesto.querySelector('h2')?.textContent.includes('We were never meant')) manifesto.replaceWith(fragment(MANIFESTO_SOURCE));
     }
     if (route === '/about') {
       const heading = document.querySelector('main h1');
-      if (heading && heading.textContent.replace(/\\s+/g, ' ').includes('Learning to move')) {
-        heading.classList.add('art-title');
-        heading.innerHTML = 'dance as <em>art.</em>';
+      if (heading && heading.textContent.replace(/\s+/g, ' ').includes('Learning to move')) {
+        heading.classList.add('art-title'); heading.innerHTML = 'dance as <em>art.</em>';
       }
     }
     if (route === '/private-sessions') {
       const lede = document.querySelector('main .lede');
-      const old = 'Your pace, your curiosity, your way of moving. An individualized space to explore without needing to get anywhere.';
-      if (lede?.textContent.trim() === old) lede.textContent = 'Your pace, your curiosity, your way of moving.';
+      if (lede?.textContent.trim() === 'Your pace, your curiosity, your way of moving. An individualized space to explore without needing to get anywhere.') lede.textContent = 'Your pace, your curiosity, your way of moving.';
     }
+    SECTION_LAYOUT_SOURCE
     ART_SOURCE
     VIDEO_JS_SOURCE
+    SECTION_JS_SOURCE
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once: true});
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', apply, {once:true});
   else apply();
 })();
-'''.replace('VIDEO_CSS_SOURCE', json.dumps(video_css)).replace('VIDEO_HERO_SOURCE', json.dumps(hero)).replace('VIDEO_FILM_SOURCE', json.dumps(film)).replace('VIDEO_JS_SOURCE', video_js).replace('CSS_SOURCE', json.dumps(css)).replace('MANIFESTO_SOURCE', json.dumps(manifesto)).replace('ART_SOURCE', art)
+'''
+replacements = {
+    'ART_CSS_SOURCE': json.dumps(asset('art-direction.css')),
+    'VIDEO_CSS_SOURCE': json.dumps(asset('video-hero.css')),
+    'SECTION_CSS_SOURCE': json.dumps(asset('section-navigation.css')),
+    'VIDEO_HERO_SOURCE': json.dumps(public_media(section('hero-canvas video-hero'))),
+    'VIDEO_FILM_SOURCE': json.dumps(public_media(section('film-section studio-film shell'))),
+    'MANIFESTO_SOURCE': json.dumps(section('manifesto movement-manifesto')),
+    'SECTION_LAYOUT_SOURCE': layout,
+    'ART_SOURCE': asset('art-direction.js'),
+    'VIDEO_JS_SOURCE': asset('video-hero.js'),
+    'SECTION_JS_SOURCE': asset('section-navigation.js'),
+}
+for name, value in replacements.items():
+    source = source.replace(name, value)
 assert '</script' not in source.lower()
 (TARGET / 'live-update.js').write_text(source)
-snippet = {'title': 'Ayoba — movement copy and interactive art study', 'general': '<script id="ayoba-live-update">\n' + source + '</script>', 'general_position': 'footer', 'goal': '', 'goal_position': 'footer'}
-(TARGET / 'netlify-snippet.json').write_text(json.dumps(snippet, ensure_ascii=False, indent=2) + '\n')
-print('Prepared', len(snippet['general'].encode()), 'bytes for the Netlify live update.')
+snippet = {'title':'Ayoba — movement copy and interactive art study', 'general':'<script id="ayoba-live-update">\n' + source + '</script>', 'general_position':'footer', 'goal':'', 'goal_position':'footer'}
+(TARGET / 'netlify-snippet.json').write_text(json.dumps(snippet,ensure_ascii=False,indent=2)+'\n')
+print('Prepared',len(snippet['general'].encode()),'bytes for the Netlify live update.')
