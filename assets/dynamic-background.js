@@ -27,7 +27,7 @@
   document.body.append(control);
   const controls = Array.from(document.querySelectorAll('[data-background-toggle]'));
   const planes = Array.from(document.querySelectorAll('[data-art-plane]'));
-  const hero = document.querySelector('[data-art-hero]');
+  const hero = document.querySelector('[data-art-hero], [data-video-hero]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   let saved;

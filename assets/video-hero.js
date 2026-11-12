@@ -1,79 +1,75 @@
-// Video enhancement is deliberately independent of booking data and form delivery.
+// The original hero follows the site's shared motion setting.
 (() => {
   const hero = document.querySelector('[data-video-hero]');
   if (!hero || hero.dataset.ready) return;
-  hero.dataset.ready = 'true';
   const video = hero.querySelector('[data-hero-video]');
-  const toggle = hero.querySelector('[data-hero-toggle]');
-  const label = hero.querySelector('[data-hero-toggle-label]');
-  const icon = hero.querySelector('[data-hero-toggle-icon]');
+  if (!video) return;
+  hero.dataset.ready = 'true';
   const film = document.querySelector('[data-studio-film]');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let wantsMotion = !reduced.matches && !navigator.connection?.saveData;
-  let inView = true;
+  let inView = !('IntersectionObserver' in window);
   let failed = false;
   let pending = false;
   let queuedResume = false;
   video.muted = true;
   video.defaultMuted = true;
-  function update() {
-    const playing = !video.paused && !video.ended;
-    toggle.setAttribute('aria-pressed', String(playing));
-    toggle.setAttribute('aria-label', failed ? 'Background video unavailable' : playing ? 'Pause background video' : 'Play background video');
-    label.textContent = failed ? 'Still image' : playing ? 'Pause motion' : 'Play motion';
-    icon.textContent = playing ? 'Ⅱ' : '▷';
-    toggle.disabled = failed;
-  }
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = 'none';
   function canResume() {
-    return !failed && wantsMotion && inView && !document.hidden && (!film || film.paused);
+    return !failed && document.body.dataset.motion === 'running' && inView &&
+      !document.hidden && (!film || film.paused || film.ended);
   }
-  async function resume() {
-    if (!canResume()) return;
+  function pause() {
+    queuedResume = false;
+    video.pause();
+  }
+  function settled(error) {
+    pending = false;
+    // Only an interrupted or successful attempt may service a queued resume.
+    // Autoplay rejection waits for a later shared-motion or visibility change.
+    const retry = queuedResume && (!error || error.name === 'AbortError');
+    queuedResume = false;
+    if (!canResume()) pause();
+    else if (retry) sync();
+  }
+  function sync() {
+    if (!canResume()) { pause(); return; }
     if (pending) { queuedResume = true; return; }
-    if (!video.getAttribute('src')) video.src = video.dataset.src;
+    if (!video.paused && !video.ended) return;
+    // Shared reduced-motion/save-data preferences prevent even loading the film.
+    if (!video.getAttribute('src')) {
+      if (!video.dataset.src) return;
+      video.src = video.dataset.src;
+    }
     pending = true;
     queuedResume = false;
-    let interrupted = false;
     try {
-      await video.play();
-      if (!canResume()) pause();
+      Promise.resolve(video.play()).then(() => settled(null), settled);
     } catch (error) {
-      interrupted = error?.name === 'AbortError';
-      // Autoplay restrictions leave the poster and manual Play control usable.
-    } finally {
-      pending = false;
-      const retry = interrupted && queuedResume && canResume();
-      queuedResume = false;
-      update();
-      if (retry) resume();
+      settled(error);
     }
   }
-  function pause() { queuedResume = false; video.pause(); update(); }
-  toggle.addEventListener('click', () => {
-    wantsMotion = video.paused;
-    if (wantsMotion) resume(); else pause();
+  video.addEventListener('playing', () => {
+    if (!failed) hero.classList.add('is-video-ready');
+    if (!canResume()) pause();
   });
-  video.addEventListener('playing', () => {hero.classList.add('is-video-ready'); update();});
-  video.addEventListener('pause', update);
   video.addEventListener('error', () => {
     failed = true;
-    wantsMotion = false;
     hero.classList.remove('is-video-ready');
     pause();
   });
-  document.addEventListener('visibilitychange', () => {if (document.hidden) pause(); else resume();});
-  reduced.addEventListener('change', () => {if (reduced.matches) {wantsMotion = false; pause();}});
+  new MutationObserver(sync).observe(document.body, {attributes:true, attributeFilter:['data-motion']});
+  document.addEventListener('visibilitychange', sync);
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {
       inView = entries[0].isIntersecting;
-      if (inView) resume(); else pause();
+      sync();
     }, {threshold: 0.05}).observe(hero);
   }
   if (film) {
     film.addEventListener('play', pause);
-    film.addEventListener('pause', resume);
-    film.addEventListener('ended', resume);
+    film.addEventListener('pause', sync);
+    film.addEventListener('ended', sync);
   }
-  update();
-  resume();
+  sync();
 })();

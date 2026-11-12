@@ -242,3 +242,14 @@ Desktop, 390px and 320px browser previews confirm readable text, no page
 overflow, motion controls, preserved section navigation and lazy video loading.
 Focused checks cover paused defaults, visibility, device selection, source
 stability, and interrupted play promise recovery.
+
+RESTORED ORIGINAL VIDEO HERO — NOVEMBER 12, 2026
+The original 7.916667-second ayoba-hero.mp4 loop and poster return to the
+homepage hero, using the earlier dark olive overlay and light typography.
+The current copy, section navigation, characters, pendants, tropical
+background elsewhere, and both About montage variants are retained.
+
+The video now follows the shared body motion state, including Pause/Play,
+reduced-motion and save-data defaults, hidden/offscreen pause, and pausing
+while the full Film is playing. This reuses existing immutable hosted media;
+no media deployment is needed. Publish only the existing presentation snippet.
