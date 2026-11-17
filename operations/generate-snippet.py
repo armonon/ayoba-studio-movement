@@ -23,6 +23,7 @@ for name, value in {
     'ABOUT_SOURCE': section('founder section'),
     'BOOK_SOURCE': section('booking-section section shell'),
     'GROUP_VIDEO_SOURCE': (TARGET / 'group-video.html').read_text(),
+    'PRIVATE_VIDEO_SOURCE': (TARGET / 'private-video.html').read_text(),
 }.items():
     layout = layout.replace(name, json.dumps(public_media(value)))
 source = r'''// Ayoba public presentation; the studio backend is deliberately excluded.

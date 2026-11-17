@@ -1,10 +1,10 @@
-// Victory loops silently when visible, following the site's motion preferences.
+// Session films loop silently when visible, following the site's motion preferences.
 (() => {
   const route = location.pathname.replace(/\/+$/, '') || '/';
-  if (!['/', '/group-journeys'].includes(route)) return;
-  document.querySelectorAll('[data-group-video]').forEach(video => {
-    if (video.dataset.groupVideoReady) return;
-    video.dataset.groupVideoReady = 'true';
+  if (!['/', '/group-journeys', '/private-sessions'].includes(route)) return;
+  document.querySelectorAll('[data-group-video], [data-private-video]').forEach(video => {
+    if (video.dataset.sessionVideoReady) return;
+    video.dataset.sessionVideoReady = 'true';
     let inView = !('IntersectionObserver' in window);
     let failed = false;
     let pending = false;

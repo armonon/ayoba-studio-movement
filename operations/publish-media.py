@@ -17,7 +17,8 @@ FILES = ['ayoba-hero.mp4', 'ayoba-film.mp4', 'ayoba-video-poster.jpg', 'ayoba-tr
          'ayoba-about-montage-poster.jpg', 'ayoba-about-montage-mobile-poster.jpg',
          'paypaya-group-victory.mp4', 'paypaya-group-victory-poster.jpg',
          'paypaya-favicon.svg', 'paypaya-social-preview.png',
-         'dance-page-favicon.svg', 'dance-page-social-preview.png', 'sophie-portrait-2026.jpg']
+         'dance-page-favicon.svg', 'dance-page-social-preview.png', 'sophie-portrait-2026.jpg',
+         'dance-page-private-yay.mp4', 'dance-page-private-yay-poster.jpg']
 token = os.environ.get('NETLIFY_AUTH_TOKEN')
 if not token:
     config = json.loads((Path.home() / 'Library/Preferences/netlify/config.json').read_text())

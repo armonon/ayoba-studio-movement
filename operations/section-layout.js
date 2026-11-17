@@ -62,3 +62,7 @@ if (route === '/contact') {
 if (route === '/group-journeys' && !document.querySelector('[data-group-video]')) {
   document.querySelector('.session-photo')?.replaceWith(fragment(GROUP_VIDEO_SOURCE));
 }
+
+if (route === '/private-sessions' && !document.querySelector('[data-private-video]')) {
+  document.querySelector('.session-photo')?.replaceWith(fragment(PRIVATE_VIDEO_SOURCE));
+}

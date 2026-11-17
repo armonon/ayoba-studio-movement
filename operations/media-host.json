@@ -94,6 +94,18 @@
       "bytes": 210538,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/sophie-portrait-2026.fb8e9bb11581.jpg"
     },
+    "dance-page-private-yay.mp4": {
+      "path": "assets/dance-page-private-yay.845f31ea77f8.mp4",
+      "sha1": "845f31ea77f85e4b15d81a91475b72050e46115a",
+      "bytes": 5448015,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dance-page-private-yay.845f31ea77f8.mp4"
+    },
+    "dance-page-private-yay-poster.jpg": {
+      "path": "assets/dance-page-private-yay-poster.15828713bde8.jpg",
+      "sha1": "15828713bde8deda6e2db1c85c3dbc4762142a2e",
+      "bytes": 42146,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dance-page-private-yay-poster.15828713bde8.jpg"
+    },
     "characters/candle-devil.webp": {
       "path": "assets/characters/candle-devil.8524e7667016.webp",
       "sha1": "8524e76670168bc9dfe26d1e715080443c08dd9b",
@@ -317,8 +329,8 @@
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye.e7eb66dc98f4.webp"
     }
   },
-  "deploy_id": "6afbdf019b87d76eff5ae45c",
-  "previous_deploy_id": "6afbdd6f1c93fc808f843a91",
+  "deploy_id": "6afbe149dbdf435b27d972c3",
+  "previous_deploy_id": "6afbdf019b87d76eff5ae45c",
   "reconciled_from_deploy_id": "6afbd495d9bc091ef9095fd9",
   "preserved_files": {
     "creative/dfc6f9d7d341561b/assets/creative-granola.png": "17ff2f938f3b2e563132cfb55e0840c18c9217fe",
