@@ -308,3 +308,24 @@ Calendly is waiting for Sophie to sign in to her existing account. No provider
 links are connected, bookings created, subscription purchased, or confirmation
 email delivery verified. The agreed service windows and prices remain visible
 as inquiries. No contact form submission is part of verification.
+
+VICTORY AUTOPLAY — NOVEMBER 16, 2026
+Victory now autoplays muted and loops on the homepage session card and the
+group-journeys page. Native controls remain available for sound and playback.
+assets/group-video.js loads the existing full film when visible and motion
+preferences allow playback. It pauses offscreen and in hidden tabs; reduced-
+motion/save-data defaults show the poster until native controls are used.
+The controller is idempotent, retains its poster on playback failure, and
+recovers an interrupted pending play without retrying autoplay denial forever.
+This reuses existing hosted media; only the presentation snippet is updated.
+
+The two short session-card descriptions are removed at the user's request;
+the same private-session introduction is removed from its detail page. Titles,
+prices, durations, links, and the longer descriptions remain.
+
+COMPACT PRESENTATION — NOVEMBER 16, 2026
+The requested session-card descriptions, “the practice” label, its decorative
+divider, and extra gaps are removed. Visible Pause motion buttons are removed.
+Automatic decorative motion still honors reduced-motion/save-data preferences
+and hidden-page pausing, without an unreachable saved-pause state. Victory
+retains native controls and autoplays muted in view when preferences allow.
