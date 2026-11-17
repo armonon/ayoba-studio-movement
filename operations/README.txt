@@ -348,3 +348,12 @@ confirming every recorded media asset remained unchanged. Its ten additional
 files are retained by exact content hashes in media-host.json preserved_files,
 with the same complete-manifest safeguards on future updates. The main site
 and Studio function are not rebuilt or redeployed.
+
+PRIVATE SESSION FILM — NOVEMBER 16, 2026
+The supplied yay.mov replaces the private-session photos on the homepage card
+and private-sessions detail page. Its full browser-compatible MP4 autoplays
+muted and loops in view, sharing Victory’s playback controller and native
+controls. It pauses offscreen/in hidden tabs and respects reduced-motion and
+save-data preferences. A poster appears before playback. Provenance and
+encoding details are recorded in operations/private-video-source.json.
+Only new immutable media files and the named public snippet are published.

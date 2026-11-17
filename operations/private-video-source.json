@@ -1,0 +1,91 @@
+{
+  "title": "Private movement session \u2014 yay",
+  "source": {
+    "basename": "yay.mov",
+    "bytes": 10027241,
+    "sha256": "ff8b1f5bba4bedfca44c255c8d079422c94e9e255ed01fa20681560656b23827"
+  },
+  "source_probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      },
+      {
+        "index": 1,
+        "codec_name": "hevc",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 2,
+        "codec_name": "mjpeg",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "90000/1"
+      }
+    ],
+    "format": {
+      "duration": "34.801438",
+      "size": "10027241"
+    }
+  },
+  "delivery_video": {
+    "basename": "dance-page-private-yay.mp4",
+    "bytes": 5448015,
+    "sha256": "51e80536065efbd6514b27d41be4861b27c83c73a503f053381daf9e411b6536"
+  },
+  "delivery_poster": {
+    "basename": "dance-page-private-yay-poster.jpg",
+    "bytes": 42146,
+    "sha256": "ebc53e949b61fa28e5eebd16e57bfb5a0bb0d04c840425dd83acb6d8bd200512"
+  },
+  "delivery_probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "34.814000",
+      "size": "5448015"
+    }
+  },
+  "encoding": {
+    "video": "H.264 libx264 medium CRF24 yuv420p at original1280x720,29.97fps",
+    "audio": "AAC128k stereo, source audio retained",
+    "container": "MP4 faststart",
+    "editing": "Full original clip; no cuts/cropping/scaling/orientation changes. Attached MJPEG thumbnail not included as a separate stream.",
+    "metadata": "Source personal/container metadata stripped",
+    "poster": "Unmodified video frame at6seconds,1280x720,JPEGquality3"
+  },
+  "verification": {
+    "full_decode_passed": true,
+    "faststart_moov_before_mdat": true,
+    "poster_visual_review": "Two people dancing indoors in a sunlit room; original wide composition retained."
+  }
+}

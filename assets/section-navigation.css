@@ -238,14 +238,14 @@ body.ayoba-simple-home .ways .manifesto-layout{width:auto;margin:0}
 body.ayoba-simple-home .ways .movement-manifesto h2{font-size:clamp(28px,3.3vw,42px);line-height:1.22;margin-bottom:24px}
 body.ayoba-simple-home .ways .intention-copy{gap:16px 24px}
 body.ayoba-simple-home .ways .journey-photo{aspect-ratio:16/9}
-body.ayoba-simple-home .ways .journey-photo.group-video video{
+body.ayoba-simple-home .ways .journey-photo:is(.group-video,.private-video) video{
   display:block;
   width:100%;
   height:100%;
   object-fit:contain;
   background:var(--ink);
 }
-body.ayoba-simple .session-photo.group-video video{
+body.ayoba-simple .session-photo:is(.group-video,.private-video) video{
   display:block;
   width:100%;
   height:auto;
