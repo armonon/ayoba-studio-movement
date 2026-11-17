@@ -329,3 +329,9 @@ divider, and extra gaps are removed. Visible Pause motion buttons are removed.
 Automatic decorative motion still honors reduced-motion/save-data preferences
 and hidden-page pausing, without an unreachable saved-pause state. Victory
 retains native controls and autoplays muted in view when preferences allow.
+
+SESSION OPTIONS — NOVEMBER 16, 2026
+The homepage sessions panel opens directly with the two session options. The
+introductory heading, subtitle and header band are removed without leaving
+empty space. Its accessible name is now sessions and practice; the existing
+practice text below the cards and all video/booking behavior remain intact.
