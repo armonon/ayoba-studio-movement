@@ -14,7 +14,9 @@ MAIN_SITE = '1aa56b2e-6e8d-4b74-a4d9-8cb68dcd9867'
 NAME = 'ayoba-studio-media-1aa56b'
 FILES = ['ayoba-hero.mp4', 'ayoba-film.mp4', 'ayoba-video-poster.jpg', 'ayoba-tropical-background.jpg',
          'ayoba-about-montage.mp4', 'ayoba-about-montage-mobile.mp4',
-         'ayoba-about-montage-poster.jpg', 'ayoba-about-montage-mobile-poster.jpg']
+         'ayoba-about-montage-poster.jpg', 'ayoba-about-montage-mobile-poster.jpg',
+         'paypaya-group-victory.mp4', 'paypaya-group-victory-poster.jpg',
+         'paypaya-favicon.svg', 'paypaya-social-preview.png']
 token = os.environ.get('NETLIFY_AUTH_TOKEN')
 if not token:
     config = json.loads((Path.home() / 'Library/Preferences/netlify/config.json').read_text())
@@ -124,7 +126,7 @@ elif mode == 'status':
         for name, asset in state['files'].items():
             req = urllib.request.Request(asset['url'], headers={'Range': 'bytes=0-63'})
             with urllib.request.urlopen(req, timeout=30) as response:
-                expected = {'.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp'}[Path(name).suffix]
+                expected = {'.mp4': 'video/mp4', '.jpg': 'image/jpeg', '.png': 'image/png', '.webp': 'image/webp', '.svg': 'image/svg+xml'}[Path(name).suffix]
                 assert response.headers.get_content_type() == expected, name
                 assert response.status == 206, (name, response.status)
                 assert response.headers.get('Content-Range') == 'bytes 0-63/' + str(asset['bytes']), name

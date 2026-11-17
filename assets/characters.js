@@ -6,21 +6,17 @@
     {name:'candle-devil', src:'/assets/dancing-clips/candle-devil.webp', poster:'/assets/dancing-clips/candle-devil-poster.webp'},
     {name:'snail', frames:16, src:'/assets/dancing-clips/snail.webp', poster:'/assets/dancing-clips/snail-poster.webp'},
     {name:'sun-dancer', src:'/assets/dancing-clips/sun-dancer.webp', poster:'/assets/dancing-clips/sun-dancer-poster.webp'},
-    {name:'ghost', src:'/assets/dancing-clips/ghost.webp', poster:'/assets/dancing-clips/ghost-poster.webp'},
-    {name:'crow-key', src:'/assets/dancing-clips/crow-key.webp', poster:'/assets/dancing-clips/crow-key-poster.webp'},
     {name:'mandrake', frames:24, src:'/assets/dancing-clips/mandrake.webp', poster:'/assets/dancing-clips/mandrake-poster.webp'},
     {name:'trumpet-lion', frames:24, src:'/assets/dancing-clips/trumpet-lion.webp', poster:'/assets/dancing-clips/trumpet-lion-poster.webp'},
     {name:'moon-wizard', src:'/assets/dancing-clips/moon-wizard.webp', poster:'/assets/dancing-clips/moon-wizard-poster.webp'},
-    {name:'walking-eye', frames:16, src:'/assets/dancing-clips/walking-eye.webp', poster:'/assets/dancing-clips/walking-eye-poster.webp'},
   ].map(clip => ({width:160, height:160, columns:8, frames:48, fps:12, ...clip}));
+  // Final tuple values preserve each remaining figure's original timing index.
   // Every instance has its own size, position, phase and playback pace.
   const layouts = [
-    ['philosophy', [[1,7,18,126],[4,92,29,156],[5,53,13,58],[8,24,84,92],[0,75,92,66],[2,97,72,116]]],
-    ['sessions', [[8,4,28,106],[3,94,16,150],[1,49,47,64],[6,92,87,140],[7,8,92,78],[5,70,6,52]]],
-    ['play', [[5,7,17,158],[6,92,27,118],[0,47,12,56],[2,14,88,104],[4,71,91,72],[8,98,72,92]]],
-    ['about', [[3,7,19,130],[7,94,69,160],[4,36,91,68],[5,91,15,62],[1,4,82,90],[8,61,8,48]]],
-    ['studio-film', [[0,9,14,138],[2,90,13,178],[1,48,7,62],[6,9,92,108],[3,91,93,76],[5,67,96,48]]],
-    ['book', [[7,3,21,148],[8,95,19,90],[4,4,63,118],[5,95,81,140],[6,42,94,58],[0,76,7,68]]],
+    ['philosophy', [[1,7,18,126,0],[3,53,13,58,2],[0,75,92,66,4],[2,97,72,116,5]], 1],
+    ['sessions', [[1,49,47,64,2],[4,92,87,140,3],[5,8,92,78,4],[3,70,6,52,5]], 2],
+    ['about', [[5,94,69,160,1],[3,91,15,62,3],[1,4,82,90,4]], 4],
+    ['book', [[5,3,21,148,0],[3,95,81,140,3],[4,42,94,58,4],[0,76,7,68,5]], 6],
   ];
   const fields = [];
   const images = new Map();
@@ -40,8 +36,7 @@
     }
     return images.get(src);
   }
-  layouts.forEach(([id, instances], index) => {
-    const sectionIndex = index + 1; // Keep the existing timing below the removed hero layer.
+  layouts.forEach(([id, instances, sectionIndex]) => {
     const section = document.getElementById(id);
     if (!section) return;
     const canvas = document.createElement('canvas');
@@ -54,7 +49,7 @@
     section.classList.add('dance-field');
     section.append(canvas);
     fields.push({section, canvas, context, visible:false, width:0, height:0,
-      people:instances.map(([clip, x, y, size], index) => ({clip:clips[clip], x, y, size,
+      people:instances.map(([clip, x, y, size, index]) => ({clip:clips[clip], x, y, size,
         phase:(index * 11 + sectionIndex * 7), rate:0.88 + ((index + sectionIndex) % 4) * 0.06,
         mirror:(index + sectionIndex) % 3 === 0, alpha:0.42, drawSize:size})),
     });

@@ -5,7 +5,6 @@
   const video = hero.querySelector('[data-hero-video]');
   if (!video) return;
   hero.dataset.ready = 'true';
-  const film = document.querySelector('[data-studio-film]');
   let inView = !('IntersectionObserver' in window);
   let failed = false;
   let pending = false;
@@ -17,7 +16,7 @@
   video.preload = 'none';
   function canResume() {
     return !failed && document.body.dataset.motion === 'running' && inView &&
-      !document.hidden && (!film || film.paused || film.ended);
+      !document.hidden;
   }
   function pause() {
     queuedResume = false;
@@ -65,11 +64,6 @@
       inView = entries[0].isIntersecting;
       sync();
     }, {threshold: 0.05}).observe(hero);
-  }
-  if (film) {
-    film.addEventListener('play', pause);
-    film.addEventListener('pause', sync);
-    film.addEventListener('ended', sync);
   }
   sync();
 })();

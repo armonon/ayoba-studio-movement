@@ -51,9 +51,7 @@
     }
     caption('#philosophy .eyebrow', motifs.disc);
     caption('#sessions .section-heading > .eyebrow', motifs.arrow);
-    caption('#play .section-heading > .eyebrow', motifs.sun);
     caption('#about .founder-copy > .eyebrow', motifs.wheel);
-    caption('#studio-film .eyebrow', motifs.tassel);
     caption('#book .booking-heading > .eyebrow', motifs.curls);
   } else {
     const pageMotif = {

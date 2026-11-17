@@ -188,3 +188,101 @@ body.ayoba-simple .media-credit{color:#595e49;font-size:9px}
 @media(prefers-reduced-motion:reduce){html:has(body.ayoba-simple){scroll-behavior:auto}}
 
 body.ayoba-simple main:not([data-section-layout]) [id]{scroll-margin-top:calc(var(--section-header-height,78px) + 24px)}
+
+/* One light, lowercase voice across the public pages. These typography-only
+   overrides also cover legacy component styles loaded after this stylesheet. */
+body.ayoba-simple,
+body.ayoba-simple :where(*),
+body.ayoba-simple :where(*)::before,
+body.ayoba-simple :where(*)::after{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+  font-weight:300!important;
+  font-style:normal!important;
+  text-transform:lowercase!important;
+}
+/* Preserve exactly how a visitor types their name, email, or message. */
+body.ayoba-simple :where(input:not([type=button]):not([type=submit]):not([type=reset]),textarea,[contenteditable=true],[contenteditable=true] *){
+  text-transform:none!important;
+}
+body.ayoba-simple .contact-layout>*,
+body.ayoba-simple .form-row>*{min-width:0}
+body.ayoba-simple .contact-email{overflow-wrap:anywhere}
+body.ayoba-simple .navlinks>a,
+body.ayoba-simple .navlinks>.button{font-size:12px;letter-spacing:.15px}
+body.ayoba-simple :is(.eyebrow,.index,.footer-links h4){letter-spacing:.7px}
+body.ayoba-simple .nav .wordmark,
+body.ayoba-simple .footer .wordmark{letter-spacing:-.045em}
+body.ayoba-simple-home .video-hero h1{letter-spacing:-.045em;line-height:1}
+body.ayoba-simple-home .video-hero h1 em{margin-left:0;font-size:1em;letter-spacing:inherit;line-height:inherit}
+body.ayoba-simple-home .movement-manifesto h2 em{font-size:1em}
+@media(max-width:700px){
+  body.ayoba-simple .navlinks>a,
+  body.ayoba-simple .navlinks>.button{font-size:11px;letter-spacing:0}
+}
+
+/* Sessions and the practice share one continuous, generously spaced box. */
+body.ayoba-simple-home .ways{
+  border:1px solid var(--line);
+  background:#f8f4e5b3;
+  padding:56px;
+  margin-block:72px;
+}
+body.ayoba-simple-home .ways .movement-manifesto{
+  border-top:1px solid var(--line);
+  margin-top:56px;
+  padding:56px 0 0;
+  scroll-margin-top:calc(var(--section-header-height,78px) + 24px);
+}
+body.ayoba-simple-home .ways .movement-manifesto:before{content:none}
+body.ayoba-simple-home .ways .manifesto-layout{width:auto;margin:0}
+body.ayoba-simple-home .ways .movement-manifesto h2{margin-bottom:34px}
+body.ayoba-simple-home .ways .intention-copy{gap:24px 30px}
+body.ayoba-simple-home .ways .journey-photo{aspect-ratio:16/9}
+body.ayoba-simple-home .ways .journey-photo.group-video video{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:var(--ink);
+}
+body.ayoba-simple .session-photo.group-video video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  background:var(--ink);
+}
+body.ayoba-simple .session-photo.group-video figcaption{font-size:12px;line-height:1.7;padding-top:12px}
+
+/* Keep both words of the current name together at every viewport size. */
+body.ayoba-simple .wordmark{white-space:nowrap}
+body.ayoba-simple .nav .wordmark small,
+body.ayoba-simple .footer .wordmark small{
+  font-size:inherit;
+  letter-spacing:inherit;
+  line-height:inherit;
+  writing-mode:horizontal-tb;
+  max-width:none;
+  margin-left:.22em;
+  align-self:auto;
+}
+body.ayoba-simple .footer .wordmark{font-size:clamp(38px,5vw,58px)}
+@media(max-width:1000px){
+  body.ayoba-simple-home .ways{padding:40px}
+}
+@media(max-width:900px){
+  body.ayoba-simple-home .ways .intention-copy{grid-template-columns:1fr;max-width:680px}
+}
+@media(max-width:700px){
+  body.ayoba-simple-home .ways{padding:25px 22px;margin-block:40px}
+  body.ayoba-simple-home .ways .movement-manifesto{margin-top:36px;padding-top:36px;scroll-margin-top:calc(var(--section-header-height,108px) + 24px)}
+  body.ayoba-simple-home .ways .movement-manifesto h2{font-size:30px;line-height:1.25;letter-spacing:-.9px;margin-bottom:26px}
+  body.ayoba-simple-home .ways .intention-copy{gap:20px}
+}
+@media(max-width:360px){
+  body.ayoba-simple-home .ways{padding-inline:18px}
+  body.ayoba-simple-home .ways .section-heading h2{font-size:38px}
+  body.ayoba-simple-home .ways .journey h3{font-size:29px}
+  body.ayoba-simple-home .ways .movement-manifesto h2{font-size:27px}
+}

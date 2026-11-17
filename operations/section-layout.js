@@ -1,7 +1,9 @@
 // Reorganize only the public presentation; preserve bound controls and form nodes.
 const publicNav = document.querySelector('#navlinks');
 const previousBooking = publicNav?.querySelector('.button')?.getAttribute('href');
-if (publicNav && !publicNav.querySelector('a[href="#sessions"], a[href="/#sessions"]')) {
+if (publicNav && (publicNav.querySelectorAll('a').length !== 3 ||
+    !publicNav.querySelector('a[href="#sessions"], a[href="/#sessions"]') ||
+    publicNav.querySelector('a[href="#philosophy"], a[href="/#philosophy"], a[href="#play"], a[href="/#play"], a[href="#studio-film"], a[href="/#studio-film"]'))) {
   publicNav.replaceChildren(fragment(NAV_SOURCE));
 }
 if (route !== '/') {
@@ -9,25 +11,30 @@ if (route !== '/') {
 }
 if (route === '/') {
   const main = document.querySelector('main');
+  main?.querySelectorAll('.playground, .film-section').forEach(section => section.remove());
+  document.querySelectorAll('a[href="#studio-film"], a[href="/#studio-film"], a[href="#play"], a[href="/#play"]').forEach(link => link.remove());
   if (main && !main.dataset.sectionLayout) {
-    const controls = main.querySelector('.play-controls');
-    const study = main.querySelector('[data-movement-study]') || fragment(STUDY_SOURCE).firstElementChild;
-    const play = main.querySelector('.playground');
-    if (controls && study && play) {
-      const playTemplate = fragment(PLAY_SOURCE);
-      playTemplate.querySelector('.play-controls').replaceWith(controls);
-      playTemplate.querySelector('[data-movement-study]').replaceWith(study);
-      play.replaceWith(playTemplate);
-    }
     main.querySelector('.intro-band')?.remove();
     main.querySelector('.reassurance')?.remove();
+    main.querySelector('#philosophy')?.remove();
     main.querySelector('.ways')?.replaceWith(fragment(SESSIONS_SOURCE));
     main.querySelector('.founder')?.replaceWith(fragment(ABOUT_SOURCE));
     if (!main.querySelector('#book')) main.append(fragment(BOOK_SOURCE));
     document.querySelector('body > .cta')?.remove();
     main.dataset.sectionLayout = 'true';
   }
-  const logo = document.querySelector('header a[aria-label="Ayoba Studio home"]');
+  // Keep the agreed order: sessions/practice, booking, then meet Sophie.
+  ['sessions','book','about'].forEach(id => {
+    const section = main?.querySelector('#' + id);
+    if (section) main.append(section);
+  });
+  const bookTitle = document.querySelector('#book-title');
+  if (bookTitle?.textContent === 'Start with a conversation.') bookTitle.innerHTML = 'tiers / booking options,<br>let’s connect.';
+  const aboutNumber = document.querySelector('#about .eyebrow');
+  if (['04 / About', '03 / About'].includes(aboutNumber?.textContent)) aboutNumber.textContent = '03 / meet sophie';
+  const bookNumber = document.querySelector('#book .eyebrow');
+  if (['06 / Book', '04 / Book'].includes(bookNumber?.textContent)) bookNumber.textContent = '02 / book';
+  const logo = document.querySelector('header a[aria-label="Ayoba Studio home"], header a[aria-label="paypaya lane home"]');
   if (logo) logo.setAttribute('href','#home');
   // Preserve a verified calendar if the existing public runtime finished first.
   if (previousBooking?.startsWith('https://')) {
@@ -50,4 +57,8 @@ if (route === '/contact') {
   if (lede?.textContent.includes('Questions, curiosities')) lede.textContent = 'Ask about a call, a session, or a group journey.';
   const notice = document.querySelector('#intro-call .notice');
   if (notice?.textContent.includes('Calendar awaiting configuration.')) notice.textContent = 'To arrange a time, send your availability using this form. Sophie will confirm the date, time zone, and call link. Sending an inquiry does not reserve a session.';
+}
+
+if (route === '/group-journeys' && !document.querySelector('[data-group-video]')) {
+  document.querySelector('.session-photo')?.replaceWith(fragment(GROUP_VIDEO_SOURCE));
 }
