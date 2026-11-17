@@ -335,3 +335,16 @@ The homepage sessions panel opens directly with the two session options. The
 introductory heading, subtitle and header band are removed without leaving
 empty space. Its accessible name is now sessions and practice; the existing
 practice text below the cards and all video/booking behavior remain intact.
+
+THE DANCE PAGE & SOPHIE PORTRAIT — NOVEMBER 16, 2026
+Public presentation is now the dance page. The supplied original JPEG is used
+in the homepage Meet Sophie section, legacy About page, and the independently
+injected artist page’s Meet Sophie portrait. A narrowly scoped observer waits
+for that artist subtree, updates its portrait and studio return labels, then
+disconnects. The artist snippet, record sleeve and artist metadata are preserved.
+New favicon, sharing graphic and portrait are additive immutable media assets.
+The existing external creative-portfolio deployment was reconciled only after
+confirming every recorded media asset remained unchanged. Its ten additional
+files are retained by exact content hashes in media-host.json preserved_files,
+with the same complete-manifest safeguards on future updates. The main site
+and Studio function are not rebuilt or redeployed.

@@ -76,6 +76,24 @@
       "bytes": 34117,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/paypaya-social-preview.0ba37126d241.png"
     },
+    "dance-page-favicon.svg": {
+      "path": "assets/dance-page-favicon.7eae0272bbe8.svg",
+      "sha1": "7eae0272bbe826a141dbbaa20768d49cdf8c8612",
+      "bytes": 273,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dance-page-favicon.7eae0272bbe8.svg"
+    },
+    "dance-page-social-preview.png": {
+      "path": "assets/dance-page-social-preview.a250348592b3.png",
+      "sha1": "a250348592b3a122612f1476816bba9bacef8c96",
+      "bytes": 35018,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dance-page-social-preview.a250348592b3.png"
+    },
+    "sophie-portrait-2026.jpg": {
+      "path": "assets/sophie-portrait-2026.fb8e9bb11581.jpg",
+      "sha1": "fb8e9bb1158142c57b042922fc061daa2c9c4681",
+      "bytes": 210538,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/sophie-portrait-2026.fb8e9bb11581.jpg"
+    },
     "characters/candle-devil.webp": {
       "path": "assets/characters/candle-devil.8524e7667016.webp",
       "sha1": "8524e76670168bc9dfe26d1e715080443c08dd9b",
@@ -299,6 +317,19 @@
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye.e7eb66dc98f4.webp"
     }
   },
-  "deploy_id": "6afbd495d9bc091ef9095fd9",
-  "previous_deploy_id": "6af6363c19a0636b8b066d56"
+  "deploy_id": "6afbdf019b87d76eff5ae45c",
+  "previous_deploy_id": "6afbdd6f1c93fc808f843a91",
+  "reconciled_from_deploy_id": "6afbd495d9bc091ef9095fd9",
+  "preserved_files": {
+    "creative/dfc6f9d7d341561b/assets/creative-granola.png": "17ff2f938f3b2e563132cfb55e0840c18c9217fe",
+    "creative/dfc6f9d7d341561b/assets/creative-imbuia.png": "fa2e4f0cae98a056bcecbc325da48e06421ce857",
+    "creative/dfc6f9d7d341561b/assets/creative-michelle-art.png": "8ac97d2929f35251f7e9cfcce84e74a155141746",
+    "creative/dfc6f9d7d341561b/assets/creative-michelle-miniatures.png": "c1202af4afa8a0b5ebf901923160ca340a4b8b45",
+    "creative/dfc6f9d7d341561b/assets/creative-mother-nature.png": "8c3bec2e55f950f1ad46ea386fcb27da80dd31c2",
+    "creative/dfc6f9d7d341561b/assets/creative-producer.css": "8b5f76e38f11c31432b4c4a291b073fae7ce03ec",
+    "creative/dfc6f9d7d341561b/assets/creative-producer.js": "22aee30a0abbd316c2637d9501e72ea18fca704c",
+    "creative/dfc6f9d7d341561b/assets/creative-sattari.png": "8e9c98f1c620a65bafa0ba55091684e6660d84b8",
+    "creative/dfc6f9d7d341561b/assets/creative-sophie-portrait.jpg": "5abf1af76be8d490fad1e108739118e5fe29033a",
+    "creative/dfc6f9d7d341561b/index.html": "522956c2faadd53d5686ed7ce8517d5698d30cbc"
+  }
 }

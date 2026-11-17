@@ -16,7 +16,8 @@ FILES = ['ayoba-hero.mp4', 'ayoba-film.mp4', 'ayoba-video-poster.jpg', 'ayoba-tr
          'ayoba-about-montage.mp4', 'ayoba-about-montage-mobile.mp4',
          'ayoba-about-montage-poster.jpg', 'ayoba-about-montage-mobile-poster.jpg',
          'paypaya-group-victory.mp4', 'paypaya-group-victory-poster.jpg',
-         'paypaya-favicon.svg', 'paypaya-social-preview.png']
+         'paypaya-favicon.svg', 'paypaya-social-preview.png',
+         'dance-page-favicon.svg', 'dance-page-social-preview.png', 'sophie-portrait-2026.jpg']
 token = os.environ.get('NETLIFY_AUTH_TOKEN')
 if not token:
     config = json.loads((Path.home() / 'Library/Preferences/netlify/config.json').read_text())
@@ -58,7 +59,15 @@ def build_uploads():
 
 def publish(site_id, state, uploads, media):
     assert site_id != MAIN_SITE, 'Never deploy this media bundle to the main studio site.'
-    digest_map = {path: hashlib.sha1(data).hexdigest() for path, data in uploads.items()}
+    # Preserve separately managed portfolio files by their verified Netlify hashes.
+    # Netlify's content-addressed store already contains these immutable bytes.
+    preserved = state.get('preserved_files', {})
+    assert not set(preserved).intersection(uploads), 'Preserved files overlap local uploads.'
+    digest_map = dict(preserved)
+    digest_map.update({path: hashlib.sha1(data).hexdigest() for path, data in uploads.items()})
+    if state.get('deploy_id'):
+        current = request('sites/' + site_id)
+        assert current['published_deploy']['id'] == state['deploy_id'], 'Media deployment changed during preparation; reconcile before publishing.'
     deploy = request('sites/' + site_id + '/deploys?title=Ayoba%20public%20media', 'POST', {'files': digest_map, 'draft': False})
     if state.get('deploy_id'):
         state['previous_deploy_id'] = state['deploy_id']
@@ -70,6 +79,7 @@ def publish(site_id, state, uploads, media):
     # can be inspected without inadvertently creating a second deployment.
     STATE.write_text(json.dumps(state, indent=2) + '\n')
     required = set(deploy.get('required', []))
+    assert required.issubset({hashlib.sha1(data).hexdigest() for data in uploads.values()}), 'Netlify requires unavailable preserved file bytes; inspect this pending deployment.'
     for path, data in uploads.items():
         if digest_map[path] in required:
             request('deploys/' + deploy['id'] + '/files/' + urllib.parse.quote(path, safe='/'), 'PUT', data)
@@ -111,8 +121,13 @@ elif mode == 'update':
     deployed_files = request('deploys/' + state['deploy_id'] + '/files')
     for item in deployed_files:
         path = item['path'].lstrip('/')
-        assert path in uploads, 'An existing deployment file would be removed: ' + path
-        assert hashlib.sha1(uploads[path]).hexdigest() == item['sha'], 'An existing deployment file would change: ' + path
+        if path in state.get('preserved_files', {}):
+            assert state['preserved_files'][path] == item['sha'], 'A preserved portfolio file changed: ' + path
+        else:
+            assert path in uploads, 'An existing deployment file would be removed: ' + path
+            assert hashlib.sha1(uploads[path]).hexdigest() == item['sha'], 'An existing deployment file would change: ' + path
+    published_paths = {item['path'].lstrip('/') for item in deployed_files}
+    assert set(state.get('preserved_files', {})).issubset(published_paths), 'A recorded preserved file is absent from the current deploy.'
     publish(site['id'], state, uploads, media)
 elif mode == 'status':
     state = json.loads(STATE.read_text())
@@ -123,6 +138,9 @@ elif mode == 'status':
     if deploy['state'] == 'ready':
         media_site = request('sites/' + state['site_id'])
         assert media_site['published_deploy']['id'] == state['deploy_id']
+        deployed = {item['path'].lstrip('/'): item['sha'] for item in request('deploys/' + state['deploy_id'] + '/files')}
+        for path, digest in state.get('preserved_files', {}).items():
+            assert deployed.get(path) == digest, 'Preserved portfolio file differs: ' + path
         for name, asset in state['files'].items():
             req = urllib.request.Request(asset['url'], headers={'Range': 'bytes=0-63'})
             with urllib.request.urlopen(req, timeout=30) as response:

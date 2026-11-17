@@ -34,7 +34,7 @@ if (route === '/') {
   if (['04 / About', '03 / About'].includes(aboutNumber?.textContent)) aboutNumber.textContent = '03 / meet sophie';
   const bookNumber = document.querySelector('#book .eyebrow');
   if (['06 / Book', '04 / Book'].includes(bookNumber?.textContent)) bookNumber.textContent = '02 / book';
-  const logo = document.querySelector('header a[aria-label="Ayoba Studio home"], header a[aria-label="paypaya lane home"]');
+  const logo = document.querySelector('header .wordmark')?.closest('a');
   if (logo) logo.setAttribute('href','#home');
   // Preserve a verified calendar if the existing public runtime finished first.
   if (previousBooking?.startsWith('https://')) {
