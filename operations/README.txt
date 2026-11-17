@@ -283,3 +283,28 @@ capped at 1.5x. Failed clip loads leave a static poster or empty decoration.
 Publish new media additively with operations/publish-media.py update;
 retain every existing media file. Then regenerate and publish only the
 existing live presentation snippet. Do not rebuild the main site.
+
+PAYPAYA LANE SIMPLIFICATION — NOVEMBER 16, 2026
+This current layout supersedes the earlier seven-section presentation:
+hero; combined sessions / practice panel; tiers / booking options; meet Sophie.
+The Play / movement-study section and separate Film player are removed.
+The original hero clip continues looping with the shared motion controls.
+Public typography is light Helvetica, lowercase; typed form values keep case.
+Ghost, walking eye and raven are removed; 15 remaining background instances
+use six character types. There is still no character canvas in the hero.
+
+Public branding is now “paypaya lane” (the user’s spelling), including visible
+copy, logo, metadata, favicon and sharing image. The old name-origin paragraph
+is removed without inventing a new origin. Existing domain, snippet name, form
+identifiers, Studio backend and immutable media paths remain unchanged.
+
+Victory from Sophie’s public Wix portfolio replaces the group-session photo
+on the homepage and group detail page. The full 103.296-second 720p film keeps
+its audio and native playback controls; it does not autoplay and preloads no
+video data. Provenance is in operations/group-video-source.json. New files are
+added to the same media host; existing deployed assets are retained verbatim.
+
+Calendly is waiting for Sophie to sign in to her existing account. No provider
+links are connected, bookings created, subscription purchased, or confirmation
+email delivery verified. The agreed service windows and prices remain visible
+as inquiries. No contact form submission is part of verification.

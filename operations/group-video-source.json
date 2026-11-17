@@ -1,0 +1,57 @@
+{
+  "title": "Victory",
+  "source_page": "https://eihpos789.wixsite.com/website",
+  "source_video_id": "7daea71ed0184631a2132ae6c6280b12",
+  "source_channel_id": "e520b72138304bf79468ab974af5fc2b",
+  "source_media_id": "a32e6c_19d81d3df96848f6862f3e42b657eedb",
+  "source_poster_url": "https://static.wixstatic.com/media/a32e6c_19d81d3df96848f6862f3e42b657eedbf002.jpg",
+  "retrieval": "Public site playback HLS 720p rendition; no login or private access. Expiring playback URLs omitted. Direct CDN MP4 is unavailable.",
+  "source_video": {
+    "file": "victory-720p.mp4",
+    "bytes": 28628234,
+    "sha256": "efa8952192b225f04cc79f4249dd1333795320967729b9428c5fbee375791569"
+  },
+  "delivery_video": {
+    "file": "paypaya-group-victory.mp4",
+    "bytes": 14958813,
+    "sha256": "851ea8c04b7d62404e81ddbd0b4782edc864f2a305fa8fabea07516af362482a"
+  },
+  "delivery_poster": {
+    "file": "paypaya-group-victory-poster.jpg",
+    "bytes": 138891,
+    "sha256": "5ccff3dcd9ae4c8cac353d383374d5d1a5102da7f9c0872365db4ba8c5b0940e"
+  },
+  "encoding": {
+    "video": "H.264 libx264 medium CRF25 yuv420p",
+    "audio": "AAC128k stereo, original audio preserved",
+    "container": "MP4 faststart",
+    "editing": "Complete source duration retained, no cuts"
+  },
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001"
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "103.296000",
+      "size": "14958813"
+    }
+  },
+  "validation": {
+    "beginning_six_seconds_decoded": true,
+    "final_six_seconds_decoded": true,
+    "poster_visual_check": "Original public Wix poster shows three people dancing outdoors at sunset."
+  }
+}

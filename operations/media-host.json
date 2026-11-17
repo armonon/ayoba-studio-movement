@@ -52,6 +52,30 @@
       "bytes": 62076,
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/ayoba-about-montage-mobile-poster.2a1dfe68af1c.jpg"
     },
+    "paypaya-group-victory.mp4": {
+      "path": "assets/paypaya-group-victory.2d627019002c.mp4",
+      "sha1": "2d627019002c4c3dc0e701592434e619a1b51534",
+      "bytes": 14958813,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/paypaya-group-victory.2d627019002c.mp4"
+    },
+    "paypaya-group-victory-poster.jpg": {
+      "path": "assets/paypaya-group-victory-poster.4ba6b4e4e082.jpg",
+      "sha1": "4ba6b4e4e0825e3036977b75fc31c22db8b63b10",
+      "bytes": 138891,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/paypaya-group-victory-poster.4ba6b4e4e082.jpg"
+    },
+    "paypaya-favicon.svg": {
+      "path": "assets/paypaya-favicon.d07bc8ed5bb3.svg",
+      "sha1": "d07bc8ed5bb329f9ad1acd0710484cd921dfa389",
+      "bytes": 273,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/paypaya-favicon.d07bc8ed5bb3.svg"
+    },
+    "paypaya-social-preview.png": {
+      "path": "assets/paypaya-social-preview.0ba37126d241.png",
+      "sha1": "0ba37126d241a2f1f9114664701db0f1015f08d7",
+      "bytes": 34117,
+      "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/paypaya-social-preview.0ba37126d241.png"
+    },
     "characters/candle-devil.webp": {
       "path": "assets/characters/candle-devil.8524e7667016.webp",
       "sha1": "8524e76670168bc9dfe26d1e715080443c08dd9b",
@@ -275,6 +299,6 @@
       "url": "https://ayoba-studio-media-1aa56b.netlify.app/assets/dancing-clips/walking-eye.e7eb66dc98f4.webp"
     }
   },
-  "deploy_id": "6af6363c19a0636b8b066d56",
-  "previous_deploy_id": "6af617ac25b1f58fae88c12b"
+  "deploy_id": "6afbd495d9bc091ef9095fd9",
+  "previous_deploy_id": "6af6363c19a0636b8b066d56"
 }
