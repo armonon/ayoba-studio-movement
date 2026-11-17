@@ -73,7 +73,7 @@ body.ayoba-simple-home .study-footer p{font-size:10px}
 body.ayoba-simple-home .study-footer button{font-size:11px;min-height:40px}
 body.ayoba-simple-home .founder{background:transparent}
 body.ayoba-simple-home .founder-grid{gap:40px;grid-template-columns:1fr 1fr;align-items:center}
-body.ayoba-simple-home .founder-photo img{aspect-ratio:1.08;object-fit:cover}
+body.ayoba-simple-home .founder-photo img{aspect-ratio:1194/1248;object-fit:cover}
 body.ayoba-simple-home .founder-photo figcaption{font:11px/1.6 DM,Arial,sans-serif;letter-spacing:.4px;padding:13px 0 0}
 body.ayoba-simple-home .founder-copy p{font-size:14px;line-height:1.85}
 body.ayoba-simple-home .founder-copy .eyebrow{font-size:10px;line-height:1.6}
@@ -255,7 +255,7 @@ body.ayoba-simple .session-photo.group-video video{
 }
 body.ayoba-simple .session-photo.group-video figcaption{font-size:12px;line-height:1.7;padding-top:12px}
 
-/* Keep both words of the current name together at every viewport size. */
+/* Keep the words of the current name together at every viewport size. */
 body.ayoba-simple .wordmark{white-space:nowrap}
 body.ayoba-simple .nav .wordmark small,
 body.ayoba-simple .footer .wordmark small{
