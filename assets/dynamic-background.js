@@ -19,37 +19,17 @@
   image.height = 1800;
   plane.append(image); backdrop.append(plane); document.body.prepend(backdrop);
 
-  const control = document.createElement('button');
-  control.type = 'button';
-  control.className = 'background-control';
-  control.dataset.backgroundToggle = '';
-  control.innerHTML = '<span data-background-icon aria-hidden="true">Ⅱ</span><span data-background-label>Pause motion</span>';
-  document.body.append(control);
-  const controls = Array.from(document.querySelectorAll('[data-background-toggle]'));
   const planes = Array.from(document.querySelectorAll('[data-art-plane]'));
   const hero = document.querySelector('[data-art-hero], [data-video-hero]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
-  let saved;
-  try { saved = sessionStorage.getItem('ayoba-background-motion'); } catch {/* Storage is optional. */}
-  let wantsMotion = saved !== 'paused' && !reduced.matches && !navigator.connection?.saveData;
+  let wantsMotion = !reduced.matches && !navigator.connection?.saveData;
   let frame = 0;
   let x = 0, y = 0;
   function update() {
     document.body.dataset.motion = wantsMotion && !document.hidden ? 'running' : 'paused';
-    controls.forEach(button => {
-      button.setAttribute('aria-pressed', String(wantsMotion));
-      button.setAttribute('aria-label', wantsMotion ? 'Pause all motion' : 'Play all motion');
-      button.querySelector('[data-background-label]').textContent = wantsMotion ? 'Pause motion' : 'Play motion';
-      button.querySelector('[data-background-icon]').textContent = wantsMotion ? 'Ⅱ' : '▷';
-    });
     if (!wantsMotion && frame) { cancelAnimationFrame(frame); frame = 0; }
   }
-  controls.forEach(button => button.addEventListener('click', () => {
-    wantsMotion = !wantsMotion;
-    try { sessionStorage.setItem('ayoba-background-motion', wantsMotion ? 'running' : 'paused'); } catch {/* Keep the control usable without storage. */}
-    update();
-  }));
   function moveArtwork() {
     frame = 0;
     if (!wantsMotion || document.hidden) return;
@@ -67,9 +47,10 @@
   }, {passive:true});
   document.addEventListener('visibilitychange', update);
   reduced.addEventListener('change', () => {
-    if (reduced.matches) { wantsMotion = false; update(); }
+    wantsMotion = !reduced.matches && !navigator.connection?.saveData;
+    update();
   });
-  // The hero has its own control; the compact control takes over farther down.
+  // Keep hero visibility available to the existing presentation styles.
   document.body.dataset.heroInView = hero ? 'true' : 'false';
   if (hero && 'IntersectionObserver' in window) {
     new IntersectionObserver(entries => {

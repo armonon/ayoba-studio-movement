@@ -39,7 +39,7 @@ body.ayoba-tropical[data-motion=paused] .tropical-image{animation-play-state:pau
 body.ayoba-tropical[data-motion=paused] .tropical-plane{transition:none}
 body.ayoba-tropical[data-hero-in-view=false] .art-hero .tropical-image{animation-play-state:paused!important}
 body.ayoba-tropical [data-section-header]{background:#f8f4e5}
-body.ayoba-tropical .footer{background:transparent;padding-bottom:76px}
+body.ayoba-tropical .footer{background:transparent;padding-bottom:24px}
 body.ayoba-tropical main{background:transparent}
 body.ayoba-tropical.ayoba-simple-home .movement-study{background:#f8f4e5e8}
 body.ayoba-tropical .panel{background:#f1efdfec}

@@ -68,12 +68,13 @@ source = r'''// Ayoba public presentation; the studio backend is deliberately ex
     }
     if (route === '/private-sessions') {
       const lede = document.querySelector('main .lede');
-      if (lede?.textContent.trim() === 'Your pace, your curiosity, your way of moving. An individualized space to explore without needing to get anywhere.') lede.textContent = 'Your pace, your curiosity, your way of moving.';
+      if (lede?.textContent.trim().startsWith('Your pace, your curiosity, your way of moving.')) lede.remove();
     }
     SECTION_LAYOUT_SOURCE
     SECTION_JS_SOURCE
     BACKGROUND_JS_SOURCE
     VIDEO_JS_SOURCE
+    GROUP_VIDEO_JS_SOURCE
     CHARACTER_JS_SOURCE
     PENDANT_JS_SOURCE
     ABOUT_FILM_JS_SOURCE
@@ -87,6 +88,7 @@ replacements = {
     'ART_CSS_SOURCE': json.dumps(asset('art-direction.css')),
     'VIDEO_CSS_SOURCE': json.dumps(asset('video-hero.css')),
     'VIDEO_JS_SOURCE': public_media(asset('video-hero.js')),
+    'GROUP_VIDEO_JS_SOURCE': public_media(asset('group-video.js')),
     'SECTION_CSS_SOURCE': json.dumps(asset('section-navigation.css')),
     'BACKGROUND_CSS_SOURCE': json.dumps(asset('dynamic-background.css')),
     'CHARACTER_CSS_SOURCE': json.dumps(asset('characters.css')),
@@ -101,7 +103,7 @@ replacements = {
     'SECTION_JS_SOURCE': asset('section-navigation.js'),
     'BRANDING_JS_SOURCE': public_media(asset('branding.js')),
 }
-for name, value in replacements.items():
+for name, value in sorted(replacements.items(), key=lambda item: len(item[0]), reverse=True):
     source = source.replace(name, value)
 assert '</script' not in source.lower()
 (TARGET / 'live-update.js').write_text(source)
